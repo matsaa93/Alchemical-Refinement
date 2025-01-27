@@ -1,0 +1,3 @@
+variantgroups: [
+		{ code: "type", states: ["cassiterite", "chromite", "hematite", "limonite", "quartz_nativegold", "magnetite", "malachite", "nativecopper", "pentlandite", "galena", "quartz_nativesilver", "sphalerite", "uranium", "rhodochrosite", "bismuthinite", "stibnite", "azurite", "chalcopyrite", "cerussite", "chalcocite", "franckeite", "freibergite", "hemimorphite", "nativeplatinum", "smithsonite", "sperrylite", "teallite", "tetrahedrite", "vanadinite", "wulfenite", "nativegold", "nativesilver"] }
+	],

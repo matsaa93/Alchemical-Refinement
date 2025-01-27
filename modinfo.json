@@ -1,0 +1,18 @@
+{
+  "Type": 1,
+  "TextureSize": 32,
+  "Name": "Alchemical Refinement",
+  "Version": "0.2.2",
+  "NetworkVersion": null,
+  "Description": "Lets you refine ores following the alchemical methode",
+  "Website": "",
+  "ModID": "alchemical-refinement",
+  "Authors": [
+    "matsaa93"
+  ],
+  "Contributors": [],
+  "Side": "Universal",
+  "RequiredOnClient": true,
+  "RequiredOnServer": true,
+  "Dependencies": {}
+}

@@ -1,0 +1,16 @@
+[
+	{
+	"op": "add",
+	"path": "/grindingPropsByType",
+	"value": {
+		"nugget-*": {
+			"groundStack": { 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-{ore}-raw" 
+			}
+		}
+	},
+	"file": "game:itemtypes/resource/nugget.json",
+	"side": "Server"
+	}
+]
