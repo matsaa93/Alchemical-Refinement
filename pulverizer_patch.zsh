@@ -8,6 +8,7 @@ declare -A material_grade_rich
 declare -A material_grade_medium 
 declare -A material_grade_poor
 declare -A material_element
+declare -A material_temp
 declare -a material
 zcalc(){ echo $(($@)) }
 zcalc_goldenratio_int(){ zcalc "$1 * 1.618" |awk '{print int($1+0.5)}' }
@@ -143,50 +144,52 @@ F_array_material_set(){
     material_element[${1}]="$2"
     material_tier[${1}]=$3
     material_stacksizex[${1}]=$4
+    material_temp[${1}]=$5
     if [[ $debug == true ]]; then; printf "\nmaterial: ${1}"; printf "\n\ttier: $material_tier[${1}]"; printf "\n\tstacksize: $material_stacksizex[${1}]"; fi
-    F_array_grade_set $1 $4 $5
+    F_array_grade_set $1 $4 $6
 }
-
+# copper=1084 bismuth=271 chromium=1907 gold=1063 ironbloom=1482 lead=327
 F_array_test(){
-    F_array_material_set cassiterite tin 2 0.3
-    F_array_material_set chromite chromium 3 1.7
-    F_array_material_set hematite ironbloom 3 1.8
-    F_array_material_set limonite ironbloom 2 1
-    F_array_material_set quartz_nativegold gold 2 0.3
-    F_array_material_set magnetite ironbloom 3 1.5
-    F_array_material_set malachite copper 2 1
-    F_array_material_set nativecopper copper 2 1.5
-    F_array_material_set pentlandite nickel 3 0.5
-    F_array_material_set galena lead 2 1.7
-    F_array_material_set quartz_nativesilver silver 2 0.6
-    F_array_material_set sphalerite zinc 2 1.5
-    F_array_material_set uranium uranium 3 1.5
-    F_array_material_set rhodochrosite manganese 3 1.7
-    F_array_material_set bismuthinite bismuth 2 1.8
-    F_array_material_set stibnite zinc 2 1.5
+    F_array_material_set bismuthinite bismuth 2 1.8 271
+    F_array_material_set azurite copper 2 1.5 1084
+    F_array_material_set chalcopyrite copper 2 1 1084
+    F_array_material_set chalcocite copper 2 1 1084
+    F_array_material_set tetrahedrite copper 2 1 1084
+    F_array_material_set malachite copper 2 1 1084
+    F_array_material_set nativecopper copper 2 1.5 1084
+    F_array_material_set chromite chromium 3 1.7 1907
+    F_array_material_set hematite ironbloom 3 1.8 1482
+    F_array_material_set limonite ironbloom 2 1 1482
+    F_array_material_set magnetite ironbloom 3 1.5 1482
+    F_array_material_set pyrite ironbloom 2 1 1482
+    F_array_material_set cerussite lead 2 2 327
+    F_array_material_set galena lead 2 1.7 327
+    F_array_material_set vanadinite lead 2 2 327
+    F_array_material_set wulfenite lead 2 1.5 327
+    F_array_material_set pentlandite nickel 3 0.5 1084
+    F_array_material_set galena_nativesilver silver 2 1.7 961
+    F_array_material_set quartz_nativesilver silver 2 0.6 961
+    F_array_material_set nativesilver silver 2 1.6 961
+    F_array_material_set freibergite silver 2 1 961
+    F_array_material_set nativegold gold 2 1 1063
+    F_array_material_set quartz_nativegold gold 2 0.3 1063
 }
 F_array_test
 F_array_test_Geology_Addition(){
-    F_array_material_set azurite copper 2 1.5
-    F_array_material_set chalcopyrite copper 2 1
-    F_array_material_set cerussite lead 2 2
-    F_array_material_set chalcocite copper 2 1
-    F_array_material_set franckeite tin 2 1.2
-    F_array_material_set freibergite silver 2 1
-    F_array_material_set hemimorphite zinc 2 1.5
-    F_array_material_set nativeplatinum platinum 3 1
-    F_array_material_set smithsonite zinc 2 1.5
-    F_array_material_set sperrylite platinum 3 1
-    F_array_material_set teallite tin 2 1
-    F_array_material_set tetrahedrite copper 2 1
-    F_array_material_set vanadinite lead 2 2
-    F_array_material_set wulfenite lead 2 1.5
-    F_array_material_set pyrite ironbloom 2 1
+    F_array_material_set franckeite tin 2 1.2 232
+    F_array_material_set cassiterite tin 2 0.3 232
+    F_array_material_set teallite tin 2 1 232
+    F_array_material_set nativeplatinum platinum 3 1 1770
+    F_array_material_set sperrylite platinum 3 1 1770
+    F_array_material_set hemimorphite zinc 2 1.5 419
+    F_array_material_set smithsonite zinc 2 1.5 419
+    F_array_material_set sphalerite zinc 2 1.5 419
 }
 F_array_test_Geology_Addition
 F_array_test_OresAPlanty(){
-    F_array_material_set nativegold gold 2 1
-    F_array_material_set nativesilver silver 2 1.6
+    F_array_material_set stibnite arsenic 2 1.5
+    F_array_material_set uranium uranium 3 1.5
+    F_array_material_set rhodochrosite manganese 3 1.7
 }
 F_array_test_OresAPlanty
 printf "$material ${#material[@]}"
@@ -250,20 +253,55 @@ FA_combustion_prop(){
 	#		smeltedStack: { type: "item", code: "game:ingot-copper" }
 	#	},
     local file
-    local ammount_of_item=${#material[@]}
+    #local ammount_of_item=${#material[@]}
     #echo > xcumbust.txt
     for F in $material
     do
-        f="$(cat zcombustprop.txt)"
-        f="$(echo ${f//Variable1/${F}})"
-        f="$(echo ${f//Variable2/${material_element[$F]}})"
+        for type in calcinated washed
+        do 
+            f="$(cat zcombustprop.txt)"
+            f="$(echo ${f//Variable1/${F}-${type}})"
+            f="$(echo ${f//Temp/${material_temp[$F]}})"
+            f="$(echo ${f//Variable2/${material_element[$F]}})"
+            echo $f
+        done
+    done
+}
+FA_Lang_File_powdered_ore(){
+    for F in $material
+    do
+        material_Upcase="$(echo "$F" | sed 's/.*/\u&/')" 
+        f="\n\t\"alchemical-refinement:item-powdered-ore-${F}-raw\": \"Powdered ${material_Upcase} Raw\","
+        n="\n\t\"alchemical-refinement:item-powdered-ore-${F}-calcinated\": \"Powdered ${material_Upcase} Calcinated\","
+        printf "${f}${n}"
+    done
+}
+FA_panning_file(){
+    #"@(bonysoil|bonysoil-.*)": [
+	#			{ type: "item", code: "bone",  chance: { avg: 0.3, var: 0 }  }
+	#		],
+    cat ore-pan-start.txt
+    for F in $material
+    do
+        f="$(cat ore-pan-drop.txt)"
+        f="$(echo ${f//INPUT/alchemical-refinement:powdered-ore-sand-${F}})"
+        f="$(echo ${f//OUTPUT/alchemical-refinement:powdered-ore-${F}-washed})"
+        #powdered-ore-sand-${F}
+        #f="$(echo ${f//Variable2/${material_element[$F]}})"
         echo $f
     done
+    cat ore-pan-end.txt
 }
 #FA_block_oregraded > assets/alchemical-refinement/recipes/grid/ore-chunks.json
 
-FA_item_oregraded > assets/game/patches/item-ore-graded-crush.json
+#FA_item_oregraded > assets/game/patches/item-ore-graded-crush.json
+#FA_Lang_File_powdered_ore > tmp/lang.json
+#FA_combustion_prop > tmp/wash-combust.txt
 #FA_combustion_prop > xcumbust.txt
+#FA_combustion_prop > tmp/combust.txt
+FA_panning_file > tmp/ore-pan.json
+
+
 
 #FA_block_oregraded > block-ore-graded-crush.json
 #printf "$(F_add_sqeer_bracket test)"

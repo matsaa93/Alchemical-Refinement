@@ -1,0 +1,110 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Origin/Cube1/Cube2,Root/Origin/Cube1",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+		"quartz": [16,16],
+		"ore": [16,16]
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Origin",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 8.0, 0.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "base",
+					"from": [ -5.0, 0.1, -5.0 ],
+					"to": [ 4.0, 0.1, 4.0 ],
+					"rotationOrigin": [ -3.0, 0.1, 0.0 ],
+					"faces": {
+						"up": { "texture": "#ore", "uv": [ 3.5, 3.5, 12.5, 12.5 ] }
+					},
+					"children": [
+						{
+							"name": "Cube1",
+							"from": [ 1.0, 0.0, 1.0 ],
+							"to": [ 7.0, 1.0, 7.0 ],
+							"rotationOrigin": [ 3.0, 0.0, 4.0 ],
+							"faces": {
+								"north": { "texture": "#ore", "uv": [ 5.0, 8.0, 11.0, 9.0 ] },
+								"east": { "texture": "#ore", "uv": [ 5.5, 7.0, 11.5, 8.0 ] },
+								"south": { "texture": "#ore", "uv": [ 4.5, 8.5, 10.5, 9.5 ] },
+								"west": { "texture": "#ore", "uv": [ 5.0, 9.5, 11.0, 10.5 ] },
+								"up": { "texture": "#ore", "uv": [ 5.0, 5.0, 11.0, 11.0 ] }
+							},
+							"children": [
+								{
+									"name": "Cube2",
+									"from": [ 1.0, 1.0, 1.0 ],
+									"to": [ 5.0, 2.0, 5.0 ],
+									"rotationOrigin": [ 2.5, 1.0, 3.5 ],
+									"faces": {
+										"north": { "texture": "#ore", "uv": [ 7.5, 7.0, 11.5, 8.0 ] },
+										"east": { "texture": "#ore", "uv": [ 5.5, 7.5, 9.5, 8.5 ] },
+										"south": { "texture": "#ore", "uv": [ 5.5, 8.5, 9.5, 9.5 ] },
+										"west": { "texture": "#ore", "uv": [ 6.5, 6.5, 10.5, 7.5 ] },
+										"up": { "texture": "#ore", "uv": [ 5.0, 5.5, 9.0, 9.5 ] }
+									},
+									"children": [
+										{
+											"name": "Cube3",
+											"from": [ 0.5, 1.0, 0.5 ],
+											"to": [ 3.5, 1.5, 3.5 ],
+											"rotationOrigin": [ 3.5, 1.5, -5.0 ],
+											"faces": {
+												"north": { "texture": "#ore", "uv": [ 6.5, 8.5, 9.5, 9.0 ] },
+												"east": { "texture": "#ore", "uv": [ 7.0, 5.5, 10.0, 6.0 ] },
+												"south": { "texture": "#ore", "uv": [ 5.5, 7.0, 8.5, 7.5 ] },
+												"west": { "texture": "#ore", "uv": [ 8.5, 6.5, 11.5, 7.0 ] },
+												"up": { "texture": "#ore", "uv": [ 5.5, 7.5, 8.5, 10.5 ] }
+											},
+											"children": [
+												{
+													"name": "Cube4",
+													"from": [ 0.5, 0.5, 0.5 ],
+													"to": [ 2.5, 1.0, 2.5 ],
+													"rotationOrigin": [ 0.5, -1.0, 0.0 ],
+													"faces": {
+														"north": { "texture": "#ore", "uv": [ 7.5, 8.5, 9.5, 9.0 ] },
+														"east": { "texture": "#ore", "uv": [ 5.5, 9.5, 7.5, 10.0 ] },
+														"south": { "texture": "#ore", "uv": [ 5.5, 7.0, 7.5, 7.5 ] },
+														"west": { "texture": "#ore", "uv": [ 6.5, 6.0, 8.5, 6.5 ] },
+														"up": { "texture": "#ore", "uv": [ 7.5, 6.5, 9.5, 8.5 ] }
+													},
+													"children": [
+														{
+															"name": "Cube5",
+															"from": [ 0.5, 0.5, 0.5 ],
+															"to": [ 1.5, 1.0, 1.5 ],
+															"rotationOrigin": [ 2.5, -1.5, 0.5 ],
+															"faces": {
+																"north": { "texture": "#ore", "uv": [ 8.0, 8.5, 9.0, 9.0 ] },
+																"east": { "texture": "#ore", "uv": [ 6.0, 5.5, 7.0, 6.0 ] },
+																"south": { "texture": "#ore", "uv": [ 8.0, 5.5, 9.0, 6.0 ] },
+																"west": { "texture": "#ore", "uv": [ 6.0, 5.5, 7.0, 6.0 ] },
+																"up": { "texture": "#ore", "uv": [ 7.0, 5.5, 8.0, 6.5 ] }
+															}
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]}

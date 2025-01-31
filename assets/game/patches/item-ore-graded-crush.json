@@ -323,6 +323,38 @@
 			},
 			"hardnessTier": 2
 		},
+		"ore-poor-galena_nativesilver-*": {
+			"crushedStack": {
+				"type": "item",
+				"code": "nugget-galena",
+				"stacksize": 4
+			},
+			"hardnessTier": 2
+		},
+		"ore-medium-galena_nativesilver-*": {
+			"crushedStack": {
+				"type": "item",
+				"code": "nugget-galena",
+				"stacksize": 6
+			},
+			"hardnessTier": 2
+		},
+		"ore-rich-galena_nativesilver-*": {
+			"crushedStack": {
+				"type": "item",
+				"code": "nugget-galena",
+				"stacksize": 8
+			},
+			"hardnessTier": 2
+		},
+		"ore-bountiful-galena_nativesilver-*": {
+			"crushedStack": {
+				"type": "item",
+				"code": "nugget-galena",
+				"stacksize": 9
+			},
+			"hardnessTier": 2
+		},
 		"ore-poor-quartz_nativesilver-*": {
 			"crushedStack": {
 				"type": "item",

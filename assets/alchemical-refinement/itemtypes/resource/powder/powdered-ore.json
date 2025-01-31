@@ -1,248 +1,443 @@
 {
-	code: "powdered-ore",
-	class: "ItemNugget",
-	variantgroups: [
-		{ code: "ore", loadFromProperties: "alchemical-refinement:block/ore-mineral" },
-		{ code: "calcinated", states: [ "raw", "calcinated" ] }
+	"code": "powdered-ore",
+	"class": "ItemNugget",
+	"variantgroups": [
+		{ "code": "ore", "loadFromProperties": "alchemical-refinement:block/ore-mineral" },
+		{ "code": "calcinated", "states": [ "raw", "calcinated", "washed" ] }
 	],
-	heldTpIdleAnimation: "holdbothhands",
-	heldRightReadyAnimation: "holdbothhands",
+	"heldTpIdleAnimation": "holdbothhands",
+	"heldRightReadyAnimation": "holdbothhands",
 	"texturesByType": {
 		"*-galena_nativesilver-*": {
-			"ore": { base: "alchemical-refinement:item/resource/powder/nativesilver2" },
-			"quartz": { base: "alchemical-refinement:item/resource/powder/galena" }
+			"ore": { "base": "alchemical-refinement:item/resource/powder/nativesilver2" },
+			"quartz": { "base": "alchemical-refinement:item/resource/powder/galena" }
 		},
 		"*-quartz_nativesilver-*": {
-			"ore": { base: "alchemical-refinement:item/resource/powder/nativesilver5" },
-			"quartz": { base: "alchemical-refinement:item/resource/powder/quartz" }
+			"ore": { "base": "alchemical-refinement:item/resource/powder/nativesilver5" },
+			"quartz": { "base": "alchemical-refinement:item/resource/powder/quartz" }
 		},
 		"*-quartz_nativegold-*": {
-			"ore": { base: "alchemical-refinement:item/resource/powder/nativegold5" },
-			"quartz": { base: "alchemical-refinement:item/resource/powder/quartz" }
+			"ore": { "base": "alchemical-refinement:item/resource/powder/nativegold5" },
+			"quartz": { "base": "alchemical-refinement:item/resource/powder/quartz" }
 		},
 		"*-raw": {
-			"ore": { base: "alchemical-refinement:item/resource/powder/{ore}" },
-			"quartz": { base: "alchemical-refinement:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}" },
+			"quartz": { "base": "alchemical-refinement:item/resource/powder/{ore}5" }
 		},
 		"*-calcinated": {
-			"ore": { base: "alchemical-refinement:item/resource/powder/{ore}3" },
-			"quartz": { base: "alchemical-refinement:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}3" },
+			"quartz": { "base": "alchemical-refinement:item/resource/powder/{ore}5" }
+		},
+		"*-washed": {
+			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}7" }
 		}
 	},
-	shape: { base: "alchemical-refinement:item/powdered-{calcinated}" },
-	creativeinventory: { "general": ["*"], "items": ["*"] },
-	dimensions: { width: 0.0625, height: 0.0625, length: 0.0625 },
-	maxstacksize: 256,
-	storageFlags: 5,
-	guiTransform: {
-		translation: { x: 0, y: 0, z: 0 },
-		rotation: { x: 149, y: 12, z: 0 },
-		origin: { x: 0.41, y: -0.1, z: 0.8 },
-		scale: 2.54
+	"shape": { "base": "alchemical-refinement:item/powdered-{calcinated}" },
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
+	"maxstacksize": 256,
+	"storageFlags": 5,
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 149, "y": 12, "z": 0 },
+		"origin": { "x": 0.41, "y": -0.1, "z": 0.8 },
+		"scale": 2.54
 	},
-	fpHandTransform: {
-		rotation: { x: 54, y: 95, z: -31 },
-		scale: 1.34
+	"fpHandTransform": {
+		"rotation": { "x": 54, "y": 95, "z": -31 },
+		"scale": 1.34
 	},
-	tpHandTransform: {
-		translation: { x: -1.87, y: -1.25, z: -0.8 },
-		rotation: { x: 70, y: 11, z: -65 },
-		scale: 0.41
+	"tpHandTransform": {
+		"translation": { "x": -1.87, "y": -1.25, "z": -0.8 },
+		"rotation": { "x": 70, "y": 11, "z": -65 },
+		"scale": 0.41
 	},
-	groundTransform: {
-		translation: { x: 0, y: 0.2, z: 0 },
-		rotation: { x: -4, y: 8, z: 0 },
-		origin: { x: 0.5, y: 0.5, z: 0.5299 },
-		scale: 1.92
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0.2, "z": 0 },
+		"rotation": { "x": -4, "y": 8, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+		"scale": 1.92
 	},
-	combustiblePropsByType: {
+	"combustiblePropsByType": {
 		"*-raw": {
-			meltingPoint: 550,
-			meltingDuration: 10,
-			smeltedRatio: 1,
-			smeltingType: "bake",
-			smeltedStack: { type: "item", code: "powdered-ore-{ore}-calcinated" },
-			requiresContainer: false
+			"meltingPoint": 550,
+			"meltingDuration": 10,
+			"smeltedRatio": 1,
+			"smeltingType": "bake",
+			"smeltedStack": { "type": "item", "code": "powdered-ore-{ore}-calcinated" },
+			"requiresContainer": false
 		},
 		"*-bismuthinite-calcinated": {
-			meltingPoint: 271,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-bismuth" }
+			"meltingPoint": 271,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-bismuth" }
+		},
+		"*-bismuthinite-washed": {
+			"meltingPoint": 271,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-bismuth" }
 		},
 		"*-azurite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-azurite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
 		},
 		"*-chalcopyrite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
 		},
-		"*-malachite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
-		},
-		"*-nativecopper-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
+		"*-chalcopyrite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
 		},
 		"*-chalcocite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-chalcocite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
 		},
 		"*-tetrahedrite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-copper" }
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-tetrahedrite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-malachite-calcinated": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-malachite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-nativecopper-calcinated": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
+		},
+		"*-nativecopper-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-copper" }
 		},
 		"*-chromite-calcinated": {
-			meltingPoint: 1907,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-chromium" }
+			"meltingPoint": 1907,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-chromium" }
 		},
-		"*-quartz_nativegold-calcinated": {
-			meltingPoint: 1063,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-gold" }
-		},
-		"*-nativegold-calcinated": {
-			meltingPoint: 1063,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-gold" }
+		"*-chromite-washed": {
+			"meltingPoint": 1907,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-chromium" }
 		},
 		"*-hematite-calcinated": {
-			meltingPoint: 1482,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ironbloom" }
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
+		"*-hematite-washed": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
 		},
 		"*-limonite-calcinated": {
-			meltingPoint: 1482,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ironbloom" }
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
+		"*-limonite-washed": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
 		},
 		"*-magnetite-calcinated": {
-			meltingPoint: 1482,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ironbloom" }
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
+		"*-magnetite-washed": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
 		},
 		"*-pyrite-calcinated": {
-			meltingPoint: 1482,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ironbloom" }
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
+		"*-pyrite-washed": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
 		},
 		"*-cerussite-calcinated": {
-			meltingPoint: 327,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-lead" }
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
 		},
-		"*-vanadinite-calcinated": {
-			meltingPoint: 327,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-lead" }
-		},
-		"*-wulfenite-calcinated": {
-			meltingPoint: 327,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-lead" }
+		"*-cerussite-washed": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
 		},
 		"*-galena-calcinated": {
-			meltingPoint: 327,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-lead" }
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
+		},
+		"*-galena-washed": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
+		},
+		"*-vanadinite-calcinated": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
+		},
+		"*-vanadinite-washed": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
+		},
+		"*-wulfenite-calcinated": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
+		},
+		"*-wulfenite-washed": {
+			"meltingPoint": 327,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-lead" }
 		},
 		"*-pentlandite-calcinated": {
-			meltingPoint: 1084,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-nickel" }
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-nickel" }
 		},
-		"*-nativeplatinum-calcinated": {
-			meltingPoint: 1770,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-platinum" }
+		"*-pentlandite-washed": {
+			"meltingPoint": 1084,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-nickel" }
 		},
-		"*-sperrylite-calcinated": {
-			meltingPoint: 1770,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-platinum" }
+		"*-galena_nativesilver-calcinated": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
+		},
+		"*-galena_nativesilver-washed": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
 		},
 		"*-quartz_nativesilver-calcinated": {
-			meltingPoint: 961,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-silver" }
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
 		},
-		"*-freibergite-calcinated": {
-			meltingPoint: 961,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-silver" }
+		"*-quartz_nativesilver-washed": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
 		},
 		"*-nativesilver-calcinated": {
-			meltingPoint: 961,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-silver" }
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
 		},
-		"*-cassiterite-calcinated": {
-			meltingPoint: 232,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-tin" }
+		"*-nativesilver-washed": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
+		},
+		"*-freibergite-calcinated": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
+		},
+		"*-freibergite-washed": {
+			"meltingPoint": 961,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-silver" }
+		},
+		"*-nativegold-calcinated": {
+			"meltingPoint": 1063,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-gold" }
+		},
+		"*-nativegold-washed": {
+			"meltingPoint": 1063,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-gold" }
+		},
+		"*-quartz_nativegold-calcinated": {
+			"meltingPoint": 1063,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-gold" }
+		},
+		"*-quartz_nativegold-washed": {
+			"meltingPoint": 1063,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-gold" }
 		},
 		"*-franckeite-calcinated": {
-			meltingPoint: 232,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-tin" }
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
+		},
+		"*-franckeite-washed": {
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
+		},
+		"*-cassiterite-calcinated": {
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
+		},
+		"*-cassiterite-washed": {
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
 		},
 		"*-teallite-calcinated": {
-			meltingPoint: 232,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-tin" }
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
 		},
-		"*-sphalerite-calcinated": {
-			meltingPoint: 419,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-zinc" }
+		"*-teallite-washed": {
+			"meltingPoint": 232,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-tin" }
+		},
+		"*-nativeplatinum-calcinated": {
+			"meltingPoint": 1770,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-platinum" }
+		},
+		"*-nativeplatinum-washed": {
+			"meltingPoint": 1770,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-platinum" }
+		},
+		"*-sperrylite-calcinated": {
+			"meltingPoint": 1770,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-platinum" }
+		},
+		"*-sperrylite-washed": {
+			"meltingPoint": 1770,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-platinum" }
 		},
 		"*-hemimorphite-calcinated": {
-			meltingPoint: 419,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-zinc" }
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
+		},
+		"*-hemimorphite-washed": {
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
 		},
 		"*-smithsonite-calcinated": {
-			meltingPoint: 419,
-			meltingDuration: 30,
-			smeltedRatio: 16,
-			smeltedStack: { type: "item", code: "game:ingot-zinc" }
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
+		},
+		"*-smithsonite-washed": {
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
+		},
+		"*-sphalerite-calcinated": {
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
+		},
+		"*-sphalerite-washed": {
+			"meltingPoint": 419,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-zinc" }
 		}
 	}
 }
