@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "pulverizer_patch",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./pulverizer_patch.zsh"
+		},
+        {
+			"type": "shell",
+			"label": "build_assets",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./build.zsh"
+		},
+		{
+			"type": "shell",
+			"label": "run-test",
+			"group": "run",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./run-test.sh"
+		}
+	]
+}

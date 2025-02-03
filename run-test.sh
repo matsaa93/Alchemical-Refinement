@@ -5,7 +5,7 @@ vintagestorydir=/usr/share/vintagestory
 echo "mod buildt in:"
 echo $build_dir
 cd $vintagestorydir
-./Vintagestory --addModPath "$build_dir"
-popd
+./Vintagestory --addModPath "$build_dir" --playStyle "preset-surviveandbuild" --openWorld  "modding test world" --tracelog
+#popd
 
 

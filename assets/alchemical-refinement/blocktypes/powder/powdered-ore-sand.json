@@ -8,20 +8,31 @@
 	"shape": { 
 		"base": "game:block/basic/cube",
 		"alternates": [
-			{ "base": "block/basic/cube", "rotateY": 90 },
-			{ "base": "block/basic/cube", "rotateY": 180 },
-			{ "base": "block/basic/cube", "rotateY": 270 }
+			{ "base": "game:block/basic/cube", "rotateY": 90 },
+			{ "base": "game:block/basic/cube", "rotateY": 180 },
+			{ "base": "game:block/basic/cube", "rotateY": 270 }
 		]
 	},
 	"drawtype": "json",
 	"blockmaterial": "Sand",
-	"textures": {
-		"all": { "base": "block/powder/{ore}3" }
+	"texturesByType": {
+		"*-galena_nativesilver": {
+			"all": { "base": "block/powder/nativesilver2" }
+		},
+		"*-quartz_nativesilver": {
+			"all": { "base": "block/powder/nativesilver3" }
+		},
+		"*-quartz_nativegold": {
+			"all": { "base": "block/powder/nativegold3" }
+		},
+		"*":{
+			"all": { "base": "block/powder/{ore}3" }
+		}
 	},
 	"attributes": {
 		"mapColorCode": "desert",
 		"pannable": true,
-		"pannedBlock": "powdered-ore-sand-washed-{ore}",
+		"pannedBlock": "washed-powdered-ore-sand-{ore}",
 		"preventsDecay": true,
 		"allowUnstablePlacement": true
 	},

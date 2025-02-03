@@ -1,0 +1,212 @@
+{
+	"code": "washed-powdered-ore-sand",
+	"behaviors": [{"name": "UnstableFalling", "properties": { "fallSound": "game:effect/rockslide", "dustIntensity": 1, "fallSidewaysChance": 0.75 }}],	
+	"variantgroups": [
+		{ "loadFromProperties": "alchemical-refinement:block/ore-mineral", "code": "ore" }
+	],
+	"creativeinventory": { "general": ["*"], "terrain": ["*"] },
+	"shape": { 
+		"base": "game:block/basic/cube",
+		"alternates": [
+			{ "base": "game:block/basic/cube", "rotateY": 90 },
+			{ "base": "game:block/basic/cube", "rotateY": 180 },
+			{ "base": "game:block/basic/cube", "rotateY": 270 }
+		]
+	},
+	"drawtype": "json",
+	"blockmaterial": "Sand",
+	"texturesByType": {
+		"*-galena_nativesilver": {
+			"all": { "base": "block/powder/nativesilver5" }
+		},
+		"*-quartz_nativesilver": {
+			"all": { "base": "block/powder/nativesilver7" }
+		},
+		"*-quartz_nativegold": {
+			"all": { "base": "block/powder/nativegold7" }
+		},
+		"*":{
+			"all": { "base": "block/powder/{ore}7" }
+		}
+	},
+	"attributes": {
+		"mapColorCode": "desert",
+		"preventsDecay": true,
+		"allowUnstablePlacement": true
+	},
+	"replaceable": 600,
+	"fertility": 10,
+	"resistance": 1.8,
+	"sounds": {
+		"place": "game:block/sand",
+		"break": "game:block/sand",
+		"hit": "game:block/sand",
+		"walk": "game:walk/sand"
+	},
+	"heldTpIdleAnimation": "holdbothhandslarge", "heldRightReadyAnimation": "heldblockready", "heldTpUseAnimation": "twohandplaceblock",
+	"tpHandTransform": {
+		"translation": { "x": -1.23, "y": -0.91, "z": -0.8 },
+		"rotation": { "x": -2, "y": 25, "z": -78 },
+		"scale": 0.4
+	},
+	"dropsByType": {
+		"*-galena_nativesilver": [
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 18, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"quantity": { "avg": 5, "var": 2 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			}
+		],
+		"*-quartz_nativesilver": [
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 18, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 8, "var": 4 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			}
+		],
+		"*-quartz_nativegold": [
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 18, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 8, "var": 4 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			}
+		],
+		"*": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 18, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			}
+		]
+	}
+}
