@@ -1,0 +1,9 @@
+[
+    { "op": "add", "path": "/variants/-", "value": { "Code": "antimony", "meltPoint": 615, "boilPoint": 1587.0, "density": 6685, "specificHeatCapacity": 0.21, "elemental": true, "tier": 1 }, "file": "game:worldproperties/block/metal.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-antimony", "value": { "meltingPoint": 615, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-antimony" } }, "file": "game:itemtypes/resource/metalbit.json" },
+    { "op": "add", "path": "/combustiblePropsByType/ingot-antimony", "value": { "meltingPoint": 615, "meltingDuration": 30, "smeltedRatio": 1, "smeltedStack": { "type": "item", "code": "ingot-antimony" } }, "file": "game:itemtypes/resource/ingot.json" },
+    { "op": "add", "path": "/requiredMiningTierByType/ore-*-stibnite-*", "value": 2, "file": "game:blocktypes/stone/ore-graded.json" },
+    { "op": "add", "path": "/variants/-", "value": { "Code": "stibnite" }, "file": "game:worldproperties/block/ore-graded.json" },
+	{ "op": "add", "path": "/variants/-", "value": { "Code": "stibnite" }, "file": "game:worldproperties/block/ore-nugget.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-stibnite", "value": { "meltingPoint": 615, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-antimony" } }, "file": "game:itemtypes/resource/nugget.json" }
+]

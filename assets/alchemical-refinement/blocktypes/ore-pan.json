@@ -364,6 +364,9 @@
 			"alchemical-refinement:powdered-ore-sand-uranium": [
 				{ "type": "item", "code": "alchemical-refinement:powdered-ore-uranium-washed",  "chance": { "avg": 0.25, "var": 0 }  }
 			],
+			"alchemical-refinement:powdered-ore-sand-molybdenite": [
+				{ "type": "item", "code": "alchemical-refinement:powdered-ore-molybdenite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
 			"alchemical-refinement:powdered-ore-sand-rhodochrosite": [
 				{ "type": "item", "code": "alchemical-refinement:powdered-ore-rhodochrosite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
 			]

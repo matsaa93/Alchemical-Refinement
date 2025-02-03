@@ -1,0 +1,9 @@
+[
+    { "op": "add", "path": "/variants/-", "value": { "Code": "manganese", "meltPoint": 1246, "boilPoint": 2061.0, "density": 7300, "specificHeatCapacity": 0.48, "elemental": true, "tier": 2 }, "file": "game:worldproperties/block/metal.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-manganese", "value": { "meltingPoint": 1246, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-manganese" } }, "file": "game:itemtypes/resource/metalbit.json" },
+    { "op": "add", "path": "/combustiblePropsByType/ingot-manganese", "value": { "meltingPoint": 1246, "meltingDuration": 30, "smeltedRatio": 1, "smeltedStack": { "type": "item", "code": "ingot-manganese" } }, "file": "game:itemtypes/resource/ingot.json" },
+    { "op": "add", "path": "/requiredMiningTierByType/ore-*-rhodochrosite-*", "value": 2, "file": "game:blocktypes/stone/ore-graded.json" },
+    { "op": "add", "path": "/variants/-", "value": { "Code": "rhodochrosite" }, "file": "game:worldproperties/block/ore-graded.json" },
+	{ "op": "add", "path": "/variants/-", "value": { "Code": "rhodochrosite" }, "file": "game:worldproperties/block/ore-nugget.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-rhodochrosite", "value": { "meltingPoint": 1246, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-manganese" } }, "file": "game:itemtypes/resource/nugget.json" }
+]

@@ -1,6 +1,6 @@
 		"*-Variable1": {
 			"meltingPoint": Temp,
 			"meltingDuration": 30,
-			"smeltedRatio": 14,
+			"smeltedRatio": amount,
 			"smeltedStack": { "type": "item", "code": "game:ingot-Variable2" }
 		},

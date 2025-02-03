@@ -1,0 +1,9 @@
+[
+    { "op": "add", "path": "/variants/-", "value": { "Code": "molybdenum", "meltPoint": 2622, "boilPoint": 4639.0, "density": 10200, "specificHeatCapacity": 0.25, "elemental": true, "tier": 3 }, "file": "game:worldproperties/block/metal.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-molybdenum", "value": { "meltingPoint": 2622, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-molybdenum" } }, "file": "game:itemtypes/resource/metalbit.json" },
+    { "op": "add", "path": "/combustiblePropsByType/ingot-molybdenum", "value": { "meltingPoint": 2622, "meltingDuration": 30, "smeltedRatio": 1, "smeltedStack": { "type": "item", "code": "ingot-molybdenum" } }, "file": "game:itemtypes/resource/ingot.json" },
+    { "op": "add", "path": "/requiredMiningTierByType/ore-*-molybdenite-*", "value": 3, "file": "game:blocktypes/stone/ore-graded.json" },
+    { "op": "add", "path": "/variants/-", "value": { "Code": "molybdenite" }, "file": "game:worldproperties/block/ore-graded.json" },
+	{ "op": "add", "path": "/variants/-", "value": { "Code": "molybdenite" }, "file": "game:worldproperties/block/ore-nugget.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-molybdenite", "value": { "meltingPoint": 2622, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-molybdenum" } }, "file": "game:itemtypes/resource/nugget.json" }
+]

@@ -115,7 +115,17 @@
 			},
 			{ 
 				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
 				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
@@ -152,8 +162,68 @@
 			},
 			{ 
 				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
 				"code": "alchemical-refinement:powdered-ore-galena-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			}
+		],
+		"*-tetrahedrite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 9, "var": 0 } 
+			},
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed", 
+				"quantity": { "avg": 9, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 0.5, "var": 2 }
+			}
+
+		],
+		"*-limonite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 9, "var": 0 } 
+			},
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"quantity": { "avg": 0.5, "var": 0 } 
 			},
 			{ 
 				"type": "item",
@@ -167,8 +237,219 @@
 			},
 			{ 
 				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
 				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 0.5, "var": 2 }
+			}
+
+		],
+		"*-hematite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 9, "var": 0 } 
+			},
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"quantity": { "avg": 0.5, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 0.5, "var": 2 }
+			}
+
+		],
+		"*-manganite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 9, "var": 0 } 
+			},
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"quantity": { "avg": 0.5, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "game:crushed-quartz",
+				"quantity": { "avg": 0.5, "var": 2 }
+			}
+
+		],
+		"*-chalcopyrite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 18, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			}
+		],
+		"*-pyrite": [
+			{
+				"type": "item", 
+				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"quantity": { "avg": 18, "var": 0 } 
+			},
+			{ 
+				"type": "item",
+				"code": "game:powder-sulfur",
+				"quantity": { "avg": 1, "var": 1 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
 			}
 		],
 		"*": [
@@ -196,6 +477,11 @@
 				"type": "item",
 				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
+			},
+			{ 
+				"type": "item",
+				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",

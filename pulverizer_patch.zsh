@@ -193,7 +193,7 @@ F_array_test_Geology_Addition(){
 }
 F_array_test_Geology_Addition
 F_array_test_OresAPlanty(){
-    F_array_material_set stibnite arsenic 2 1.5
+    F_array_material_set stibnite antimony 2 1.5 615
     F_array_material_set uranium uranium 3 1.5
     F_array_material_set rhodochrosite manganese 3 1.7
 }
@@ -261,12 +261,16 @@ FA_combustion_prop(){
     local file
     #local ammount_of_item=${#material[@]}
     #echo > xcumbust.txt
+    declare -A smeltedStack
+    smeltedStack[calcinated]=16
+    smeltedStack[washed]=14
     for F in $material
     do
         for type in calcinated washed
         do 
             f="$(cat zcombustprop.txt)"
             f="$(echo ${f//Variable1/${F}-${type}})"
+            f="$(echo ${f//amount/$smeltedStack[${type}]})"
             f="$(echo ${f//Temp/${material_temp[$F]}})"
             f="$(echo ${f//Variable2/${material_element[$F]}})"
             echo $f
@@ -455,13 +459,14 @@ FA_Block_drop(){
 #FA_block_oregraded > assets/alchemical-refinement/recipes/grid/ore-chunks.json
 
 #FA_item_oregraded > assets/game/patches/item-ore-graded-crush.json
-FA_Lang_File_powdered_ore > tmp/lang.json
+#FA_Lang_File_powdered_ore > tmp/lang.json
 #FA_combustion_prop > tmp/wash-combust.txt
 #FA_combustion_prop > xcumbust.txt
-#FA_combustion_prop > tmp/combust.txt
+FA_combustion_prop > tmp/combust.txt
 #FA_panning_file > tmp/ore-pan.json
 #FA_Panning_Drop
 #FA_panning_file "alchemical-refinement" > tmp/ore-pan-new.json
+#FA_combustion_prop
 
 
 
