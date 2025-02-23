@@ -1,0 +1,9 @@
+{
+	"ingredientPattern": "_S_",
+	"ingredients": {
+		"S": { "type": "block", "name": "type", "code": "game:pan-wooden", "quantity": 1 }
+	},
+	"width": 3,
+	"height": 1,
+	"output": { "type": "block", "code": "ore-pan-wooden", "quantity": 1  }
+}

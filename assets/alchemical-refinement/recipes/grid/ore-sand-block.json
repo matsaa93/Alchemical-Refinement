@@ -1,9 +1,9 @@
 {
-	ingredientPattern: "SSS,SSS,SSS",
-	ingredients: {
-		"S": { type: "item", name: "type", code: "powdered-ore-*-calcinated", quantity: 2 }
+	"ingredientPattern": "SSS,SSS,SSS",
+	"ingredients": {
+		"S": { "type": "item", "name": "type", "code": "powdered-ore-*-calcinated", "quantity": 2 }
 	},
-	width: 3,
-	height: 3,
-	output: { type: "block", code: "powdered-ore-sand-{type}", quantity: 1  }
+	"width": 3,
+	"height": 3,
+	"output": { "type": "block", "code": "powdered-ore-sand-{type}", "quantity": 1  }
 }
