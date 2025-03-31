@@ -2,37 +2,37 @@
 	"code": "powdered-ore",
 	"class": "ItemNugget",
 	"variantgroups": [
-		{ "code": "ore", "loadFromProperties": "alchemical-refinement:block/ore-mineral" },
+		{ "code": "ore", "loadFromProperties": "alchemref:block/ore-mineral" },
 		{ "code": "calcinated", "states": [ "raw", "calcinated", "washed" ] }
 	],
 	"heldTpIdleAnimation": "holdbothhands",
 	"heldRightReadyAnimation": "holdbothhands",
 	"texturesByType": {
 		"*-galena_nativesilver-*": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/nativesilver2" },
-			"quartz": { "base": "alchemical-refinement:item/resource/powder/galena" }
+			"ore": { "base": "alchemref:item/resource/powder/nativesilver2" },
+			"quartz": { "base": "alchemref:item/resource/powder/galena" }
 		},
 		"*-quartz_nativesilver-*": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/nativesilver5" },
-			"quartz": { "base": "alchemical-refinement:item/resource/powder/quartz" }
+			"ore": { "base": "alchemref:item/resource/powder/nativesilver5" },
+			"quartz": { "base": "alchemref:item/resource/powder/quartz" }
 		},
 		"*-quartz_nativegold-*": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/nativegold5" },
-			"quartz": { "base": "alchemical-refinement:item/resource/powder/quartz" }
+			"ore": { "base": "alchemref:item/resource/powder/nativegold5" },
+			"quartz": { "base": "alchemref:item/resource/powder/quartz" }
 		},
 		"*-raw": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}" },
-			"quartz": { "base": "alchemical-refinement:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemref:item/resource/powder/{ore}" },
+			"quartz": { "base": "alchemref:item/resource/powder/{ore}5" }
 		},
 		"*-calcinated": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}3" },
-			"quartz": { "base": "alchemical-refinement:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemref:item/resource/powder/{ore}3" },
+			"quartz": { "base": "alchemref:item/resource/powder/{ore}5" }
 		},
 		"*-washed": {
-			"ore": { "base": "alchemical-refinement:item/resource/powder/{ore}7" }
+			"ore": { "base": "alchemref:item/resource/powder/{ore}7" }
 		}
 	},
-	"shape": { "base": "alchemical-refinement:item/powdered-{calcinated}" },
+	"shape": { "base": "alchemref:item/powdered-{calcinated}" },
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
 	"maxstacksize": 256,

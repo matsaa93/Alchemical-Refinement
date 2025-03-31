@@ -2,7 +2,7 @@
 	"code": "washed-powdered-ore-sand",
 	"behaviors": [{"name": "UnstableFalling", "properties": { "fallSound": "game:effect/rockslide", "dustIntensity": 1, "fallSidewaysChance": 0.75 }}],	
 	"variantgroups": [
-		{ "loadFromProperties": "alchemical-refinement:block/ore-mineral", "code": "ore" }
+		{ "loadFromProperties": "alchemref:block/ore-mineral", "code": "ore" }
 	],
 	"creativeinventory": { "general": ["*"], "terrain": ["*"] },
 	"shape": { 
@@ -53,12 +53,12 @@
 		"*-galena_nativesilver": [
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 18, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"code": "alchemref:powdered-ore-galena-washed",
 				"quantity": { "avg": 5, "var": 2 }
 			},
 			{ 
@@ -68,29 +68,29 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			}
 		],
 		"*-quartz_nativesilver": [
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 18, "var": 0 }
 			},
 			{ 
@@ -105,44 +105,44 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"code": "alchemref:powdered-ore-galena-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"code": "alchemref:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			}
 		],
 		"*-quartz_nativegold": [
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 18, "var": 0 }
 			},
 			{ 
@@ -157,49 +157,49 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"code": "alchemref:powdered-ore-galena-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"code": "alchemref:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			}
 		],
 		"*-tetrahedrite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 9, "var": 0 } 
 			},
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed", 
+				"code": "alchemref:powdered-ore-stibnite-washed", 
 				"quantity": { "avg": 9, "var": 0 } 
 			},
 			{ 
@@ -217,22 +217,22 @@
 		"*-limonite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 9, "var": 0 } 
 			},
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"code": "alchemref:powdered-ore-rhodochrosite-washed", 
 				"quantity": { "avg": 0.5, "var": 0 } 
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
@@ -242,17 +242,17 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
@@ -265,22 +265,22 @@
 		"*-hematite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 9, "var": 0 } 
 			},
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"code": "alchemref:powdered-ore-rhodochrosite-washed", 
 				"quantity": { "avg": 0.5, "var": 0 } 
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
@@ -290,17 +290,17 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
@@ -313,22 +313,22 @@
 		"*-manganite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 9, "var": 0 } 
 			},
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-rhodochrosite-washed", 
+				"code": "alchemref:powdered-ore-rhodochrosite-washed", 
 				"quantity": { "avg": 0.5, "var": 0 } 
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
@@ -338,22 +338,22 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"code": "alchemref:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
@@ -366,7 +366,7 @@
 		"*-chalcopyrite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{ 
@@ -376,39 +376,39 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"code": "alchemref:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			}
 		],
 		"*-pyrite": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{ 
@@ -418,44 +418,44 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-galena-washed",
+				"code": "alchemref:powdered-ore-galena-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-molybdenite-washed",
+				"code": "alchemref:powdered-ore-molybdenite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			}
 		],
 		"*": [
 			{
 				"type": "item", 
-				"code": "alchemical-refinement:powdered-ore-{ore}-washed", 
+				"code": "alchemref:powdered-ore-{ore}-washed", 
 				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{ 
@@ -465,32 +465,32 @@
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-sphalerite-washed",
+				"code": "alchemref:powdered-ore-sphalerite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-chalcopyrite-washed",
+				"code": "alchemref:powdered-ore-chalcopyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-pyrite-washed",
+				"code": "alchemref:powdered-ore-pyrite-washed",
 				"quantity": { "avg": 0.3, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-stibnite-washed",
+				"code": "alchemref:powdered-ore-stibnite-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativesilver-washed",
+				"code": "alchemref:powdered-ore-nativesilver-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			},
 			{ 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-nativegold-washed",
+				"code": "alchemref:powdered-ore-nativegold-washed",
 				"quantity": { "avg": 0.15, "var": 0 }
 			}
 		]

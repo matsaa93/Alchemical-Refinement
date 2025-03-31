@@ -20,7 +20,7 @@
 			"ore": { "base": "game:item/resource/crushed/quartz" }
 		}
 	},
-	"shape": { "base": "alchemical-refinement:item/powdered-washed" },
+	"shape": { "base": "alchemref:item/powdered-washed" },
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
 	"maxstacksize": 256,

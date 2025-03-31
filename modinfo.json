@@ -6,7 +6,7 @@
   "NetworkVersion": null,
   "Description": "Lets you refine ores following the alchemical methode",
   "Website": "",
-  "ModID": "alchemical-refinement",
+  "ModID": "alchemref",
   "Authors": [
     "matsaa93"
   ],

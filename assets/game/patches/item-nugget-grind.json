@@ -6,7 +6,7 @@
 		"nugget-*": {
 			"groundStack": { 
 				"type": "item",
-				"code": "alchemical-refinement:powdered-ore-{ore}-raw" 
+				"code": "alchemref:powdered-ore-{ore}-raw" 
 			}
 		}
 	},

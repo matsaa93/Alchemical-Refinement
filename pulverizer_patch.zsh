@@ -282,11 +282,11 @@ FA_Lang_File_powdered_ore(){
     do
         material_Upcase="$(echo "$F" | sed 's/.*/\u&/')" 
         s="\n\t// ${material_Upcase} section:"
-        f="\n\t\"alchemical-refinement:item-powdered-ore-${F}-raw\": \"Powdered ${material_Upcase} Raw\","
-        n="\n\t\"alchemical-refinement:item-powdered-ore-${F}-calcinated\": \"Powdered ${material_Upcase} Calcinated\","
-        m="\n\t\"alchemical-refinement:item-powdered-ore-${F}-washed\": \"Powdered ${material_Upcase} washed\","
-        t="\n\t\"alchemical-refinement:block-powdered-ore-sand-${F}\": \"Ore Sand ${material_Upcase}\","
-        g="\n\t\"alchemical-refinement:block-washed-powdered-ore-sand-${F}\": \"Washed Ore Sand ${material_Upcase}\","
+        f="\n\t\"alchemref:item-powdered-ore-${F}-raw\": \"Powdered ${material_Upcase} Raw\","
+        n="\n\t\"alchemref:item-powdered-ore-${F}-calcinated\": \"Powdered ${material_Upcase} Calcinated\","
+        m="\n\t\"alchemref:item-powdered-ore-${F}-washed\": \"Powdered ${material_Upcase} washed\","
+        t="\n\t\"alchemref:block-powdered-ore-sand-${F}\": \"Ore Sand ${material_Upcase}\","
+        g="\n\t\"alchemref:block-washed-powdered-ore-sand-${F}\": \"Washed Ore Sand ${material_Upcase}\","
         printf "${s}${f}${n}${m}${t}${g}"
     done
 }
@@ -439,8 +439,8 @@ FA_panning_file(){
         esac
         echo "\t\t\t],"
         #f="$(cat ore-pan-drop.txt)"
-        #f="$(echo ${f//INPUT/alchemical-refinement:powdered-ore-sand-${F}})"
-        #f="$(echo ${f//OUTPUT/alchemical-refinement:powdered-ore-${F}-washed})"
+        #f="$(echo ${f//INPUT/alchemref:powdered-ore-sand-${F}})"
+        #f="$(echo ${f//OUTPUT/alchemref:powdered-ore-${F}-washed})"
         #powdered-ore-sand-${F}
         #f="$(echo ${f//Variable2/${material_element[$F]}})"
         #echo $f
@@ -456,7 +456,7 @@ FA_Block_drop(){
     echo "{ \"type\": \"item\", }"
 }
 
-#FA_block_oregraded > assets/alchemical-refinement/recipes/grid/ore-chunks.json
+#FA_block_oregraded > assets/alchemref/recipes/grid/ore-chunks.json
 
 #FA_item_oregraded > assets/game/patches/item-ore-graded-crush.json
 #FA_Lang_File_powdered_ore > tmp/lang.json
@@ -465,7 +465,7 @@ FA_Block_drop(){
 FA_combustion_prop > tmp/combust.txt
 #FA_panning_file > tmp/ore-pan.json
 #FA_Panning_Drop
-#FA_panning_file "alchemical-refinement" > tmp/ore-pan-new.json
+#FA_panning_file "alchemref" > tmp/ore-pan-new.json
 #FA_combustion_prop
 
 

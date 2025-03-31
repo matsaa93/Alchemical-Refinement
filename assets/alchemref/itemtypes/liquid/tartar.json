@@ -4,7 +4,7 @@
 	"matterState": "liquid",
 	"variantGroups": [
 		{ "code": "tartar", "states": [ "oil", "cream" ] },
-		{ "code": "type", "loadFromProperties": "alchemical-refinement:block/solution-strenght" }
+		{ "code": "type", "loadFromProperties": "alchemref:block/solution-strenght" }
 	],
 	"attributes": {
 		"handbook": { "ignoreCreativeInvStacks": true },
@@ -20,7 +20,7 @@
 			}
 		},
 		"allowSpill": true,
-		"whenSpilled": { "action": "DropContents", "stack": { "type": "item", "code": "alchemical-refinement:tartar-{tartar}-{type}" } }
+		"whenSpilled": { "action": "DropContents", "stack": { "type": "item", "code": "alchemref:tartar-{tartar}-{type}" } }
 	},
 	"shape": { "base": "game:item/liquid" },
 	"texturesByType": {
@@ -32,7 +32,7 @@
 	},
 	"creativeinventoryStacks": [ { "tabs": ["general", "liquids" ],
 		"stacks": [
-			{ "type": "block", "code": "game:woodbucket", "attributes": { "ucontents": [ { "type": "item", "code": "alchemical-refinement:tartar-{tartar}-{type}", "makefull": true } ] } }
+			{ "type": "block", "code": "game:woodbucket", "attributes": { "ucontents": [ { "type": "item", "code": "alchemref:tartar-{tartar}-{type}", "makefull": true } ] } }
 		] } ],
 	"maxstacksize": 16,
 	"materialDensity": 250,

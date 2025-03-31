@@ -2,7 +2,7 @@
 	"code": "powdered-ore-sand",
 	"behaviors": [{"name": "UnstableFalling", "properties": { "fallSound": "game:effect/rockslide", "dustIntensity": 1, "fallSidewaysChance": 0.75 }}],	
 	"variantgroups": [
-		{ "loadFromProperties": "alchemical-refinement:block/ore-mineral", "code": "ore" }
+		{ "loadFromProperties": "alchemref:block/ore-mineral", "code": "ore" }
 	],
 	"creativeinventory": { "general": ["*"], "terrain": ["*"] },
 	"shape": { 

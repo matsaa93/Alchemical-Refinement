@@ -9,7 +9,7 @@
 		"powder": [16,16]
 	},
 	"textures": {
-		"powder": "alchemical-refinement:item/resource/powder/azurite"
+		"powder": "alchemref:item/resource/powder/azurite"
 	},
 	"elements": [
 		{

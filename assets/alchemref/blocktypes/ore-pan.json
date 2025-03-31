@@ -1,0 +1,427 @@
+{
+	"code": "ore-pan",
+	"class": "BlockPan",
+	"behaviors": [
+		{ "name": "SneakPlacing"},
+		{ "name": "UnstableFalling", "properties": { "attachmentArea": { "x1": 5, "y1": 0, "z1": 5, "x2": 10, "y2": 0, "z2": 10 } }},
+		{ "name": "RightClickPickup"}
+	],
+	"maxStackSize": 1,
+	"attributes": {
+		"heldItemPitchFollow": 0.5,
+		"panningDrops": {
+			"alchemref:powdered-ore-sand-bismuthinite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-bismuthinite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-azurite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-chalcopyrite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-chalcocite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcocite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-tetrahedrite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-malachite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-nativecopper": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativecopper-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-chromite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-chromite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-hematite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-hematite-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-limonite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-magnetite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-pyrite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-cerussite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-cerussite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-galena": [
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-vanadinite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-vanadinite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-wulfenite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-wulfenite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-pentlandite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-hematite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-galena_nativesilver": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-quartz_nativesilver": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-nativesilver": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-freibergite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-freibergite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.3, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-nativegold": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-quartz_nativegold": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.2, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-franckeite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-franckeite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-cassiterite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-cassiterite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-teallite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-teallite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-nativeplatinum": [
+				{ "type": "item", "code": "alchemref:powdered-ore-nativeplatinum-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-sperrylite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-sperrylite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pentlandite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-tetrahedrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-azurite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-malachite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:crushed-quartz",  "chance": { "avg": 0.1, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-hemimorphite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-hemimorphite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-hemimorphite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-smithsonite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-smithsonite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-smithsonite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-sphalerite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.25, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-sphalerite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-chalcopyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-limonite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-magnetite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-pyrite-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "alchemref:powdered-ore-galena-washed",  "chance": { "avg": 0.05, "var": 0 }  },
+				{ "type": "item", "code": "game:powder-sulfur",  "chance": { "avg": 0.2, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-stibnite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-stibnite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-uranium": [
+				{ "type": "item", "code": "alchemref:powdered-ore-uranium-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-molybdenite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-molybdenite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],
+			"alchemref:powdered-ore-sand-rhodochrosite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-rhodochrosite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			]
+        }
+	},
+	"variantgroups": [
+		{ "code": "type", "states": ["wooden" ] }
+	],
+	"shape": { "base": "game:block/wood/pan/empty" },
+	"doNotRenderAtLod2": true,
+	"blockmaterial": "Wood",
+	"materialDensity": 450,
+	"durability": 150,
+	"randomizeRotations": true,
+	"sideopaque": { "all": false },
+	"sidesolid": { "all": false },
+	"emitSideAO": { "all": false },
+	"lightAbsorption": 0,
+	"creativeinventory": { "general": ["*"], "items": ["*"], "tools": ["*"] },
+	"heldTpIdleAnimation": "holdbothhandslarge", "heldRightReadyAnimation": "heldblockready",
+	"heldTpUseAnimation": "panning",
+	"combustibleProps": {
+		"burnTemperature": 600,
+		"burnDuration": 20
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.3, "y": 0, "z": 0 },
+		"rotation": { "x": 15, "y": 15, "z": 0 },
+		"scale": 2
+	},
+	"guiTransform": {
+		"rotate": true,
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": -25, "y": 22, "z": 0 },
+		"origin": { "x": 0.53, "y": 0.21, "z": 0.5 },
+		"scale": 1.76
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 0, "y": 18, "z": 0 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 4
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.71, "y": 0.04, "z": -0.41 },
+		"rotation": { "x": 0, "y": 13, "z": -83 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 0.8
+	},
+	"collisionSelectionBox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.1875, "z2": 0.875 },
+	"resistance": 1,
+	"sounds": {
+		"place": "game:block/planks",
+		"hit": "game:block/planks",
+		"break": "game:block/planks",
+		"walk": "game:walk/wood"
+	}
+}

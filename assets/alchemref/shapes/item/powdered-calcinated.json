@@ -11,8 +11,8 @@
 		"ore": [16,16]
 	},
 	"textures": {
-		"ore": "alchemical-refinement:item/resource/powder/nativegold",
-		"quartz": "alchemical-refinement:item/resource/powder/quartz"
+		"ore": "alchemref:item/resource/powder/nativegold",
+		"quartz": "alchemref:item/resource/powder/quartz"
 	},
 	"elements": [
 		{
