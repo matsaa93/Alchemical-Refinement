@@ -1,8 +1,9 @@
 {
-	"code": "aquaregia",
+	"code": "aqua",
 	"class": "ItemLiquidPortion",
 	"matterState": "liquid",
 	"variantGroups": [
+		{ "code": "aqua", "states": [ "fortis", "regia", "tofani" ] },
 		{ "code": "type", "loadFromProperties": "alchemical-refinement:block/solution-strenght" }
 	],
 	"attributes": {
@@ -10,21 +11,23 @@
 		"waterTightContainerProps": {
 			"containable": true,
 			"itemsPerLitre": 1,
-			"texture": { "base": "alchemical-refinement:block/liquid/aquafortis/aquaregia", "alpha": 150 }
+			"nutritionPropsPerLitre": { "saturation": 0, "health": -50, "foodcategory": "NoNutrition" },
+			"texture": { "base": "alchemical-refinement:block/liquid/aqua/aqua-{aqua}", "alpha": 150 }
 		},
 		"allowSpill": true,
-		"whenSpilled": { "action": "DropContents", "stack": { "type": "item", "code": "alchemical-refinement:aquaregia-{type}" } }
+		"whenSpilled": { "action": "DropContents", "stack": { "type": "item", "code": "alchemical-refinement:aqua-{aqua]-{type}" } }
 	},
 	"shape": { "base": "game:item/liquid" },
 	"textures": {
-		"all": { "base": "alchemical-refinement:block/liquid/aquafortis/aquaregia", "alpha": 100 }
+		"all": { "base": "alchemical-refinement:block/liquid/aqua/aqua-{aqua}", "alpha": 100 }
 	},
 	"creativeinventoryStacks": [ { "tabs": ["general", "liquids" ],
 		"stacks": [
-			{ "type": "block", "code": "game:woodbucket", "attributes": { "ucontents": [ { "type": "item", "code": "alchemical-refinement:aquaregia-{type}", "makefull": true } ] } }
+			{ "type": "block", "code": "game:woodbucket", "attributes": { "ucontents": [ { "type": "item", "code": "alchemical-refinement:aqua-{aqua}-{type}", "makefull": true } ] } }
 		] } ],
 	"maxstacksize": 16,
 	"materialDensity": 250,
+	"nutritionProps": { "saturation": 0, "health": -50, "foodcategory": "NoNutrition" },
 	"guiTransform": {
 		"rotation": { "x": 123, "y": -33, "z": -13 },
 		"origin": { "x": 0.5, "y": 0, "z": 0.5 },

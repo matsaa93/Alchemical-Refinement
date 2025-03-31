@@ -2,7 +2,7 @@
   "Type": 1,
   "TextureSize": 32,
   "Name": "Alchemical Refinement",
-  "Version": "0.3.0",
+  "Version": "0.3.1",
   "NetworkVersion": null,
   "Description": "Lets you refine ores following the alchemical methode",
   "Website": "",

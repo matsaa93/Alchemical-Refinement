@@ -1,0 +1,49 @@
+{
+    "code": "salis",
+	"class": "ItemNugget",
+	"variantgroups": [
+		{ "code": "salis", "states": [ "stannous", "hartshorn", "tartar", "petra", "ammoniac", "alembroth", "common" ] },
+		{ "code": "calcinated", "states": [ "raw", "washed", "purified" ] }
+	],
+	"heldTpIdleAnimation": "holdbothhands",
+	"heldRightReadyAnimation": "holdbothhands",
+	"texturesByType": {
+		"*-raw": {
+			"ore": { "base": "game:item/resource/crushed/quartz" },
+			"quartz": { "base": "game:item/resource/crushed/quartz" }
+		},
+		"*-washed": {
+			"ore": { "base": "game:item/resource/crushed/quartz" },
+			"quartz": { "base": "game:item/resource/crushed/quartz" }
+		},
+		"*-purified": {
+			"ore": { "base": "game:item/resource/crushed/quartz" }
+		}
+	},
+	"shape": { "base": "alchemical-refinement:item/powdered-washed" },
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
+	"maxstacksize": 256,
+	"storageFlags": 5,
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 149, "y": 12, "z": 0 },
+		"origin": { "x": 0.41, "y": -0.1, "z": 0.8 },
+		"scale": 2.54
+	},
+	"fpHandTransform": {
+		"rotation": { "x": 54, "y": 95, "z": -31 },
+		"scale": 1.34
+	},
+	"tpHandTransform": {
+		"translation": { "x": -1.87, "y": -1.25, "z": -0.8 },
+		"rotation": { "x": 70, "y": 11, "z": -65 },
+		"scale": 0.41
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0.2, "z": 0 },
+		"rotation": { "x": -4, "y": 8, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+		"scale": 1.92
+	}
+}

@@ -3,7 +3,7 @@
 	"class": "ItemLiquidPortion",
 	"matterState": "liquid",
 	"variantGroups": [
-		{ "code": "color", "states": [ "red", "green", "blue", "white" ] },
+		{ "code": "color", "states": [ "red", "green", "blue", "white", "sweet", "glauber" ] },
 		{ "code": "type", "loadFromProperties": "alchemical-refinement:block/solution-strenght" }
 	],
 	"attributes": {
@@ -12,10 +12,11 @@
 			"containable": true,
 			"itemsPerLitre": 1,
 			"textureByType": {
-				"*-weak": 		{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 75 },
-				"*-diluted": 	{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 125 },
-				"*-strong": 	{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 175 },
-				"*-pure": 		{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 225 }
+				"*-weak": 			{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 75 },
+				"*-diluted": 		{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 125 },
+				"*-homogeneous": 	{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 150 },
+				"*-strong": 		{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 175 },
+				"*-pure": 			{ "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 225 }
 			}
 		},
 		"allowSpill": true,
@@ -23,10 +24,11 @@
 	},
 	"shape": { "base": "game:item/liquid" },
 	"texturesByType": {
-		"*-weak": 		{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 75 } },
-		"*-diluted": 	{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 125 } },
-		"*-strong": 	{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 175 } },
-		"*-pure": 		{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 225 } }
+		"*-weak": 			{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 75 } },
+		"*-diluted": 		{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 125 } },
+		"*-homogeneous": 	{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 150 } },
+		"*-strong": 		{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 175 } },
+		"*-pure": 			{ "all": { "base": "alchemical-refinement:block/liquid/vitriol/{color}", "alpha": 225 } }
 	},
 	"creativeinventoryStacks": [ { "tabs": ["general", "liquids" ],
 		"stacks": [
