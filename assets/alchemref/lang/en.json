@@ -1,12 +1,12 @@
 {
   "game:smeltdesc-bakeore-plural": "Calcinates into pPwdered Ore",
   "alchemref:itemdesc-powdered-ore-*-raw": "Raw Needs to be calcinated to remove its impurities.",
-  	"alchemref:itemdesc-powdered-ore-*-calcinated": "Can be smelted into metal, or can be further refined with the Alchemical Process by crafting it into a block",
-	"alchemref:itemdesc-powdered-ore-*-washed": "Washed Can be smelted into metal, or can be further refined with the Alchemical Process",
+  	"alchemref:itemdesc-powdered-ore-*-calcinated": "Can be smelted into metal, or can be further refined with the Alchemical Process by crafting it into a block.",
+	"alchemref:itemdesc-powdered-ore-*-washed": "Can be smelted into metal, or can be further refined with the Alchemical Process.",
 	"alchemref:block-ore-pan-*": "Ore Washing Pan",
 	"alchemref:blockdesc-ore-pan-*": "Used to wash ore sand to further purify the ore, and seperate it from the sand using water.",
-	"alchemref:blockdesc-powdered-ore-sand-*": "Needs to be with an Ore Washing Pan",
-	"alchemref:blockdesc-washed-powdered-ore-sand-*": "Break this block to get ore powder!",
+	"alchemref:blockdesc-powdered-ore-sand-*": "Needs to be washed with an Ore Washing Pan",
+	"alchemref:blockdesc-washed-powdered-ore-sand-*": "Break this block to get ore powder!".,
 
 	"alchemref:item-spiritof-vitriol-weak": "Weak Spirit of Vitriol",
 	"alchemref:item-spiritof-vitriol-diluted": "Diluted Spirit of Vitriol",
@@ -30,7 +30,7 @@
 	"alchemref:incontainer-item-spiritof-box-homogeneous": "Spirit of Box",
 	"alchemref:incontainer-item-spiritof-box-strong": "Strong Spirit of Box",
 	"alchemref:incontainer-item-spiritof-box-pure": "Fuming Spirit of Box",
-	"alchemref:itemdesc-spiritof-box-*": "A distilled wood alcohol, also known as Pyroxlic Spirits, Nitrous ether or Sweet Spirits of Nitre (CH3OH)",
+	"alchemref:itemdesc-spiritof-box-*": "A distilled wood alcohol, also known as Pyroxlic Spirits, Nitrous ether or Sweet Spirits of Nitre. (CH3OH)",
 
 	"alchemref:item-spiritof-hartshorn-weak": "Weak Spirit of Hartshorn",
 	"alchemref:item-spiritof-hartshorn-diluted": "Diluted Spirit of Hartshorn",
