@@ -1,0 +1,47 @@
+{
+    "code": "powdered_vitriol",
+	"variantgroups": [
+		{ "code": "vitriol", "loadFromProperties": "alchemref:block/vitriol" },
+		{ "code": "type", "states": [ "raw", "washed", "purified" ] }
+	],
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
+	"maxstacksize": 256,
+	"heldTpIdleAnimation": "holdbothhands",
+	"heldRightReadyAnimation": "holdbothhands",
+	"shape": { "base": "alchemref:item/resource/powder/powdered-{type}" },
+	"texturesByType": {
+		"*-raw": {
+			"ore": { "base": "alchemref:item/resource/powder/vitriol/{vitriol}1" },
+			"quartz": { "base": "alchemref:item/resource/powder/vitriol/{vitriol}2" }
+		},
+		"*-washed": {
+			"ore": { "base": "alchemref:item/resource/powder/vitriol/{vitriol}1" },
+			"quartz": { "base": "alchemref:item/resource/powder/vitriol/{vitriol}2" }
+		},
+		"*-purified": {
+			"ore": { "base": "alchemref:item/resource/powder/vitriol/{vitriol}1" }
+		}
+	},
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 149, "y": 12, "z": 0 },
+		"origin": { "x": 0.41, "y": -0.1, "z": 0.8 },
+		"scale": 2.54
+	},
+	"fpHandTransform": {
+		"rotation": { "x": 54, "y": 95, "z": -31 },
+		"scale": 1.34
+	},
+	"tpHandTransform": {
+		"translation": { "x": -1.87, "y": -1.25, "z": -0.8 },
+		"rotation": { "x": 70, "y": 11, "z": -65 },
+		"scale": 0.41
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0.2, "z": 0 },
+		"rotation": { "x": -4, "y": 8, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+		"scale": 1.92
+	}
+}

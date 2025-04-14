@@ -9,30 +9,30 @@
 	"heldRightReadyAnimation": "holdbothhands",
 	"texturesByType": {
 		"*-galena_nativesilver-*": {
-			"ore": { "base": "alchemref:item/resource/powder/nativesilver2" },
-			"quartz": { "base": "alchemref:item/resource/powder/galena" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/nativesilver2" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/galena" }
 		},
 		"*-quartz_nativesilver-*": {
-			"ore": { "base": "alchemref:item/resource/powder/nativesilver5" },
-			"quartz": { "base": "alchemref:item/resource/powder/quartz" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/nativesilver5" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/quartz" }
 		},
 		"*-quartz_nativegold-*": {
-			"ore": { "base": "alchemref:item/resource/powder/nativegold5" },
-			"quartz": { "base": "alchemref:item/resource/powder/quartz" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/nativegold5" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/quartz" }
 		},
 		"*-raw": {
-			"ore": { "base": "alchemref:item/resource/powder/{ore}" },
-			"quartz": { "base": "alchemref:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/{ore}" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/{ore}5" }
 		},
 		"*-calcinated": {
-			"ore": { "base": "alchemref:item/resource/powder/{ore}3" },
-			"quartz": { "base": "alchemref:item/resource/powder/{ore}5" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/{ore}3" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/{ore}5" }
 		},
 		"*-washed": {
-			"ore": { "base": "alchemref:item/resource/powder/{ore}7" }
+			"ore": { "base": "alchemref:item/resource/powder/ore/{ore}7" }
 		}
 	},
-	"shape": { "base": "alchemref:item/powdered-{calcinated}" },
+	"shape": { "base": "alchemref:item/resource/powder/powdered-{calcinated}" },
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
 	"maxstacksize": 256,

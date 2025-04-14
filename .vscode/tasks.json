@@ -17,7 +17,25 @@
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-			"command": "./build.zsh"
+			"command": "./run-test.sh -b"
+		},
+		{
+			"type": "shell",
+			"label": "build_run",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./run-test.sh -rb"
+		},
+		{
+			"type": "shell",
+			"label": "run_vsmodelcreator",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}/Referance/vsmodelcreator"
+			},
+			"command": "java -jar vsmodelcreator.jar"
 		},
 		{
 			"type": "shell",
@@ -26,7 +44,7 @@
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-			"command": "./run-test.sh"
+			"command": "./run-test.sh -r"
 		}
 	]
 }

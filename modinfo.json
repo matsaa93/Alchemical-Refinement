@@ -1,18 +1,16 @@
 {
-  "Type": 1,
-  "TextureSize": 32,
-  "Name": "Alchemical Refinement",
-  "Version": "0.3.1",
-  "NetworkVersion": null,
-  "Description": "Lets you refine ores following the alchemical methode",
-  "Website": "",
-  "ModID": "alchemref",
-  "Authors": [
+  "type": "content",
+  "name": "Alchemical Refinement",
+  "version": "0.3.2",
+  "description": "Lets you refine ores following the alchemical methode",
+  "modid": "alchemref",
+  "authors": [
     "matsaa93"
   ],
-  "Contributors": [],
-  "Side": "Universal",
-  "RequiredOnClient": true,
-  "RequiredOnServer": true,
-  "Dependencies": {}
+  "website": "https://mods.vintagestory.at/alchemicalrefinement",
+  "contributors": [ 
+    "Ragolution" 
+  ],
+  "side": "universal",
+  "dependencies": {}
 }

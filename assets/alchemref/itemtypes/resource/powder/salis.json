@@ -1,6 +1,5 @@
 {
     "code": "salis",
-	"class": "ItemNugget",
 	"variantgroups": [
 		{ "code": "salis", "states": [ "stannous", "hartshorn", "tartar", "petra", "ammoniac", "alembroth", "common" ] },
 		{ "code": "calcinated", "states": [ "raw", "washed", "purified" ] }
@@ -20,7 +19,7 @@
 			"ore": { "base": "game:item/resource/crushed/quartz" }
 		}
 	},
-	"shape": { "base": "alchemref:item/powdered-washed" },
+	"shape": { "base": "alchemref:item/resource/powder/powdered-washed" },
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
 	"maxstacksize": 256,

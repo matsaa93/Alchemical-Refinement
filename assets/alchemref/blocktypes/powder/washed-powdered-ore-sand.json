@@ -212,13 +212,12 @@
 				"code": "game:crushed-quartz",
 				"quantity": { "avg": 0.5, "var": 2 }
 			}
-
 		],
 		"*-limonite": [
 			{
 				"type": "item", 
 				"code": "alchemref:powdered-ore-{ore}-washed", 
-				"quantity": { "avg": 9, "var": 0 } 
+				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{
 				"type": "item", 
@@ -266,7 +265,7 @@
 			{
 				"type": "item", 
 				"code": "alchemref:powdered-ore-{ore}-washed", 
-				"quantity": { "avg": 9, "var": 0 } 
+				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{
 				"type": "item", 
@@ -314,7 +313,7 @@
 			{
 				"type": "item", 
 				"code": "alchemref:powdered-ore-{ore}-washed", 
-				"quantity": { "avg": 9, "var": 0 } 
+				"quantity": { "avg": 18, "var": 0 } 
 			},
 			{
 				"type": "item", 

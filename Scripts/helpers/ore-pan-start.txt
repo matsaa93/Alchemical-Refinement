@@ -1,0 +1,12 @@
+{
+	"code": "ore-pan",
+	"class": "BlockPan",
+	"behaviors": [
+		{ "name": "SneakPlacing"},
+		{ "name": "UnstableFalling", "properties": { "attachmentArea": { "x1": 5, "y1": 0, "z1": 5, "x2": 10, "y2": 0, "z2": 10 } }},
+		{ "name": "RightClickPickup"}
+	],
+	"maxStackSize": 1,
+	"attributes": {
+		"heldItemPitchFollow": 0.5,
+		"panningDrops": {

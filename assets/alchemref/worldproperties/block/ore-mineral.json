@@ -2,115 +2,115 @@
 	"code": "ore-mineral",
 	"variants": [
 		{
-			"Code": "nativecopper",
+			"Code": "nativecopper"
 		},
 		{
-			"Code": "limonite",
+			"Code": "limonite"
 		},
 		{
-			"Code": "quartz_nativegold",
+			"Code": "quartz_nativegold"
 		},
 		{
-			"Code": "galena",
+			"Code": "galena"
 		},
 		{
-			"Code": "cassiterite",
+			"Code": "cassiterite"
 		},
 		{
-			"Code": "chromite",
+			"Code": "chromite"
 		},
 		{
-			"Code": "ilmenite",
+			"Code": "ilmenite"
 		},
 		{
-			"Code": "sphalerite",
+			"Code": "sphalerite"
 		},
 		{
-			"Code": "quartz_nativesilver",
+			"Code": "quartz_nativesilver"
 		},
 		{
-			"Code": "galena_nativesilver",
+			"Code": "galena_nativesilver"
 		},
 		{
-			"Code": "bismuthinite",
+			"Code": "bismuthinite"
 		},
 		{
-			"Code": "magnetite",
+			"Code": "magnetite"
 		},
 		{
-			"Code": "hematite",
+			"Code": "hematite"
 		},
 		{
-			"Code": "malachite",
+			"Code": "malachite"
 		},
 		{
-			"Code": "pentlandite",
+			"Code": "pentlandite"
 		},
 		{
-			"Code": "pyrite",
+			"Code": "pyrite"
 		},
 		{
-			"Code": "uranium",
+			"Code": "uranium"
 		},
 		{
-			"Code": "wolframite",
+			"Code": "wolframite"
 		},
 		{
-			"Code": "rhodochrosite",
+			"Code": "rhodochrosite"
 		},
 		{
-			"Code": "azurite",
+			"Code": "azurite"
 		},
 		{
-			"Code": "chalcopyrite",
+			"Code": "chalcopyrite"
 		},
 		{
-			"Code": "cerussite",
+			"Code": "cerussite"
 		},
 		{
-			"Code": "chalcocite",
+			"Code": "chalcocite"
 		},
 		{
-			"Code": "franckeite",
+			"Code": "franckeite"
 		},
 		{
-			"Code": "freibergite",
+			"Code": "freibergite"
 		},
 		{
-			"Code": "hemimorphite",
+			"Code": "hemimorphite"
 		},
 		{
-			"Code": "nativeplatinum",
+			"Code": "nativeplatinum"
 		},
 		{
-			"Code": "smithsonite",
+			"Code": "smithsonite"
 		},
 		{
-			"Code": "sperrylite",
+			"Code": "sperrylite"
 		},
 		{
-			"Code": "teallite",
+			"Code": "teallite"
 		},
 		{
-			"Code": "tetrahedrite",
+			"Code": "tetrahedrite"
 		},
 		{
-			"Code": "vanadinite",
+			"Code": "vanadinite"
 		},
 		{
-			"Code": "wulfenite",
+			"Code": "wulfenite"
 		},
 		{
-			"Code": "nativegold",
+			"Code": "nativegold"
 		},
 		{
-			"Code": "nativesilver",
+			"Code": "nativesilver"
 		},
 		{
-			"Code": "Molybdenite",
+			"Code": "Molybdenite"
 		},
 		{
-			"Code": "stibnite",
+			"Code": "stibnite"
 		}
 	]
 }
