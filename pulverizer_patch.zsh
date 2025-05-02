@@ -5,6 +5,7 @@ source Scripts/common.zsh
 source Scripts/material-arrays.zsh
 source Scripts/panning_drop.zsh
 source Scripts/metal_ores.zsh
+source Scripts/localization_variables.zsh
 source Scripts/localization.zsh
 
 

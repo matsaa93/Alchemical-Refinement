@@ -1,0 +1,63 @@
+
+loop_array_msg[nitrum-bismuth]="(Bi(NO₃)₃): Pepto-Bismol precursor, can be prepared by the reaction of bismuth metal and concentrated nitric acid. Forms bismuth oxide (Bi₂O₃) when heated, used in yellow ceramic glazes and pearlescent paints. Antimicrobial agent in wound treatments."
+loop_array_msg[nitrum-ammonium]="(NH₄NO₃): used as a nitrogen fertiliser, or as a stable explosive when mixed with oils. Often blended with urea or limestone to reduce explosion risk."
+loop_array_msg[nitrum-chromium]="(Cr(NO₃)₃): used for Tanning leather, Ceramic glazes: Imparts green/yellow colors. Textile mordant: Fixes dyes to fabrics (especially wool)."
+loop_array_msg[nitrum-copper]="(Cu(NO₃)₂): higher than Silver on the reaction scale. Wood preservative: Protects against termites and decay. Ceramic glazes: Creates turquoise/blue colors."
+loop_array_msg[nitrum-iron]="(Fe(NO₃)₃): Plant nutrient: Provides iron in fertilizers (corrects chlorosis). decomposes at 61 °C into iron(III) oxide rather than iron(II) oxide."
+loop_array_msg[nitrum-lead]="plumbum dulce, meaning sweet lead,(Pb(NO₃)₂): Gold extraction: Used in cyanide leaching to recover gold from ores."
+loop_array_msg[nitrum-nickel]="(Ni(NO₃)₂): Ceramic glazes: Produces green/brown colors."
+loop_array_msg[nitrum-silver]='(AgNO₃): usually a by product of inquartation of gold with silver, to purify the gold. Mirror production: Forms silver coatings on glass. A typical reaction with silver nitrate is to suspend a piece of copper in a solution of silver nitrate and leave it for a few hours. The silver nitrate reacts with copper to form hairlike crystals of silver metal and a blue solution of copper nitrate, this is do to silver being lower on the reaction scale. reacts with Halides so make a insoluble salt called <a href=\"handbook://item-alchemref:salis-argentum-purified\">Luna Cornea</a>'
+loop_array_msg[nitrum-tin]="Sn(NO₃)₄): Ceramic glazes: Produces opaque/white finishes. Unlike other nitrates, it reacts with water to produce nitrogen dioxide. "
+loop_array_msg[nitrum-titanium]="(Ti(NO₃)₄): Catalyst Precursor: Used to synthesize titanium dioxide (TiO₂). Ceramic Pigments: Creates durable white/colored coatings."
+loop_array_msg[nitrum-uranium]="Uranyl Nitrate (UO₂(NO₃)₂): Ceramics: Produced vibrant orange/yellow glazes."
+loop_array_msg[nitrum-zinc]="(Zn(NO₃)₂): Wood Preservative: Protects against fungi and insects. Thermal decomposition yields Zinc oxide."
+loop_array_msg[nitrum-vanadium]="Vanadyl nitrate, also called vanadium oxytrinitrate (V(NO₃)₃): Ceramic Glazes: Imparts yellow/green colors. Catalyst: Used in oxidation reactions (e.g., sulfuric acid production via the Contact Process)."
+loop_array_msg[nitrum-manganese]="(Mn(NO₃)₂): Wood Preservative: Protects against fungi and insects. Ceramic Glazes: Produces brown/pink hues in pottery and tiles. Thermal decomposition yields manganese dioxide."
+loop_array_msg[nitrum-molybdenum]="Mo(NO₃)₆): Ceramic Glazes: Imparts yellow/orange colors."
+loop_array_msg[nitrum-kalium]="Nitre of Potash or KNO3, typically mined from covered dungheaps. Nitrogen-Kalium Fertilizer: Promotes plant growth. Curing Agent: Preserves meats (e.g., ham, sausages) by inhibiting bacterial growth."
+loop_array_msg[nitrum-natrium]=" also known as Chile saltpeter or soda niter (NaNO₃): Nitrogen Source: Provides soluble nitrogen for crops (e.g., leafy vegetables, beets). Gold Refining: Extracts gold from ores via cyanide leaching. Glass Production: Lowers melting point of silica (energy savings)."
+loop_array_msg[nitrum-quicksilver]="(Hg(NO₃)₂): Mirror Making: Silvering glass via the Brashear process. Explosives: Mercury fulminate (Hg(CNO)₂) synthesis for detonators."
+loop_array_msg[nitrum-calcium]="also called Norgessalpeter (Norwegian salpeter) (Ca(NO₃)₂): Coagulant in latex production, especially in dipping processes. From nitric acid + limestone or as a byproduct of the Odda process (phosphate fertilizer production)."
+loop_array_msg[nitrum-barium]="(Ba(NO₃)₂): Barium Oxide Production: Thermal decomposition yields BaO (for cathode ray tubes). Optical Glass: Enhances refractive index for lenses and prisms. Ceramic Glazes: Creates glossy finishes and color stabilizers."
+loop_array_msg[nitrum-magnesium]="(Mg(NO₃)₂): Ceramic Binder: Stabilizes glazes and pigments. From nitric acid + magnesium oxide/hydroxide, or as a byproduct of potassium nitrate production."
+
+loop_array_msg[carbonate-bismuth]="(Bi₂(CO₃)₃): occurs naturally as the mineral bismutite. Antacid Precursor: Converted to bismuth subsalicylate Ceramic Glazes: Creates iridescent finishes (often with Bi₂O₃ conversion)."
+loop_array_msg[carbonate-copper]="(CuCO₃): occurs in nature as the mineral malachite and azurite. Green/Blue Colors: Used in paints, ceramics (e.g., malachite green and azurite blue historically). Produced: By reacting copper sulfate with sodium carbonate."
+loop_array_msg[carbonate-iron]="(FeCO₃), also known as siderite when occurring naturally: Steel Production: Acts as a flux to remove impurities in blast furnaces. Animal Feed Additive: Boosts hemoglobin in livestock (especially pigs and poultry). Produced: By Reacting iron salts (e.g., FeCl₂) with sodium bicarbonate (NaHCO₃)."
+loop_array_msg[carbonate-lead]="(PbCO₃), also known as cerussite in its natural mineral form: Glass/Glaze Opacifier: Added to ceramics for milky finishes. winemakers used lead carbonate to sweeten wine"
+loop_array_msg[carbonate-nickel]="(NiCO₃): occurs naturally The natural as hellyerite. Glass/Glaze Coloring: Imparts green/blue hues in ceramics and enamels. Produced: By Precipitation from nickel sulfate + sodium carbonate."
+loop_array_msg[carbonate-silver]="(Ag₂CO₃): Decomposes to silver oxide (Ag₂O) and CO₂ when exposed to light."
+loop_array_msg[carbonate-manganese]="(MnCO₃): Occurs naturally as Rhodochrosite Pink/red mineral. Steel Production: Added to alloys to improve hardness and corrosion resistance. Glass Coloring: Produces amethyst/purple tints in stained glass. Pottery Glazes: Creates earthy brown/black finishes when fired."
+loop_array_msg[carbonate-uranium]="Uranyl carbonate (UO₂CO₃): Occurs naturally as Rutherfordine (UO₂CO₃): Rare secondary mineral in oxidized uranium deposits. Andersonite (Na₂Ca(UO₂)(CO₃)₃·6H₂O): Yellow-green fluorescent mineral."
+loop_array_msg[carbonate-zinc]="(ZnCO₃): also known as smithsonite in its natural mineral form. Decomposes: Forms ZnO + CO₂ when heated (~300°C), Intermediate in smelting zinc ores. Ceramic Glazes: Produces turquoise/blue finishes (when combined with copper). Reacting zinc salts (e.g., ZnSO₄) with sodium bicarbonate (NaHCO₃)."
+loop_array_msg[carbonate-dolomite]="(CaMg(CO₃)₂), a calcium-magnesium carbonate mineral: Steel Production: Flux in blast furnaces (removes impurities as slag). Glass Manufacturing: Stabilizes silica and reduces melting temperature. occurs in Sedimentary beds (dolostone) or metamorphic marble."
+loop_array_msg[carbonate-ankerite]="[Ca(Fe,Mg,Mn)(CO₃)₂], an iron-rich carbonate mineral related to dolomite:  Indicator Mineral: Signals proximity to hydrothermal ore deposits (e.g., lead-zinc veins). occurs in Hydrothermal veins, metamorphosed iron formations, or coal beds."
+loop_array_msg[carbonate-tartar]="(K₂CO₃), commonly known as potas: Glass Production: Lowers melting point of silica. Potash Fertilizers: Supplies soluble potassium for crops.     Extracted from wood ash (historically) or brine deposits."
+loop_array_msg[carbonate-natrium]="(Na₂CO₃), commonly known as soda ash, natron washing soda, sal soda, and soda crystal: occurs in Trona ore and Saltwater algae. Flux: Removes impurities in smelting. Glass Production: Lowers silica’s melting point (70% of global use). Detergents: Softens water and boosts cleaning power in soaps/powders."
+loop_array_msg[carbonate-calcium]="(CaCO₃): occurs naturally as Limestone, Marble, Calcite, Vaterite and Aragonite. "
+loop_array_msg[carbonate-barium]="(BaCO₃): Occurs as the mineral known as Witherite. Glaze/Opaque Agent: Creates glossy finishes in tiles, dishware, and sanitaryware. Crystal Glass: Enhances brilliance in optical glass (e.g., lenses, prisms). Witherite: Rare mineral (BaCO₃), less common than barite (BaSO₄). Produced with Carbonation of barium sulfide (BaS + CO₂ → BaCO₃)."
+loop_array_msg[carbonate-hartshorn]="Salt of Hartshorn, Sal Volatila or ammonium carbonate ((NH₄)₂CO₃): Smelling Salts: Historical use to revive fainting victims"
+loop_array_msg[carbonate-magnesium]="(MgCO₃): Occurence: Magnesite Pure MgCO₃, Dolomite: CaMg(CO₃)₂ (mixed calcium-magnesium carbonate). Production: Precipitation from magnesium salts + sodium carbonate."
+
+loop_array_msg[salis-auric]='Gold(III) Chloride, (AuCl₃): \\n\\r\\nGlass & Ceramics Coloring: Imparts ruby-red or purple hues to glass (cranberry glass) and ceramics.'
+loop_array_msg[salis-alembroth]='salt composed of chlorides of ammonium and mercury.'
+loop_array_msg[salis-ammoniac]='Nushadir Salt, Sal Ammoniac, (NH₄Cl): \\n\\r\\nFertilizers: Provides nitrogen to crops, improving soil fertility. \\n\\r\\nLeather Tanning: Helps soften and preserve leather.'
+loop_array_msg[salis-common]='Halite, Sodium Chloride, and even more simply known as table salt. NaCl.'
+loop_array_msg[salis-argentum]='Luna Cornea, Commonly known as Silver Chloride. \\n\\r\\nOccurring Naturally: Horn Silver or Cerargyrite. formed by heating horn silver till it liquefies and then cooling.'
+loop_array_msg[salis-stannous]='Tin(II) Chloride, (SnCl₂): \\n\\r\\nDetects mercury (Hg²⁺) and gold (Au³⁺) ions in solutions. \\n\\r\\nGlass & Ceramics: Produces opaque or red-tinted glass.'
+loop_array_msg[salis-stannic]='Tin(IV) Chloride, (SnCl₄): \\n\\r\\nGlass & Ceramics: Mirror Silvering – Helps deposit reflective silver layers. Tinted Glass – Imparts frosted or iridescent effects.'
+loop_array_msg[salis-kalium]='Sal Degistivum Sylvii, Sal Febrifugum Sylvii, Muriate of Potash, (KCl): \\n\\r\\nFertilizers: Major source of kalium (K) for crops, essential for plant growth and drought resistance. \\n\\r\\nProduced: salts derived from wood ash leaching.'
+loop_array_msg[salis-calomel]='Sweet Mercury, Mercury(I) Chloride (Hg₂Cl₂) \\n\\r\\nUsed in transmutation experiments'
+loop_array_msg[salis-purple_of_cassius]='formed by precipitating a mixture of gold, stannous and stannic chlorides, with alkali. Used for glass coloring'
+loop_array_msg[salis-cuprous]='Resin of copper, white muriate of copper, Copper(I) chloride, (CuCl), formed by heating copper with corrosive sublimate. \\n\\r\\nBlue-Green Colors: Ceramic glazes, glass staining, and art pigments. \\n\\r\\nNatural form of CuCl is the rare mineral nantokite'
+loop_array_msg[salis-cupric]='Copper(II) Chloride, (CuCl₂): \\n\\r\\nUsed in green and blue pigments (e.g., for ceramics, glass). \\n\\r\\nDecomposes: it starts to decompose to copper(I) chloride and chlorine gas around 400 °C and is completely decomposed near 1,000 °C'
+loop_array_msg[salis-manganese]='Manganese Chloride, (MnCl₂):\\n\\r\\nMicronutrient Fertilizer: Corrects manganese deficiency in crops.'
+loop_array_msg[salis-zinc]='Zinc Chloride (ZnCl₂): \\n\\r\\nGalvanizing & Soldering Flux: Cleans metal surfaces before welding/soldering'
+loop_array_msg[salis-ferrous]='Iron(II) Chloride, (FeCl₂): \\n\\r\\nPrecursor to FeCl₃ – Oxidized to produce ferric chloride '
+loop_array_msg[salis-ferric]='Iron(III) Chloride, (FeCl₃): \\n\\r\\nMetal Surface Treatment – Prepares steel and aluminum for coating or galvanization.'
+loop_array_msg[salis-titanium_tetrachloride]='Titanium(IV) Chloride (TiCl₄): \\n\\r\\nMetal & Alloy Production: Kroll Process – Key precursor for producing metallic titanium (reduced with magnesium). \\n\\r\\nTitanium Dioxide (TiO₂) Production: Used in the chloride process for making white pigment. \\n\\r\\nGlass & Ceramics: Optical Coatings – Deposits titanium oxide layers for anti-reflective lenses and mirrors. Enamel & Glaze Production – Improves durability and color effects. \\n\\r\\nTitanium Compound Precursor: For making TiCl₃, titanates, and organotitanium compounds.'
+loop_array_msg[salis-titanium_trichloride]='Titanium(III) Chloride (TiCl₃):'
+loop_array_msg[salis-bismuth]='butter of bismuth, Bismuth Chloride (BiCl₃):'
+loop_array_msg[salis-antimony]='Butter of Antimony, Caustic Antimon, Antimony Trichloride (SbCl₃): \\n\\r\\nused as a catalyst for polymerization, hydrocracking, and chlorination reactions'
+
+#<a href=\"handbook://item-alchemref:salis-argentum-purified\">Luna Cornea</a>

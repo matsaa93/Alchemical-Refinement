@@ -1,0 +1,22 @@
+{
+    "code": "carbonate",
+    "variants": [
+        { "code": "bismuth" },
+        { "code": "copper" },
+        { "code": "iron" },
+        { "code": "lead" },
+        { "code": "nickel" },
+        { "code": "silver" },
+        { "code": "manganese" },
+        { "code": "uranium" },
+        { "code": "zinc" },
+        { "code": "dolomite" },
+        { "code": "ankerite" },
+        { "code": "tartar" },
+        { "code": "natrium" },
+        { "code": "calcium" },
+        { "code": "barium" },
+        { "code": "hartshorn" },
+        { "code": "magnesium" }
+    ]
+}

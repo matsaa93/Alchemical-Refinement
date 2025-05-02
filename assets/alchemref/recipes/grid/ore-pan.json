@@ -5,5 +5,5 @@
 	},
 	"width": 3,
 	"height": 1,
-	"output": { "type": "block", "code": "ore-pan-wooden", "quantity": 1  }
+	"output": { "type": "block", "code": "alchemref:ore-pan-wooden", "quantity": 1  }
 }

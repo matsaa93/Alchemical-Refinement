@@ -60,10 +60,10 @@
 	},
 	"combustiblePropsByType": {
 		"*-raw": {
-			"meltingPoint": 550,
-			"meltingDuration": 10,
+			"meltingPoint": 600,
+			"meltingDuration": 2,
 			"smeltedRatio": 1,
-			"smeltingType": "bake",
+			"smeltingType": "convert",
 			"smeltedStack": { "type": "item", "code": "powdered-ore-{ore}-calcinated" },
 			"requiresContainer": false
 		},

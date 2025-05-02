@@ -1,0 +1,5 @@
+[
+    { "op": "add", "path": "/variants/-", "value": { "Code": "vanadium", "meltPoint": 1910, "boilPoint": 3407.0, "density": 6110, "specificHeatCapacity": 0.49, "elemental": true, "tier": 4 }, "file": "game:worldproperties/block/metal.json" },
+    { "op": "add", "path": "/combustiblePropsByType/*-vanadium", "value": { "meltingPoint": 1910, "meltingDuration": 30, "smeltedRatio": 20, "smeltedStack": { "type": "item", "code": "ingot-vanadium" } }, "file": "game:itemtypes/resource/metalbit.json" },
+    { "op": "add", "path": "/combustiblePropsByType/ingot-vanadium", "value": { "meltingPoint": 1910, "meltingDuration": 30, "smeltedRatio": 1, "smeltedStack": { "type": "item", "code": "ingot-vanadium" } }, "file": "game:itemtypes/resource/ingot.json" }
+]

@@ -367,6 +367,9 @@
 			"alchemref:powdered-ore-sand-molybdenite": [
 				{ "type": "item", "code": "alchemref:powdered-ore-molybdenite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
 			],
+			"alchemref:powdered-ore-sand-gerhardtite": [
+				{ "type": "item", "code": "alchemref:powdered-ore-gerhardtite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
+			],	
 			"alchemref:powdered-ore-sand-rhodochrosite": [
 				{ "type": "item", "code": "alchemref:powdered-ore-rhodochrosite-washed",  "chance": { "avg": 0.25, "var": 0 }  }
 			]

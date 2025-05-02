@@ -13,6 +13,7 @@ FA_VC(){ cat <<< "${1}$(FA_V $2 $(FA_CB "$3"))$4" }
 FA_VN(){ cat <<< "${1}$(FA_V "$2" "$3")$4" }
 
 declare -a loop_array
+declare -A loop_array_msg
 version=$(get_Json_info "version")
 modid=$(get_Json_info "modid")
 vintagestory_dir=/usr/share/vintagestory

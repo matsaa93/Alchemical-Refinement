@@ -1,8 +1,8 @@
 {
     "code": "salis",
 	"variantgroups": [
-		{ "code": "salis", "states": [ "stannous", "hartshorn", "tartar", "petra", "ammoniac", "alembroth", "common" ] },
-		{ "code": "calcinated", "states": [ "raw", "washed", "purified" ] }
+		{ "code": "salis", "loadFromProperties": "alchemref:block/salis" },
+		{ "code": "purity", "states": [ "raw", "washed", "purified" ] }
 	],
 	"heldTpIdleAnimation": "holdbothhands",
 	"heldRightReadyAnimation": "holdbothhands",

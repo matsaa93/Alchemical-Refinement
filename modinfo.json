@@ -1,7 +1,7 @@
 {
   "type": "content",
   "name": "Alchemical Refinement",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Lets you refine ores following the alchemical methode",
   "modid": "alchemref",
   "authors": [

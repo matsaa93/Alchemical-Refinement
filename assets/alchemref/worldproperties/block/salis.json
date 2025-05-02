@@ -1,0 +1,25 @@
+{
+    "code": "salis",
+    "variants": [
+        { "code": "auric" },
+        { "code": "alembroth" },
+        { "code": "ammoniac" },
+        { "code": "common" },
+        { "code": "argentum" },
+        { "code": "stannous" },
+        { "code": "stannic" },
+        { "code": "kalium" },
+        { "code": "calomel" },
+        { "code": "purple_of_cassius" },
+        { "code": "cupric" },
+        { "code": "cuprous" },
+        { "code": "manganese" },
+        { "code": "zinc" },
+        { "code": "ferrous" },
+        { "code": "ferric" },
+        { "code": "titanium_tetrachloride" },
+        { "code": "titanium_trichloride" },
+        { "code": "bismuth" },
+        { "code": "antimony" }
+    ]
+}

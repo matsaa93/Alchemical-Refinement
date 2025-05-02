@@ -1,0 +1,26 @@
+{
+    "code": "nitrum",
+    "variants": [
+        { "code": "ammonium" },
+        { "code": "bismuth" },
+        { "code": "chromium" },
+        { "code": "copper" },
+        { "code": "iron" },
+        { "code": "lead" },
+        { "code": "nickel" },
+        { "code": "silver" },
+        { "code": "tin" },
+        { "code": "titanium" },
+        { "code": "uranium" },
+        { "code": "zinc" },
+        { "code": "vanadium" },
+        { "code": "manganese" },
+        { "code": "molybdenum" },
+        { "code": "kalium" },
+        { "code": "natrium" },
+        { "code": "quicksilver" },
+        { "code": "calcium" },
+        { "code": "barium" },
+        { "code": "magnesium" }
+    ]
+}
