@@ -39,5 +39,7 @@ Carbonate
 Nitrum
 currently uses quartz as texture but needs its own.
 
+add "@.*-(limonite|hematite|quartz_.*|pentlandite)-.*" to the ore "panning drop" in the ore-washing pan and for the ore blocks drop where
+
 
 
