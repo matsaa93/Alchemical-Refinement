@@ -14,15 +14,17 @@ I will at some point make another mod that expands on this with C# code but for 
 
 1. Grind ore nuggets in a Grind stone(Quern) to create the powdered ore to make it easier to purify it.
 
-2. Calcinate/Roast in a firepit to remove the volatile impurities.
+2. [Calcinate/Roast](operations/Calcination-Firepit.png) in a firepit to remove the volatile impurities.
 
-3. Combine the calcinated ore in to a block in a grid.
+3. [Combine the calcinated ore](operations/OreBlock-Crafting.png) in to a block in a grid.
 
-4. Washed with the [Ore Washing Pan](operations/Ore-Washing-Pan-Craft.png) to remove the soluble impurities.
+4. [Washed](operations/Washing-Block.png) with the [Ore Washing Pan](operations/Ore-Washing-Pan-Craft.png) to remove the soluble impurities.
 
-5. Washed block can be broken in to the washed powder.
+5. [Washed block can be broken](operations/OreBlock_Drops.png) in to the washed powder.
 
 6. Smelt it in a crucible.
+
+![the output amount](operations/The-Operation.png)
 
 ### Known Bugs:
 
