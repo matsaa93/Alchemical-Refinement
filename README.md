@@ -1,5 +1,5 @@
 # Alchemical Refinement
-
+![modimage](modicon.png)
 ---
 
 the mod lets you follow the Alchemical Process to refine ore.
@@ -26,13 +26,27 @@ I will at some point make another mod that expands on this with C# code but for 
 
 ![the output amount](operations/The-Operation.png)
 
-### Known Bugs:
+### Stages of Alchemy:
+
+1. [Calcination:](operations/1-Calcination.md) The burning away of impurities through intense heat or fire.
+
+2. [Dissolution:](operations/2-Dissolution.md) The breaking down of the remaining material into a solution.
+
+3. [Seperation:](operations/3-Seperation.md) The removal of any remaining impurities from the solution.
+
+4. [Conjunction:](operations/4-Conjunction.md) The union of purified substances to create something new.
+
+5. [Fermentation:](operations/5-Fermentation.md) The process of allowing the new substance to mature and develop.
+
+6. [Distillation:](operations/6-Distillation.md) The separation and concentration of the pure essence of the substance.
+
+7. [Coagulation:](operations/7-Coagulation.md) The solidification of the purified essence into a new form or state.
+
+## Known Bugs:
 
 - extra info causes crash is you access the handbook page for the ore washing pan if it is installed.
 
 ## NB!
-
----
 
 as of now the mod is not Balanced and it might give you a little much for that little effort it takes.
 

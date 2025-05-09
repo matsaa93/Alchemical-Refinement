@@ -25,12 +25,15 @@ In the horizontal orientation of left and right, the Conjunction is an attempt t
 
 Images of the vertical Conjunction include the Ladder of the Planets, seven stars on an object inclined upwards, and rainbows (the seven colors in harmony). Other images are a white bird descending into flames, a bird chained to an earthbound animal, the Red Lion partly disappearing into a sphere, or stylized representations of the union of Fire and Water. Carl Jung suggested that angels coming down from heaven and the landing of UFOs were also images of vertical Conjunction, in the obvious sense of the union between the powers Above with the powers Below. 
 
-    - **in the laboratory/Chemical Conjunction**: is the recombination of the saved elements from Separation into a new substance. Often this was a forced marriage done by fusing or amalgamating metals or by mixing saved components in a new chemical reaction by the addition of a temporary mediator such as an acid or a catalyst.
+## The union of purified substances to create something new.
 
- 
+Conjunction, the fourth stage of alchemy, involves the union of two or more purified substances to create something new. This stage can be seen as the synthesis of the previous stages, where the purified elements are brought together to form a new whole. This stage requires a deep understanding of the nature of the substances involved and their potential for transformation. The union of these substances is often seen as a metaphor for the union of opposites within oneself, leading to a greater sense of wholeness and integration. In this stage, the alchemist works to find a balance between opposing forces, recognizing that each has its own unique qualities that can be combined to create something new and transformative.
 
-    - **Physiologically**: Conjunction is using the body’s sexual energies for personal transformation. Conjunction takes place in the body at the level of the Heart or Copper Chakra. On the planetary level, Conjunction occurs when primordial life forms are created from the energy of the Sun or lightning.
 
- 
+- <ins>**in the laboratory/Chemical Conjunction**</ins>: is the recombination of the saved elements from Separation into a new substance. Often this was a forced marriage done by fusing or amalgamating metals or by mixing saved components in a new chemical reaction by the addition of a temporary mediator such as an acid or a catalyst.
 
-    - **Psychologically**: Conjunction is empowerment of our true selves, the union of both the masculine and feminine sides of our personalities into a new belief system or an intuitive state of consciousness. The alchemists referred to it as the Lesser Stone, and after it is achieved, the adept is able to clearly discern what needs to be done to achieve lasting enlightenment. Often synchronicities begin to occur at this stage that confirm the alchemist is on the right track in his or her personal transformation. In society, it is the growth of crafts and technology to master the environment. 
+
+- <ins>**Physiologically Conjunction**</ins>: Is using the body’s sexual energies for personal transformation. Conjunction takes place in the body at the level of the Heart or Copper Chakra. On the planetary level, Conjunction occurs when primordial life forms are created from the energy of the Sun or lightning.
+
+
+- <ins>**Psychologically Conjunction**</ins>: Is empowerment of our true selves, the union of both the masculine and feminine sides of our personalities into a new belief system or an intuitive state of consciousness. The alchemists referred to it as the Lesser Stone, and after it is achieved, the adept is able to clearly discern what needs to be done to achieve lasting enlightenment. Often synchronicities begin to occur at this stage that confirm the alchemist is on the right track in his or her personal transformation. In society, it is the growth of crafts and technology to master the environment. 
