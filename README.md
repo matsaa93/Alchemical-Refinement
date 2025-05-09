@@ -18,7 +18,7 @@ I will at some point make another mod that expands on this with C# code but for 
 
 3. Combine the calcinated ore in to a block in a grid.
 
-4. Washed with the Ore Washing Pan to remove the soluble impurities.
+4. Washed with the [Ore Washing Pan](operations/Ore-Washing-Pan-Craft.png) to remove the soluble impurities.
 
 5. Washed block can be broken in to the washed powder.
 
