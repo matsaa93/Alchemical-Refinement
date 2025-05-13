@@ -1,36 +1,20 @@
 changed:
-powdered-ore-*-raw combustibleProps {
-"meltingDuration": from 10 to 2,
-"smeltingType": "baked" to "convert",
-} this makes calcinating the ore faster.
+
 
 added:
-salis-{ "stannic", "antimony", "bismuth", "titanium_trichloride", 
-"titanium_tetrachloride", "ferric", "ferrous", "calomel", "argentum", 
-"purple_of_cassius", "cupric", "cuprous", "manganese", "zinc",}
-vanadium metal
-gerhardtite mineral
-nitrum nitrates for refining
-carbonates added for refining and or endproduct depending on the ore.
+
 
 variant files added: 
-salis "salis.json"
-nitrum "nitrum.json"
-carbonate "carbonate.json"
+
 
 Moved:
-Saltpeter to Nitrum
-Salt of Tartar to carbonate
-Salt of Hartshorn to carbonate
+
 
 Bugs detected:
-extra info causes crash is you access the handbook page
-for the ore washing pan if it is installed.
-needs to be improved, might be that it looks up 
-all the panning drops, and struggles with them.
+
 
 Fixed: 
-missing textures for many substances.
+
 
 TODO:
 Create new textures:

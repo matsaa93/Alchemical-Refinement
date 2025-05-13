@@ -61,4 +61,4 @@ loop_array_msg[salis]="salt"
 #FA_Lang_File_two_variants vitriol.json $modid item "powdered_vitriol" > tmp/lang_powdered_vitriol.json
 #FA_Lang_File_two_variants nitrum.json $modid item "nitrum" > tmp/lang_nitrum.json
 #FA_Lang_File_two_variants carbonate.json $modid item "carbonate" > tmp/lang_carbonate.json
-FA_Lang_File_two_variants salis.json $modid item "salis" > tmp/lang_salis.json
+#FA_Lang_File_two_variants salis.json $modid item "salis" > tmp/lang_salis.json

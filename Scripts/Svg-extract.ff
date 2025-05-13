@@ -1,0 +1,6 @@
+#!/usr/bin/fontforge
+#/home/matsaa93/Documents/GitHub/Alchemical-Refinement/tmp/icon/fonts/
+Open($1)
+SelectAll()
+UnlinkReference()
+Export("/tmp/svg/%n-%e.svg")
