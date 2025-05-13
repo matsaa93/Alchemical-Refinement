@@ -20,6 +20,10 @@
 			"ore": { "base": "alchemref:item/resource/powder/ore/nativegold5" },
 			"quartz": { "base": "alchemref:item/resource/powder/ore/quartz" }
 		},
+		"*-quartz_nativeelectrum-*": {
+			"ore": { "base": "alchemref:item/resource/powder/ore/nativeelectrum5" },
+			"quartz": { "base": "alchemref:item/resource/powder/ore/quartz" }
+		},
 		"*-raw": {
 			"ore": { "base": "alchemref:item/resource/powder/ore/{ore}" },
 			"quartz": { "base": "alchemref:item/resource/powder/ore/{ore}5" }

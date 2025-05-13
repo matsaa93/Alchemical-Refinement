@@ -25,6 +25,9 @@
 		"*-quartz_nativegold": {
 			"all": { "base": "block/powder/nativegold3" }
 		},
+		"*-quartz_nativeelectrum": {
+			"all": { "base": "block/powder/nativeelectrum3" }
+		},
 		"*":{
 			"all": { "base": "block/powder/{ore}3" }
 		}
@@ -32,7 +35,7 @@
 	"attributes": {
 		"mapColorCode": "desert",
 		"pannable": true,
-		"pannedBlock": "washed-powdered-ore-sand-{ore}",
+		"pannedBlock": "powdered-ore-sand-7-{ore}",
 		"preventsDecay": true,
 		"allowUnstablePlacement": true
 	},

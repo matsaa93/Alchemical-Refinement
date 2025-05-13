@@ -25,6 +25,9 @@
 		"*-quartz_nativegold": {
 			"all": { "base": "block/powder/nativegold7" }
 		},
+		"*-quartz_nativeelectrum": {
+			"all": { "base": "block/powder/nativeelectrum7" }
+		},
 		"*":{
 			"all": { "base": "block/powder/{ore}7" }
 		}

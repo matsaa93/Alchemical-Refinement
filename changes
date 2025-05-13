@@ -1,5 +1,6 @@
 changed:
-
+panning of blocks to have 7 layers
+panningdrops 
 
 added:
 
@@ -16,14 +17,28 @@ Bugs detected:
 Fixed: 
 
 
-TODO:
-Create new textures:
-Salis
-Carbonate
-Nitrum
-currently uses quartz as texture but needs its own.
+TODO:{
+    add mineral:
+    Siderite
+    Barite
+    Bornite
+    Pyrolusite
+    Arsenopyrite
+    Argentite
+    nativeelectrum
+    quartz_nativeelectrum
+    anglesite
+
+    Create new textures:
+    Salis
+    Carbonate
+    Nitrum
+    currently uses quartz as texture but needs its own.
+}
 
 add "@.*-(limonite|hematite|quartz_.*|pentlandite)-.*" to the ore "panning drop" in the ore-washing pan and for the ore blocks drop where
 
 
+
++5\u00b0C for degres C
 

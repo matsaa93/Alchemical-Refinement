@@ -13,7 +13,7 @@
 	"textures": {
 		"base": "alchemref:item/resource/crystal/base",
 		"crystals": "alchemref:item/resource/crystal/crystals",
-		"crystalsleft": "alchemref:item/resource/crystal/crystalsleft"
+		"crystalsleft": "alchemref:item/resource/crystal/crystals"
 	},
 	"elements": [
 		{

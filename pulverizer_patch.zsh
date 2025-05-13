@@ -7,6 +7,7 @@ source Scripts/panning_drop.zsh
 source Scripts/metal_ores.zsh
 source Scripts/localization_variables.zsh
 source Scripts/localization.zsh
+source Scripts/texture-maker.zsh
 
 
 FA_OP(){
@@ -235,3 +236,4 @@ FA_Variants_file(){
 #}
 # F_grade_array 2 true
 
+F_MASK_TEXTURE_FILES_ORE
