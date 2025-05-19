@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 debug=false
-working_dir="$HOME/Documents/GitHub/Alchemical-Refinement"
 source Scripts/common.zsh
 source Scripts/material-arrays.zsh
 source Scripts/panning_drop.zsh
@@ -8,7 +7,7 @@ source Scripts/metal_ores.zsh
 source Scripts/localization_variables.zsh
 source Scripts/localization.zsh
 source Scripts/texture-maker.zsh
-
+source Scripts/patching.zsh
 
 FA_OP(){
     mode=$2
@@ -188,11 +187,11 @@ FA_Variants_file(){
     fileVar="{ \"code\": \"$vargruop\", \"variants\": [$fileVar ] }"
     echo $fileVar | jq "."
 }
+
 #vargruop="vitriol"
 #FA_Variants_file "red" "green" "blue" "white" "sweet" "glauber" "argentum" "dutch_white" "gypsum" "turpeth" "epsomite" "alunogen" "celestine" "angelesite"
 
 # FA_combustion_prop_file
-
 
 #FA_block_oregraded > assets/alchemref/recipes/grid/ore-chunks.json
 
@@ -236,4 +235,4 @@ FA_Variants_file(){
 #}
 # F_grade_array 2 true
 
-F_MASK_TEXTURE_FILES_ORE
+#F_MASK_TEXTURE_FILES_ORE

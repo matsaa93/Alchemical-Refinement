@@ -185,3 +185,27 @@ rename_icons(){
 }
 # rename_icons ariel
 # icon_extract_main
+extract_rename_icons(){
+    icon_extract_main
+    rename_icons "$ttf_file"
+}
+usage(){
+    echo "# 1) - extract_icons          --> to extract icons from Font"
+    echo "# 2) - rename_icons           --> to rename icons extracted to the names refenanced in var_ucode function"
+    echo "# 3) - extract_rename_icons   --> to chain both the above functions"
+    echo "# 4) - exit                   --> to exit the script"
+
+}
+usage
+select opt in extract_icons rename_icons extract_rename_icons exit; do
+    case $opt in
+        *icons)
+            echo "mode: $opt"
+            $opt
+        ;;
+        exit)
+            break
+        ;;
+    esac
+    usage
+done

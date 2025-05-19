@@ -1,5 +1,5 @@
 get_Json_info(){
-    local ref=$(jq ".$1"  modinfo.json)
+    local ref=$(jq ".$1"  $working_dir/modinfo.json)
     echo ${ref//\"/}
 }
 zcalc(){ echo $(($@)) }
@@ -14,6 +14,8 @@ FA_VN(){ cat <<< "${1}$(FA_V "$2" "$3")$4" }
 
 declare -a loop_array
 declare -A loop_array_msg
+
+working_dir="$HOME/Documents/GitHub/Alchemical-Refinement"
 version=$(get_Json_info "version")
 modid=$(get_Json_info "modid")
 vintagestory_dir=/usr/share/vintagestory
@@ -28,3 +30,24 @@ worldproperties_mod_dir=$assets_mod_dir/worldproperties
 itemtypes_mod_dir=$assets_mod_dir/itemtypes
 blocktypes_mod_dir=$assets_mod_dir/blocktypes
 game_patches=$working_dir/assets/game/patches
+game_textures=$working_dir/assets/game/textures
+VS_texture_dir=$vintagestory_dir/assets/survival/textures
+scripts_dir=$working_dir/Scripts
+scripts_helper_dir=$scripts_dir/helpers
+get_Json_output(){
+    local ref=$(jq ".$1" $2)
+    echo ${ref//\"/}
+}
+compare_variant_files(){
+    for A in $(get_Json_output "variants[].Code" $1 ); do
+        same=false
+        for B in $(get_Json_output "variants[].Code" $2 ); do
+            if [ $A = $B ]; then
+                same=true
+                break
+            fi
+        done
+        [ $same = false ] && echo $A
+    done
+}
+#compare_variant_files assets/alchemref/worldproperties/block/ore-mineral.json Referance/ore-graded.json > tmp/compared.txt

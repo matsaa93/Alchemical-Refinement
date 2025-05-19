@@ -1,0 +1,242 @@
+[
+    {
+        "code": "dolomite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-limestone" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-aragonite" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-calcite" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "2.3",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-chalk" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "2.3",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-chalk" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-limestone" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-aragonite" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "limestone",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-claystone" },
+            "placeblock": { "code": "rock-limestone" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "aragonite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-claystone" },
+            "placeblock": { "code": "rock-aragonite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-claystone" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-claystone" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "limestone",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-shale" },
+            "placeblock": { "code": "rock-limestone" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "aragonite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-shale" },
+            "placeblock": { "code": "rock-aragonite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-shale" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-shale" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "limestone",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-limestone" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "aragonite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-aragonite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "2.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-dolomite" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    }
+]

@@ -107,7 +107,7 @@
 			"Code": "nativesilver"
 		},
 		{
-			"Code": "Molybdenite"
+			"Code": "molybdenite"
 		},
 		{
 			"Code": "gerhardtite"
@@ -116,7 +116,7 @@
 			"Code": "nativeelectrum"
 		},
 		{
-			"code": "quartz_nativeelectrum"
+			"Code": "quartz_nativeelectrum"
 		},
 		{
 			"Code": "stibnite"

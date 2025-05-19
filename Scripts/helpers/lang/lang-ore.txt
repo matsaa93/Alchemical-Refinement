@@ -1,0 +1,12 @@
+
+	"game:block-looseores-oretype-*": "Oretype ore bits",
+	"game:ore-oretype": "Oretype",
+	"game:block-ore-*-oretype-*": "Oretype ore",
+	"game:item-nugget-oretype": "Nugget (Oretype)",
+
+	"alchemref:item-powdered-ore-oretype-raw": "Raw Impure Powdered Oretype",
+	"alchemref:item-powdered-ore-oretype-calcinated": "Calcinated Powdered Oretype",
+	"alchemref:item-powdered-ore-oretype-washed": "Washed Powdered Oretype",
+	"alchemref:block-powdered-ore-*-oretype": "Oretype Ore-sand",
+	"alchemref:block-washed-powdered-ore-sand-oretype": "Washed Oretype Ore-sand",
+

@@ -1,0 +1,32 @@
+[
+	{
+		"code": "cerussite",
+		"triesPerChunk": 10,
+		"withOreMap": true,
+		"handbookPageCode": "item-nugget-cerussite",
+		"generator": "disc-followsurface",
+		"attributes": {
+			"inblock": { "code": "rock-*", "name": "rock", "allowedVariants": ["limestone", "aragonite", "calcite", "dolomite" , "chalk", "bauxite", "claystone", "sandstone"] },
+			"placeblock": {
+				"code": "ore-*-cerussite-{rock}",
+				"name": "grade",
+				"allowedVariantsByInBlock": {
+					"rock-limestone": ["poor", "medium", "rich", "bountiful"],
+                    "rock-calcite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-dolomite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-aragonite": ["poor", "medium", "rich", "bountiful"],
+					"rock-chalk": ["poor", "medium", "rich"],
+					"rock-bauxite": ["poor", "medium", "rich"],
+					"rock-claystone": ["poor", "medium", "rich"],
+					"rock-sandstone": ["poor", "medium", "rich"]
+				}
+			},
+			"surfaceBlock": { "code": "looseores-cerussite-{rock}-free" },
+			"surfaceBlockChance": 0.2,
+			"radius": { "dist": "uniform", "avg": 7, "var": 3 },
+			"yPosRel": {"dist": "uniform", "avg": 0.46, "var": 0.48 },
+			"gradedistribution": "RandomPlusDepthBonus",
+			"thickness": { "dist": "stronginvexp", "avg": 1, "var": 2 }
+		}
+	}
+]

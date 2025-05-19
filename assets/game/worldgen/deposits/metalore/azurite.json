@@ -1,0 +1,31 @@
+[
+	{
+		"code": "azurite",
+		"triesPerChunk": 10,
+		"withOreMap": true,
+		"handbookPageCode": "item-nugget-azurite",
+		"generator": "disc-followsurface",
+		"attributes": {
+			"inblock": { "code": "rock-*", "name": "rock", "allowedVariants": ["limestone", "redmarble", "greenmarble", "whitemarble", "aragonite", "calcite", "dolomite"] },
+			"placeblock": {
+				"code": "ore-*-azurite-{rock}",
+				"name": "grade",
+				"allowedVariantsByInBlock": {
+					"rock-limestone": ["poor", "medium", "rich", "bountiful"],
+                    "rock-calcite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-dolomite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-aragonite": ["poor", "medium", "rich", "bountiful"],
+					"rock-redmarble": ["poor", "medium", "rich"],
+					"rock-greenmarble": ["poor", "medium", "rich"],
+					"rock-whitemarble": ["poor", "medium", "rich"]
+				}
+			},
+			"surfaceBlock": { "code": "looseores-azurite-{rock}-free" },
+			"surfaceBlockChance": 0.2,
+			"radius": { "dist": "uniform", "avg": 7, "var": 3 },
+			"yPosRel": {"dist": "uniform", "avg": 0.46, "var": 0.48 },
+			"gradedistribution": "RandomPlusDepthBonus",
+			"thickness": { "dist": "stronginvexp", "avg": 1, "var": 2 }
+		}
+	}
+]

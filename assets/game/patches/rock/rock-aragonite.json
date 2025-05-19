@@ -1,0 +1,29 @@
+[
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldproperties/block/rockwithdeposit.json",
+        "value": { "Code": "aragonite", "Weight": "35", "SoilpH": "7.5", "WeatheringFactor": "0.7", "RockGroup": "sedimentary" }       
+    },
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldproperties/block/rock.json",
+        "value": { "Code": "aragonite", "Weight": "35", "SoilpH": "7.5", "WeatheringFactor": "0.7", "RockGroup": "sedimentary" }       
+    },
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldgen/rockstrata.json",
+        "value": {
+            "blockcode": "rock-aragonite",
+			"amplitudes":  [4.5, 2.25, 1.13, 0.56],
+			"thresholds":  [3.2, 1.6, 0.8, 0.4],
+			"frequencies": [0.05, 0.1, 0.2, 0.4],
+			"genDir": "TopDown",
+			"rockGroup": "Sedimentary"
+        }
+    },
+    { "op": "add", "path": "/0/attributes/inblock/allowedVariants/-", "value": "aragonite", "file": "game:worldgen/deposits/mineralore/halite.json" },
+    { "op": "add", "path": "/1/attributes/inblock/allowedVariants/-", "value": "aragonite", "file": "game:worldgen/deposits/mineralore/halite.json" }
+]

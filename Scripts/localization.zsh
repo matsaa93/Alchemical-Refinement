@@ -62,3 +62,32 @@ loop_array_msg[salis]="salt"
 #FA_Lang_File_two_variants nitrum.json $modid item "nitrum" > tmp/lang_nitrum.json
 #FA_Lang_File_two_variants carbonate.json $modid item "carbonate" > tmp/lang_carbonate.json
 #FA_Lang_File_two_variants salis.json $modid item "salis" > tmp/lang_salis.json
+
+FA_merge_lang_files(){
+    echo ""
+    cat tmp/lang/*.json > tmp/lang.json
+    rm -r tmp/lang/*.json
+}
+
+FA_LANG_ORE(){
+    local File=$(cat $scripts_helper_dir/lang/lang-ore.txt)
+    local OreType=$1
+    File=${File//oretype/$OreType}
+    print -r "${File//Oretype/$(echo $OreType | sed 's/.*/\u&/')}" > tmp/lang/$OreType.json
+}
+
+FA_LANG_ROCK(){
+    local File=$(cat $scripts_helper_dir/lang/lang-rock.txt)
+    local RockType=$1
+    File=${File//rocktype/$RockType}
+    print -r "${File//Rocktype/$(echo $RockType | sed 's/.*/\u&/')}" > tmp/lang/$RockType.json
+}
+
+#FA_LANG_ROCK dolomite
+#FA_LANG_ROCK calcite
+#FA_LANG_ROCK aragonite
+#FA_merge_lang_files
+#FA_LANG_ORE cerussite
+#FA_LANG_ORE azurite
+#FA_LANG_ORE smithsonite
+

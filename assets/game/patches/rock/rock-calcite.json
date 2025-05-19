@@ -1,0 +1,29 @@
+[
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldproperties/block/rockwithdeposit.json",
+        "value": { "Code": "calcite", "Weight": "35", "SoilpH": "7.5", "WeatheringFactor": "0.7", "RockGroup": "sedimentary" }       
+    },
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldproperties/block/rock.json",
+        "value": { "Code": "calcite", "Weight": "35", "SoilpH": "7.5", "WeatheringFactor": "0.7", "RockGroup": "sedimentary" }       
+    },
+    {
+        "op": "add",
+        "path": "/variants/-",
+        "file": "game:worldgen/rockstrata.json",
+        "value": {
+            "blockcode": "rock-calcite",
+			"amplitudes":  [4, 2, 1],
+			"thresholds":  [2.2, 1.1, 0.5],
+			"frequencies": [0.05, 0.1, 0.2],
+			"genDir": "TopDown",
+			"rockGroup": "Sedimentary"
+        }
+    },
+    { "op": "add", "path": "/0/attributes/inblock/allowedVariants/-", "value": "calcite", "file": "game:worldgen/deposits/mineralore/halite.json" },
+    { "op": "add", "path": "/1/attributes/inblock/allowedVariants/-", "value": "calcite", "file": "game:worldgen/deposits/mineralore/halite.json" }
+]

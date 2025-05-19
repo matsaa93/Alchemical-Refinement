@@ -1,0 +1,33 @@
+[
+	{
+		"code": "smithsonite",
+		"triesPerChunk": 10,
+		"withOreMap": true,
+		"handbookPageCode": "item-nugget-smithsonite",
+		"generator": "disc-followsurface",
+		"attributes": {
+			"inblock": { "code": "rock-*", "name": "rock", "allowedVariants": ["limestone", "aragonite", "calcite", "dolomite" , "chalk", "shale", "claystone", "sandstone", "chert"] },
+			"placeblock": {
+				"code": "ore-*-smithsonite-{rock}",
+				"name": "grade",
+				"allowedVariantsByInBlock": {
+					"rock-limestone": ["poor", "medium", "rich", "bountiful"],
+                    "rock-calcite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-dolomite": ["poor", "medium", "rich", "bountiful"],
+                    "rock-aragonite": ["poor", "medium", "rich", "bountiful"],
+					"rock-chalk": ["poor", "medium", "rich"],
+					"rock-shale": ["poor", "medium", "rich"],
+					"rock-claystone": ["poor", "medium", "rich"],
+					"rock-chert": ["poor", "medium", "rich"],
+					"rock-sandstone": ["poor", "medium", "rich"]
+				}
+			},
+			"surfaceBlock": { "code": "looseores-smithsonite-{rock}-free" },
+			"surfaceBlockChance": 0.2,
+			"radius": { "dist": "uniform", "avg": 7, "var": 3 },
+			"yPosRel": {"dist": "uniform", "avg": 0.46, "var": 0.48 },
+			"gradedistribution": "RandomPlusDepthBonus",
+			"thickness": { "dist": "stronginvexp", "avg": 1, "var": 2 }
+		}
+	}
+]

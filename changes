@@ -1,9 +1,16 @@
 changed:
 panning of blocks to have 7 layers
-panningdrops 
+panningdrops so it has less lines and more streamline.
 
 added:
 
+to worldgen:
+rock-aragonite
+rock-calcite
+rock-dolomite
+ore-azurite
+ore-cerussite
+ore-smithsonite
 
 variant files added: 
 
@@ -19,15 +26,32 @@ Fixed:
 
 TODO:{
     add mineral:
-    Siderite
-    Barite
-    Bornite
-    Pyrolusite
-    Arsenopyrite
-    Argentite
+    siderite
+    barite
+    bornite
+    pyrolusite
+    arsenopyrite
+    argentite
     nativeelectrum
     quartz_nativeelectrum
     anglesite
+    calamine
+    
+    nitrate minerals:
+    nitre or niter (saltpetre) 
+    nitratine or nitratite
+    nitromagnesite
+    likasite
+    nitrocalcite (forms in limestone mines and caverns)
+
+    carbonate minerals:
+    Spherocobaltite
+    gaspeite
+    Malachite
+    azurite
+    Cerussite
+    Hydrozincite
+    Natrona
 
     Create new textures:
     Salis
@@ -38,7 +62,70 @@ TODO:{
 
 add "@.*-(limonite|hematite|quartz_.*|pentlandite)-.*" to the ore "panning drop" in the ore-washing pan and for the ore blocks drop where
 
-
+Pyrolusite is extensively used for the manufacture of spiegeleisen and ferromanganese and of various alloys such as manganese-bronze. 
 
 +5\u00b0C for degres C
 
+Dolomite spawn rock:
+calcite
+chalk 
+limestone
+Aragonite
+
+Gypsum spawn rock:
+dolomite
+calcite
+chalk
+limestone
+Aragonite
+
+
+
+    {
+        "code": "limestone",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-limestone" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "aragonite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-aragonite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "calcite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-calcite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
+    {
+        "code": "dolomite",
+        "triesPerChunk": "0.8",
+        "generator": "disc-followsurface",
+        "attributes": {
+            "inblock": { "code": "rock-sandstone" },
+            "placeblock": { "code": "rock-dolomite" },
+            "radius": { "dist": "gaussian", "avg": 24, "var": 12 },
+            "yPosRel": { "dist": "uniform", "avg": 0.4, "var": 0.8 },
+            "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
+        }
+    },
