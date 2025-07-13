@@ -1,6 +1,6 @@
 get_Json_info(){
-    local ref=$(jq ".$1"  $working_dir/modinfo.json)
-    echo ${ref//\"/}
+    local ref=$(jq -r ".$1"  $working_dir/modinfo.json)
+    #echo ${ref//\"/}
 }
 zcalc(){ echo $(($@)) }
 zcalc_goldenratio_int(){ zcalc "$1 * 1.618" |awk '{print int($1+0.5)}' }

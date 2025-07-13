@@ -30,6 +30,15 @@
 		},
 		{
 			"type": "shell",
+			"label": "run_pre_release",
+			"group": "build",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./run-test.sh -rp"
+		},
+		{
+			"type": "shell",
 			"label": "run_vsmodelcreator",
 			"group": "build",
 			"options": {
@@ -40,7 +49,7 @@
 		{
 			"type": "shell",
 			"label": "run-test",
-			"group": "run",
+			"group": "test",
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},

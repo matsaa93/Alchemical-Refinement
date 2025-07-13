@@ -175,9 +175,10 @@ F_TEXTURE_GENERATE_FILES(){
 #  }
 F_TEXTURE_MASK_MAKE(){
     rock_mask=$image_helper/rock-mask
-    local stone_textures=$VS_texture_dir/block/stone
+    #local stone_textures=$VS_texture_dir/block/stone
+    local stone_textures=$working_dir/Referance/VS-prerelease/assets/survival/textures/block/stone
     cd $stone_textures
-    for DIR in cobblestone cobbleskull "polishedrock-old/full" "polishedrock-old/cobbled" agedbrick crackedbrick termitemound rock sand gravel drystone drystonefence brick polishedrockslab "polishedrock-old/inside" polishedrock cobblestonestairs; do
+    for DIR in cobblestone cobbleskull "polishedrock-old/full" "polishedrock-old/cobbled" agedbrick crackedbrick termitemound rock sand sand/wavy gravel drystone drystonefence brick polishedrockslab "polishedrock-old/inside" polishedrock cobblestonestairs; do
         #ls $stone_textures/$DIR/chalk*
         for File in $(ls $DIR/chalk*); do
             echo "Input File: $File Output File: ${File//\//_}"
@@ -348,11 +349,12 @@ F_MASK_blackout_ore(){
 #F_TEXTURE_NUGGET "0,95,114" "90,136,162" "42,139,155" smithsonite
 #F_TEXTURE_NUGGET "37,42,22" "42,139,155" "90,136,162" smithsonite
 
-F_MASK_TEXTURE_FILES_ORE
-F_MASK_blackout_ore
-# F_TEXTURE_ROCK dolomite "205,185,185"
-# F_TEXTURE_ROCK calcite "205,205,165"
-#F_TEXTURE_ROCK aragonite "193,154,107"
+#F_MASK_TEXTURE_FILES_ORE
+#F_MASK_blackout_ore
+# F_TEXTURE_MASK_MAKE
+F_TEXTURE_ROCK dolomite "205,185,185"
+F_TEXTURE_ROCK calcite "205,205,165"
+F_TEXTURE_ROCK aragonite "193,154,107"
 
 # magick -size 32x32 xc:"rgb(193,154,107)" \
 #           -stroke xc:"rgb(193,154,0)"    -strokewidth 15 -draw 'line 5,50 65,50' \
