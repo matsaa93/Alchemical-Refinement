@@ -1,16 +1,11 @@
 changed:
-panning of blocks to have 7 layers
-panningdrops so it has less lines and more streamline.
+
+
 
 added:
 
 to worldgen:
-rock-aragonite
-rock-calcite
-rock-dolomite
-ore-azurite
-ore-cerussite
-ore-smithsonite
+
 
 variant files added: 
 
@@ -22,7 +17,8 @@ Bugs detected:
 
 
 Fixed: 
-
+smithsonite nuggests was set as lead changed to proper metal zink
+Vitrol handbook entries so that they are linked to a itemdesc insted of a handbook page
 
 TODO:{
     add mineral:
@@ -79,7 +75,7 @@ chalk
 limestone
 Aragonite
 <a href=\"handbook://alchemical--handbook\">TEXT</a>
-
+<a href=\"handbook://block-alchemref:ore-pan-wooden\">Ore Washing Pan</a> 
 
     {
         "code": "limestone",

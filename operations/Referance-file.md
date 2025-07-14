@@ -20,7 +20,8 @@
 - [Unveiling the Seven Stages of Alchemical Transformation](https://www.onealchemist.com/blog/unveiling-the-seven-stages-of-alchemical-transformation)
 - [The Seven Operations of Alchemy](https://www.alchemyguildohio.org/seven-operations-of-alchemy)
 - [The Seven Stages of Alchemical Transformation](https://weclustr.com/the-seven-stages-of-alchemical-transformation/)
-- []()
+- [Mineral Expert place to find stuff about minerals](https://mineralexpert.org/articles?page=1)
+- [WebMineral another place to find info about minerals](https://webmineral.com/)
 - []()
 - []()
 - []()
@@ -28,3 +29,18 @@
 - []()
 - []()
 
+
+# Links for VS code help
+- [Json Docs Namespace Vintagestory.GameContent](https://apidocs.vintagestory.at/json-docs/jsondocs/Vintagestory.GameContent.html)
+- [Vintage story Wiki Modding Category Page](https://wiki.vintagestory.at/Category:Modding)
+- [intagetext Markup Language (VTML)](https://wiki.vintagestory.at/index.php/VTML)
+- [Github for Vintage story Survival module](https://github.com/anegostudios/vssurvivalmod)
+- [Json CheatSheet](https://quickref.me/json.html)
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()
+- []()

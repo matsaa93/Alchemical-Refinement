@@ -112,7 +112,7 @@
         "op": "add", "path": "/combustiblePropsByType/*-smithsonite", 
         "value": { 
             "meltingPoint": 420, "meltingDuration": 30, "smeltedRatio": 20, 
-            "smeltedStack": { "type": "item", "code": "ingot-lead" } 
+            "smeltedStack": { "type": "item", "code": "ingot-zinc" } 
         }, 
         "file": "game:itemtypes/resource/nugget.json" 
     }
