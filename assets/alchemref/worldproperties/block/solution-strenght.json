@@ -1,20 +1,10 @@
 {
     "code": "solution-strenght",
     "variants": [
-        {
-            "code": "weak"
-        },
-        {
-            "code": "diluted"
-        },
-        {
-            "code": "homogeneous"
-        },
-        {
-            "code": "strong"
-        },
-        {
-            "code": "pure"
-        }
+        { "code": "weak" },
+        { "code": "diluted" },
+        { "code": "homogeneous" },
+        { "code": "strong" },
+        { "code": "pure" }
     ]
 }

@@ -1,125 +1,45 @@
 {
 	"code": "ore-mineral",
 	"variants": [
-		{
-			"Code": "nativecopper"
-		},
-		{
-			"Code": "limonite"
-		},
-		{
-			"Code": "quartz_nativegold"
-		},
-		{
-			"Code": "galena"
-		},
-		{
-			"Code": "cassiterite"
-		},
-		{
-			"Code": "chromite"
-		},
-		{
-			"Code": "ilmenite"
-		},
-		{
-			"Code": "sphalerite"
-		},
-		{
-			"Code": "quartz_nativesilver"
-		},
-		{
-			"Code": "galena_nativesilver"
-		},
-		{
-			"Code": "bismuthinite"
-		},
-		{
-			"Code": "magnetite"
-		},
-		{
-			"Code": "hematite"
-		},
-		{
-			"Code": "malachite"
-		},
-		{
-			"Code": "pentlandite"
-		},
-		{
-			"Code": "pyrite"
-		},
-		{
-			"Code": "uranium"
-		},
-		{
-			"Code": "wolframite"
-		},
-		{
-			"Code": "rhodochrosite"
-		},
-		{
-			"Code": "azurite"
-		},
-		{
-			"Code": "chalcopyrite"
-		},
-		{
-			"Code": "cerussite"
-		},
-		{
-			"Code": "chalcocite"
-		},
-		{
-			"Code": "franckeite"
-		},
-		{
-			"Code": "freibergite"
-		},
-		{
-			"Code": "hemimorphite"
-		},
-		{
-			"Code": "nativeplatinum"
-		},
-		{
-			"Code": "smithsonite"
-		},
-		{
-			"Code": "sperrylite"
-		},
-		{
-			"Code": "teallite"
-		},
-		{
-			"Code": "tetrahedrite"
-		},
-		{
-			"Code": "vanadinite"
-		},
-		{
-			"Code": "wulfenite"
-		},
-		{
-			"Code": "nativegold"
-		},
-		{
-			"Code": "nativesilver"
-		},
-		{
-			"Code": "molybdenite"
-		},
-		{
-			"Code": "gerhardtite"
-		},
-		{
-			"Code": "nativeelectrum"
-		},
-		{
-			"Code": "quartz_nativeelectrum"
-		},
-		{
-			"Code": "stibnite"
-		}
+		{ "Code": "nativecopper" },
+		{ "Code": "limonite" },
+		{ "Code": "quartz_nativegold" },
+		{ "Code": "galena" },
+		{ "Code": "cassiterite" },
+		{ "Code": "chromite" },
+		{ "Code": "ilmenite" },
+		{ "Code": "sphalerite" },
+		{ "Code": "quartz_nativesilver" },
+		{ "Code": "galena_nativesilver" },
+		{ "Code": "bismuthinite" },
+		{ "Code": "magnetite" },
+		{ "Code": "hematite" },
+		{ "Code": "malachite" },
+		{ "Code": "pentlandite" },
+		{ "Code": "pyrite" },
+		{ "Code": "uranium" },
+		{ "Code": "wolframite" },
+		{ "Code": "rhodochrosite" },
+		{ "Code": "azurite" },
+		{ "Code": "chalcopyrite" },
+		{ "Code": "cerussite" },
+		{ "Code": "chalcocite" },
+		{ "Code": "franckeite" },
+		{ "Code": "freibergite" },
+		{ "Code": "hemimorphite" },
+		{ "Code": "nativeplatinum" },
+		{ "Code": "smithsonite" },
+		{ "Code": "sperrylite" },
+		{ "Code": "teallite" },
+		{ "Code": "tetrahedrite" },
+		{ "Code": "vanadinite" },
+		{ "Code": "wulfenite" },
+		{ "Code": "nativegold" },
+		{ "Code": "nativesilver" },
+		{ "Code": "molybdenite" },
+		{ "Code": "gerhardtite" },
+		{ "Code": "nativeelectrum" },
+		{ "Code": "quartz_nativeelectrum" },
+		{ "Code": "stibnite" }
 	]
 }

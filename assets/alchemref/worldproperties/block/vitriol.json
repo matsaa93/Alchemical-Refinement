@@ -1,47 +1,19 @@
 {
     "Code": "vitriol",
     "variants": [
-            {
-            "Code": "red"
-            },
-            {
-            "Code": "green"
-            },
-            {
-            "Code": "blue"
-            },
-            {
-            "Code": "white"
-            },
-            {
-            "Code": "sweet"
-            },
-            {
-            "Code": "glauber"
-            },
-            {
-            "Code": "argentum"
-            },
-            {
-            "Code": "dutch_white"
-            },
-            {
-            "Code": "gypsum"
-            },
-            {
-            "Code": "turpeth"
-            },
-            {
-            "Code": "epsomite"
-            },
-            {
-            "Code": "alunogen"
-            },
-            {
-            "Code": "celestine"
-            },
-            {
-            "Code": "anglesite"
-            }
+        { "Code": "red" },
+        { "Code": "green" },
+        { "Code": "blue" },
+        { "Code": "white" },
+        { "Code": "sweet" },
+        { "Code": "glauber" },
+        { "Code": "argentum" },
+        { "Code": "dutch_white" },
+        { "Code": "gypsum" },
+        { "Code": "turpeth" },
+        { "Code": "epsomite" },
+        { "Code": "alunogen" },
+        { "Code": "celestine" },
+        { "Code": "anglesite" }
     ]
 }
