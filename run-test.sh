@@ -10,8 +10,9 @@ usage(){
     echo "#################################################################################################################"
 }
 get_Json_info(){
-    local ref=$(jq -r ".$1"  modinfo.json)
+    #local ref=$(jq -r ".$1"  modinfo.json)
     #echo ${ref//\"/}
+    jq -r ".$1"  modinfo.json
 }
 run_fun(){
     export LD_DEBUG=true
@@ -24,7 +25,7 @@ SCRIPT_path=$(/bin/readlink -f ${0%/*})
 build_dir="$(dirname "$(readlink -f "$0")")/build"
 vintagestory_dir_pre=$SCRIPT_path/Referance/VS-prerelease
 VSDataDIR=$SCRIPT_path/Referance/VSDataDIR
-vintagestory_dir=/usr/share/vintagestory
+vintagestory_dir=/opt/vintagestory
 vintagestory_mods_dir="$HOME/.config/VintagestoryData/Mods"
 version=$(get_Json_info "version")
 modid=$(get_Json_info "modid")
