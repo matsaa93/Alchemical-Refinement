@@ -4,7 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "../../../../../usr/share/vintagestory"
+			"path": "../../../../../opt/vintagestory/assets"
+		},
+		{
+			"path": "../../VS-Referance"
 		}
 	]
 }

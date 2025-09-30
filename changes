@@ -1,11 +1,8 @@
 changed:
-changed some textures for stone versions
 
 
 added:
-Dolomite textures for sand variants
-Aragonite textures for sand variants
-Calcite textures for sand variants
+
 
 to worldgen:
 
@@ -20,8 +17,7 @@ Bugs detected:
 
 
 Fixed: 
-smithsonite nuggests was set as lead changed to proper metal zink
-Vitrol handbook entries so that they are linked to a itemdesc insted of a handbook page
+
 
 TODO:{
     add mineral:

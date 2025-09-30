@@ -1,0 +1,42 @@
+{
+    "code": "calcinator",
+    "class": "ARCalcinatorBlock",
+    "entityClass": "ARBECalcinator",
+    "creativeInventory": { "general": ["calcinator-west"] },
+    "variantgroups": [
+		{ "code": "side", "loadFromProperties": "game:abstract/horizontalorientation" }
+	],
+    "behaviors": [
+		{ "name": "Unstable" },
+		{ "name": "HorizontalOrientable", "properties": {  "dropBlockFace": "west" }}
+	],
+    "shapebytype": {
+		"*-west": { "base": "block/apparatus/calcinator", "rotateY": 0 },
+		"*-east": { "base": "block/apparatus/calcinator", "rotateY": 180 },
+		"*-south": { "base": "block/apparatus/calcinator", "rotateY": 90 },
+		"*-north": { "base": "block/apparatus/calcinator", "rotateY": 270 }
+	},
+    "blockmaterial": "metal",
+	"drawtype": "json",
+	"replaceable": 160,
+	"resistance": 4,
+	"lightAbsorption": 0,
+    "sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"sounds": {
+		"place": "game:block/chute",
+		"break": "game:block/chute",
+		"hit": "game:block/chute",
+		"walk": "game:walk/stone*"
+	},
+    "collisionbox": { "x1": 0.25, "y1": 0, "z1": 0.25, "x2": 0.75, "y2": 1, "z2": 0.75 },
+	"selectionbox": { "x1": 0.25, "y1": 0, "z1": 0.25, "x2": 0.75, "y2": 1, "z2": 0.75 },
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 1, "z": 0.5 },
+		"scale": 0.8
+	}
+}

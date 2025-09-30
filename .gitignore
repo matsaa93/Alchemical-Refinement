@@ -1,3 +1,7 @@
 tmp/*
 build/*
 Referance/*
+VSDataDIR/*
+obj/*
+bin/*
+*.sln
