@@ -178,14 +178,18 @@ namespace AlchemicalRefinement
             string info = base.GetPlacedBlockInfo(world, pos, forPlayer);
 
             BECalcinator beb = world.BlockAccessor.GetBlockEntity(pos) as BECalcinator;
-            float temp = beb?.InputStackTemp ?? 0;
-            if (temp <= 20)
+            if (beb != null)
             {
-                info += "\r\n" + Lang.Get("Cold.");
-            }
-            else
-            {
-                info += "\r\n" + Lang.Get("Temperature: {0}°C", (int)temp);
+                float temp = beb.blockTemperature;
+                if (temp <= 20)
+                {
+                    info += "\r\n" + Lang.Get("Cold.");
+                    //info += "\r\n" + Lang.Get("Temperature: {0}°C", (int)temp);
+                }
+                else
+                {
+                    info += "\r\n" + Lang.Get("Temperature: {0}°C", (int)temp);
+                }
             }
 
             if (beb != null && beb.firepitStage >= 5)

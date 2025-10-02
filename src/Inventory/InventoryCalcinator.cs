@@ -16,18 +16,19 @@ using Vintagestory.GameContent;
 namespace AlchemicalRefinement.Inventory
 {
     /// <summary>
-    /// Inventory with Two normal slot and Two output slot
+    /// Inventory with Two Input Slots and Two Output Slots and A Fuel Slot
     /// </summary>
     public class InventoryCalcinator : InventoryBase, ISlotProvider
     {
         ItemSlot[] slots;
         public ItemSlot[] Slots { get { return slots; } }
 
+        /// <summary>
+        /// SlotID: FuelStack = 0 input = 1-2 , output = 3-4
+        /// </summary>
         public InventoryCalcinator(string inventoryID, ICoreAPI api) : base(inventoryID, api)
         {
-            /// <summary>
-            /// SlotID: input = 0-1 , output = 2-3
-            /// </summary>
+            
             slots = GenEmptySlots(5);
         }
 

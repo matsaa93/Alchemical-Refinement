@@ -5,6 +5,11 @@ using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
+
+[assembly: ModInfo("AlchemicalRefinement",
+    Authors = new string[] { "Matsaa93", "UnknownFutureGuy" },
+    Description = "Extension to, Alchemy, Refining, and mining.",
+    Version = "0.4.0")]
 namespace AlchemicalRefinement
 {
     public class AlchemicalRefinementMod : ModSystem

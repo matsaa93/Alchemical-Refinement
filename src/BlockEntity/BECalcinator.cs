@@ -36,23 +36,21 @@ namespace AlchemicalRefinement
         public float CalcinationDuration;
     }
 
-    public class BECalcinator : BlockEntityOpenableContainer, IFirePit
+    public class BECalcinator : BEFirepitContainer //BlockEntityOpenableContainer, IFirePit
     {
         //public override string InventoryClassName => "calcinator";
         private ICoreClientAPI capi;
         private ICoreServerAPI sapi;
-        MeshData firepitMesh;
-        public int firepitStage;
-        double lastTickTotalHours;
-        public float fuelHours;
         float calcinationAccum;
+        private float calcinatorTemp;
+
+        #region Invetory
         private InventoryCalcinator _inventory;
         public override string InventoryClassName { get { return "InventoryCalcinator"; } }
         /// <summary>
         /// SlotID: 1-2 = input, 0 = fuel, 3-4 = output
         /// </summary>
         public override InventoryBase Inventory { get { return _inventory; } }
-
         public ItemSlot[] FuelSlots
         {
             get
@@ -97,26 +95,6 @@ namespace AlchemicalRefinement
             }
         }
         
-        public virtual float SoundLevel
-        {
-            get { return 0.66f; }
-        }
-
-        public bool IsBurning => firepitStage == 6 && fuelHours > 0;
-        public bool IsSmoldering => firepitStage == 6 && fuelHours > -3;
-
-        public static AssetLocation[] firepitShapeBlockCodes = new AssetLocation[]
-        {
-            null,
-            new AssetLocation("firepit-construct1"),
-            new AssetLocation("firepit-construct2"),
-            new AssetLocation("firepit-construct3"),
-            new AssetLocation("firepit-construct4"),
-            new AssetLocation("firepit-cold"),
-            new AssetLocation("firepit-lit"),
-            new AssetLocation("firepit-extinct"),
-        };
-
         public BECalcinator()
         {
             _inventory = new InventoryCalcinator(null, null);
@@ -137,52 +115,15 @@ namespace AlchemicalRefinement
                 return _inventory[1]?.Itemstack;
             }
         }
-
-        public override void Initialize(ICoreAPI api)
+        #endregion
+        
+        public virtual float SoundLevel
         {
-            base.Initialize(api);
-            if (api.Side == EnumAppSide.Server)
-            {
-                sapi = api as ICoreServerAPI;
-                RegisterGameTickListener(onBurnTick, 100);
-                //_heatPerSecondBase = base.Block.Attributes["heatpersecond"].AsInt(0);
-            }
-            else
-            {
-                capi = api as ICoreClientAPI;
-            }
-
-            //RegisterGameTickListener(onBurnTick, 100);
-            loadMesh();
-
-            if (firepitStage == 6 && IsBurning)
-            {
-                GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
-            }
+            get { return 0.66f; }
         }
 
-        private void onBurnTick(float dt)
-        {
-            if (firepitStage == 6 && !IsBurning)
-            {
-                GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(false);
-                firepitStage++;
-                MarkDirty(true);
-            }
-
-            if (IsBurning)
-            {
-                heatItem(dt);
-            }
-
-            double dh = Api.World.Calendar.TotalHours - lastTickTotalHours;
-            if (dh > 0.1f)
-            {
-                if (IsBurning) fuelHours -= (float)dh;
-                lastTickTotalHours = Api.World.Calendar.TotalHours;
-            }
-            // to do add rest of function/methode See BEBoiler onBurnTick for more
-        }
+       
+        
 
         public void heatItem(float dt)
         {
@@ -193,7 +134,21 @@ namespace AlchemicalRefinement
                 InputStackTemp += dt * 2;
             }
         }
-
+/*        
+        public override heatBlock(float dt)
+        {
+            //_inventory[1].StackSize
+        }
+*/
+        /// <summary>
+        /// Set and get for Calcinator Block Temperature 
+        /// </summary>
+        public float CalcinatorTemp
+        {
+            get => calcinatorTemp;
+            set => calcinatorTemp = value;
+        }
+        
         public float InputStackTemp
         {
             get
@@ -214,91 +169,6 @@ namespace AlchemicalRefinement
             }
         }
 
-        public bool OnInteract(IPlayer byPlayer, BlockSelection blockSel)
-        {
-            ItemSlot hotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
-
-            bool addGrass = hotbarSlot.Itemstack?.Collectible is ItemDryGrass && firepitStage == 0;
-            bool addFireWood = hotbarSlot.Itemstack?.Collectible is ItemFirewood && firepitStage >= 1 && firepitStage <= 4;
-            bool reignite = hotbarSlot.Itemstack?.Collectible is ItemFirewood && (firepitStage >= 5 && fuelHours <= 6f);
-
-            if (addGrass || addFireWood || reignite)
-            {
-                if (!reignite) firepitStage++;
-                else if (firepitStage == 7) firepitStage = 5;
-
-                MarkDirty(true);
-                hotbarSlot.TakeOut(1);
-                (byPlayer as IClientPlayer)?.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
-                Block block = Api.World.GetBlock(firepitShapeBlockCodes[firepitStage]);
-                if (block?.Sounds != null) Api.World.PlaySoundAt(block.Sounds.Place, Pos, 0, byPlayer);
-            }
-
-            if (addGrass) return true;
-            if (addFireWood || reignite)
-            {
-                fuelHours = Math.Max(2, fuelHours + 2);
-                return true;
-            }
-
-            return false;
-        }
-
-        public bool CanIgnite()
-        {
-            return firepitStage == 5;
-        }
-
-        public void TryIgnite()
-        {
-            if (!CanIgnite()) return;
-
-            firepitStage++;
-            GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
-
-            MarkDirty(true);
-            lastTickTotalHours = Api.World.Calendar.TotalHours;
-        }
-
-        private void loadMesh()
-        {
-            if (Api.Side == EnumAppSide.Server) return;
-            if (firepitStage <= 0)
-            {
-                firepitMesh = null;
-                return;
-            }
-
-            Block block = Api.World.GetBlock(firepitShapeBlockCodes[firepitStage]);
-            firepitMesh = capi.TesselatorManager.GetDefaultBlockMesh(block);
-        }
-
-        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessorForResolve)
-        {
-            base.FromTreeAttributes(tree, worldAccessorForResolve);
-
-            firepitStage = tree.GetInt("firepitConstructionStage");
-            lastTickTotalHours = tree.GetDouble("lastTickTotalHours");
-            fuelHours = tree.GetFloat("fuelHours");
-
-            if (Api != null) loadMesh();
-        }
-
-        public override void ToTreeAttributes(ITreeAttribute tree)
-        {
-            base.ToTreeAttributes(tree);
-
-            tree.SetInt("firepitConstructionStage", firepitStage);
-            tree.SetDouble("lastTickTotalHours", lastTickTotalHours);
-            tree.SetFloat("fuelHours", fuelHours);
-        }
-
-        public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
-        {
-            mesher.AddMeshData(firepitMesh);
-
-            return base.OnTesselation(mesher, tessThreadTesselator);
-        }
         public override bool OnPlayerRightClick(IPlayer byPlayer, BlockSelection blockSel)
         {
             return true;
