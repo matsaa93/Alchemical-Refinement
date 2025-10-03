@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VSDevProjSettings">
+    <option name="shapePath" value="/bin/java" />
+    <option name="texturePath" value="$PROJECT_DIR$/../../VS-Referance/Referance/vsmodelcreator" />
+  </component>
+</project>

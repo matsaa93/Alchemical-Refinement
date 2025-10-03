@@ -16,7 +16,7 @@ namespace AlchemicalRefinement
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
-            firepitBlock = api.World.GetBlock(BECalcinator.firepitShapeBlockCodes[6]);
+            firepitBlock = api.World.GetBlock(BECalcinator.FirepitShapeBlockCodes[6]);
 
             //partCollBoxes = (Cuboidf[])CollisionBoxes.Clone();
             //partCollBoxes[0].Y1 = 7 / 16f;
@@ -50,7 +50,7 @@ namespace AlchemicalRefinement
                         Itemstacks = canIgniteStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
                             BECalcinator bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BECalcinator;
-                            if (bef != null && !bef.IsBurning && bef.fuelHours > 0 && bef.firepitStage >= 5) return wi.Itemstacks;
+                            if (bef != null && !bef.IsBurning && bef.FuelHours > 0 && bef.FirepitStage >= 5) return wi.Itemstacks;
                             return null;
                         }
                     },
@@ -61,7 +61,7 @@ namespace AlchemicalRefinement
                         Itemstacks = tinderStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
                             BECalcinator bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BECalcinator;
-                            if (bef != null && bef.firepitStage == 0) return wi.Itemstacks;
+                            if (bef != null && bef.FirepitStage == 0) return wi.Itemstacks;
                             return null;
                         }
                     },
@@ -72,7 +72,7 @@ namespace AlchemicalRefinement
                         Itemstacks = firewoodStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
                             BECalcinator bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BECalcinator;
-                            if (bef != null && bef.firepitStage > 0 && bef.fuelHours <= 6f) return wi.Itemstacks;
+                            if (bef != null && bef.FirepitStage > 0 && bef.FuelHours <= 6f) return wi.Itemstacks;
                             return null;
                         }
                     }
@@ -102,7 +102,7 @@ namespace AlchemicalRefinement
             if (pos == null) return base.GetLightHsv(blockAccessor, pos, stack);
 
             BECalcinator be = blockAccessor.GetBlockEntity(pos) as BECalcinator;
-            if (be != null && be.firepitStage == 6) return firepitBlock.LightHsv;
+            if (be != null && be.FirepitStage == 6) return firepitBlock.LightHsv;
 
             return base.GetLightHsv(blockAccessor, pos, stack);
         }
@@ -117,7 +117,7 @@ namespace AlchemicalRefinement
             isWindAffected = true;
 
             BECalcinator be = world.BlockAccessor.GetBlockEntity(pos) as BECalcinator;
-            if (be != null && be.firepitStage == 6) return true;
+            if (be != null && be.FirepitStage == 6) return true;
 
             return base.ShouldReceiveClientParticleTicks(world, player, pos, out isWindAffected);
         }
@@ -125,7 +125,7 @@ namespace AlchemicalRefinement
         public override void OnAsyncClientParticleTick(IAsyncParticleManager manager, BlockPos pos, float windAffectednessAtPos, float secondsTicking)
         {
             BECalcinator be = api.World.BlockAccessor.GetBlockEntity(pos) as BECalcinator;
-            if (be != null && be.firepitStage == 6)
+            if (be != null && be.FirepitStage == 6)
             {
                 //firepitBlock.OnAsyncClientParticleTick(manager, pos, windAffectednessAtPos, secondsTicking);
                 var props = firepitBlock.ParticleProperties;
@@ -180,7 +180,7 @@ namespace AlchemicalRefinement
             BECalcinator beb = world.BlockAccessor.GetBlockEntity(pos) as BECalcinator;
             if (beb != null)
             {
-                float temp = beb.blockTemperature;
+                float temp = beb.BlockTemperature;
                 if (temp <= 20)
                 {
                     info += "\r\n" + Lang.Get("Cold.");
@@ -192,15 +192,15 @@ namespace AlchemicalRefinement
                 }
             }
 
-            if (beb != null && beb.firepitStage >= 5)
+            if (beb != null && beb.FirepitStage >= 5)
             {
-                if (beb.fuelHours <= 0)
+                if (beb.FuelHours <= 0)
                 {
                     info += "\r\n" + Lang.Get("No more fuel.");
                 }
                 else
                 {
-                    info += "\r\n" + Lang.Get("Fuel for {0:#.#} hours.", beb.fuelHours);
+                    info += "\r\n" + Lang.Get("Fuel for {0:#.#} hours.", beb.FuelHours);
                 }
             }
 

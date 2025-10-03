@@ -1,4 +1,5 @@
 using System;
+using AlchemicalRefinement.GUI;
 using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 using Vintagestory.API.Common;
@@ -6,6 +7,7 @@ using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
 using AlchemicalRefinement.Inventory;
+using Vintagestory.API.Config;
 
 namespace AlchemicalRefinement
 {
@@ -41,14 +43,17 @@ namespace AlchemicalRefinement
         //public override string InventoryClassName => "calcinator";
         private ICoreClientAPI capi;
         private ICoreServerAPI sapi;
+
+        private GUICalcinator _clientDialog;
         float calcinationAccum;
         private float calcinatorTemp;
+        private float calcinatoinProgress = 0;
 
         #region Invetory
         private InventoryCalcinator _inventory;
         public override string InventoryClassName { get { return "InventoryCalcinator"; } }
         /// <summary>
-        /// SlotID: 1-2 = input, 0 = fuel, 3-4 = output
+        /// SlotID: 0 = fuel, 1-3 = input, 4-5 = output
         /// </summary>
         public override InventoryBase Inventory { get { return _inventory; } }
         public ItemSlot[] FuelSlots
@@ -68,7 +73,20 @@ namespace AlchemicalRefinement
                 return new ItemSlot[]
                 {
                     _inventory[1],
-                    _inventory[2]
+                    _inventory[2],
+                    _inventory[3]
+                };
+            }
+        }
+        
+        public ItemSlot[] OutputSlots
+        {
+            get
+            {
+                return new ItemSlot[]
+                {
+                    _inventory[4],
+                    _inventory[5]
                 };
             }
         }
@@ -79,26 +97,34 @@ namespace AlchemicalRefinement
         {
             get
             {
-                return _inventory[1].Empty && _inventory[2].Empty;
+                return _inventory[1].Empty && _inventory[2].Empty && _inventory[3].Empty;
             }
         }
 
-        public ItemSlot[] OutputSlots
+        public bool FuelSlotsEmpty
         {
-            get
-            {
-                return new ItemSlot[]
-                {
-                    _inventory[3],
-                    _inventory[4]
-                };
-            }
+            get { return _inventory[1].Empty; }
         }
+
+        
         
         public BECalcinator()
         {
             _inventory = new InventoryCalcinator(null, null);
-            //_inventory.SlotModified += OnSlotModifid;
+            _inventory.SlotModified += OnSlotModifid;
+        }
+
+        private void OnSlotModifid(int slotid)
+        {
+            if (slotid >= 0 || slotid < 5) // input or fuel slot update
+            {
+                //FindMatchingRecipe();
+                MarkDirty(true);
+                if (_clientDialog != null)
+                {
+                    //_clientDialog.Update(RecipeProgress, CurrentTemp, CurrentRecipe);
+                }
+            }
         }
 
         public ItemStack InputStack
@@ -169,9 +195,75 @@ namespace AlchemicalRefinement
             }
         }
 
+        public string DialogTitle => Lang.Get("alchemref:gui-title-calcinator");
+
+        #region Blockinteractions
+
+        public override void OnBlockRemoved()
+        {
+            base.OnBlockRemoved();
+            if (_clientDialog != null)
+            {
+                _clientDialog.TryClose();
+                GUICalcinator gUIlog = _clientDialog;
+                if (gUIlog != null) { gUIlog.Dispose(); }
+                _clientDialog = null;
+            }
+        }
+
         public override bool OnPlayerRightClick(IPlayer byPlayer, BlockSelection blockSel)
         {
+            if (Api.Side == EnumAppSide.Client)
+            {
+                toggleInventoryDialogClient(byPlayer, () => {
+                    _clientDialog = new GUICalcinator(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
+                    _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+                    return _clientDialog;
+                });
+            }
+            
             return true;
         }
+        #endregion
+        public override void Initialize(ICoreAPI api)
+        {
+            base.Initialize(api);
+            RegisterGameTickListener(OnCraftTick, 500);
+
+            _inventory.Pos = this.Pos;
+            _inventory.LateInitialize($"{InventoryClassName}-{this.Pos.X}/{this.Pos.Y}/{this.Pos.Z}", api);
+        }
+
+        public void OnCraftTick(float dt)
+        {
+            if (IsBurning || IsSmoldering)
+            {
+                if (Api.Side == EnumAppSide.Client)
+                {
+                    _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+                    //MarkDirty();
+                }
+            }
+
+        }
+
+        public override void ToTreeAttributes(ITreeAttribute tree)
+        {
+            base.ToTreeAttributes(tree);
+            ITreeAttribute invtree = new TreeAttribute();
+            this._inventory.ToTreeAttributes(invtree);
+            tree["inventory"] = invtree;
+        }
+
+        public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessorForResolve)
+        {
+            base.FromTreeAttributes(tree, worldAccessorForResolve);
+            _inventory.FromTreeAttributes(tree.GetTreeAttribute("inventory"));
+            if (Api?.Side == EnumAppSide.Client && _clientDialog != null)
+            {
+                _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+            }
+        }
+        
     }
 }

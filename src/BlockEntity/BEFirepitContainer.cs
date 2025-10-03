@@ -11,27 +11,29 @@ namespace AlchemicalRefinement
     {
         private ICoreClientAPI capi;
         private ICoreServerAPI sapi;
-        public float fuelHours;
-        public int firepitStage;
+        public float FuelHours;
+        public int FirepitStage;
         MeshData firepitMesh;
         double lastTickTotalHours;
         private float blockMaxTemperature = 750;
-        public float blockTemperature;
+        public float BlockTemperature;
     
         public override InventoryBase Inventory { get; }
         public override string InventoryClassName { get; }
+        
+        
         public override bool OnPlayerRightClick(IPlayer byPlayer, BlockSelection blockSel)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         /// <summary>
         /// If CanIgnite is changed this needs to be overidden to make it fit with the new firepitStage in that methode. 
         /// </summary>
-        public virtual bool IsBurning => firepitStage == 6 && fuelHours > 0;
-        public virtual bool IsSmoldering => firepitStage == 7 && fuelHours > -3;
+        public virtual bool IsBurning => FirepitStage == 6 && FuelHours > 0;
+        public virtual bool IsSmoldering => FirepitStage == 7 && FuelHours > -3 && BlockTemperature >= 10;
         
-        public static AssetLocation[] firepitShapeBlockCodes = new AssetLocation[]
+        public static AssetLocation[] FirepitShapeBlockCodes = new AssetLocation[]
         {
             null,
             new AssetLocation("firepit-construct1"),
@@ -49,15 +51,15 @@ namespace AlchemicalRefinement
             if (api.Side == EnumAppSide.Server)
             {
                 sapi = api as ICoreServerAPI;
-                RegisterGameTickListener(onFirepitBurnTick, 100);
+                RegisterGameTickListener(OnFirepitBurnTick, 100);
                 //_heatPerSecondBase = base.Block.Attributes["heatpersecond"].AsInt(0);
             }
             else
             {
                 capi = api as ICoreClientAPI;
-                RegisterGameTickListener(onFirepitBurnTick, 100);
-                loadFirepitMesh();
-                if (firepitStage == 6 && IsBurning)
+                RegisterGameTickListener(OnFirepitBurnTick, 100);
+                LoadFirepitMesh();
+                if (FirepitStage == 6 && IsBurning)
                 {
                     GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
                 }
@@ -78,28 +80,28 @@ namespace AlchemicalRefinement
         /// to change how this function Override the heatBlock function.
         /// </summary>
         /// <param name="dt"></param>
-        private void onFirepitBurnTick(float dt)
+        private void OnFirepitBurnTick(float dt)
         {
-            if (firepitStage == 6 && !IsBurning)
+            if (FirepitStage == 6 && !IsBurning)
             {
                 GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(false);
-                firepitStage++;
+                FirepitStage++;
                 MarkDirty(true);
             }
 
             if (IsBurning)
             {
-                heatBlock(dt);
+                HeatBlock(dt);
                 //blockTemperature += 3 * 1;
             } else if (IsSmoldering)
             {
-                coolBlock(dt);
+                CoolBlock(dt);
             }
 
             double dh = Api.World.Calendar.TotalHours - lastTickTotalHours;
             if (dh > 0.1f)
             {
-                if (IsBurning) fuelHours -= (float)dh;
+                if (IsBurning) FuelHours -= (float)dh;
                 lastTickTotalHours = Api.World.Calendar.TotalHours;
             }
             // to do add rest of function/methode See BEBoiler onBurnTick for more
@@ -109,17 +111,17 @@ namespace AlchemicalRefinement
         /// Calculation Function for Temperature of the block used for making the block hotter.
         /// </summary>
         /// <param name="dt"></param>
-        public virtual void heatBlock(float dt)
+        public virtual void HeatBlock(float dt)
         {
-            if (blockTemperature <= blockMaxTemperature)
+            if (BlockTemperature <= blockMaxTemperature)
             {
-                blockTemperature += dt * 8;
+                BlockTemperature += dt * 8;
             }
         }
 
-        public virtual void coolBlock(float dt)
+        public virtual void CoolBlock(float dt)
         {
-            if(blockTemperature >= 0) blockTemperature -= dt * 8;
+            if(BlockTemperature >= 0) BlockTemperature -= dt * 8;
         }
         
         
@@ -137,26 +139,28 @@ namespace AlchemicalRefinement
         {
             ItemSlot hotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
 
-            bool addGrass = hotbarSlot.Itemstack?.Collectible is ItemDryGrass && firepitStage == 0;
-            bool addFireWood = hotbarSlot.Itemstack?.Collectible is ItemFirewood && firepitStage >= 1 && firepitStage <= 4;
-            bool reignite = hotbarSlot.Itemstack?.Collectible is ItemFirewood && (firepitStage >= 5 && fuelHours <= 6f);
+            bool addGrass = hotbarSlot.Itemstack?.Collectible is ItemDryGrass && FirepitStage == 0;
+            bool addFireWood = hotbarSlot.Itemstack?.Collectible is ItemFirewood && FirepitStage >= 1 && FirepitStage <= 4;
+            bool reignite = hotbarSlot.Itemstack?.Collectible is ItemFirewood && (FirepitStage >= 5 && FuelHours <= 6f);
+            bool interactgui = hotbarSlot.Empty && (FirepitStage >= 5);
 
+            if (interactgui) OnPlayerRightClick(byPlayer, blockSel);
             if (addGrass || addFireWood || reignite)
             {
-                if (!reignite) firepitStage++;
-                else if (firepitStage == 7) firepitStage = 5;
+                if (!reignite) FirepitStage++;
+                else if (FirepitStage == 7) FirepitStage = 5;
 
                 MarkDirty(true);
                 hotbarSlot.TakeOut(1);
                 (byPlayer as IClientPlayer)?.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
-                Block block = Api.World.GetBlock(firepitShapeBlockCodes[firepitStage]);
+                Block block = Api.World.GetBlock(FirepitShapeBlockCodes[FirepitStage]);
                 if (block?.Sounds != null) Api.World.PlaySoundAt(block.Sounds.Place, Pos, 0, byPlayer);
             }
 
             if (addGrass) return true;
             if (addFireWood || reignite)
             {
-                fuelHours = Math.Max(2, fuelHours + 2);
+                FuelHours = Math.Max(2, FuelHours + 2);
                 return true;
             }
 
@@ -170,7 +174,7 @@ namespace AlchemicalRefinement
         /// <returns>true if It is at the right firepitStage</returns>
         public virtual bool CanIgnite()
         {
-            return firepitStage == 5;
+            return FirepitStage == 5;
         }
         
         /// <summary>
@@ -181,7 +185,7 @@ namespace AlchemicalRefinement
         {
             if (!CanIgnite()) return;
 
-            firepitStage++;
+            FirepitStage++;
             GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
 
             MarkDirty(true);
@@ -192,16 +196,16 @@ namespace AlchemicalRefinement
         /// Loads in the Mesh of the Firepit block,
         /// and assignes the mesh stage to the Mesh.
         /// </summary>
-        private void loadFirepitMesh()
+        private void LoadFirepitMesh()
         {
             if (Api.Side == EnumAppSide.Server) return;
-            if (firepitStage <= 0)
+            if (FirepitStage <= 0)
             {
                 firepitMesh = null;
                 return;
             }
 
-            Block block = Api.World.GetBlock(firepitShapeBlockCodes[firepitStage]);
+            Block block = Api.World.GetBlock(FirepitShapeBlockCodes[FirepitStage]);
             firepitMesh = capi.TesselatorManager.GetDefaultBlockMesh(block);
         }
         
@@ -209,22 +213,22 @@ namespace AlchemicalRefinement
         {
             base.FromTreeAttributes(tree, worldAccessorForResolve);
 
-            firepitStage = tree.GetInt("firepitConstructionStage");
+            FirepitStage = tree.GetInt("firepitConstructionStage");
             lastTickTotalHours = tree.GetDouble("lastTickTotalHours");
-            fuelHours = tree.GetFloat("fuelHours");
-            blockTemperature  = tree.GetFloat("blockTemperature");
+            FuelHours = tree.GetFloat("fuelHours");
+            BlockTemperature  = tree.GetFloat("blockTemperature");
 
-            if (Api != null) loadFirepitMesh();
+            if (Api != null) LoadFirepitMesh();
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
             base.ToTreeAttributes(tree);
 
-            tree.SetInt("firepitConstructionStage", firepitStage);
+            tree.SetInt("firepitConstructionStage", FirepitStage);
             tree.SetDouble("lastTickTotalHours", lastTickTotalHours);
-            tree.SetFloat("fuelHours", fuelHours);
-            tree.SetFloat("blockTemperature", blockTemperature);
+            tree.SetFloat("fuelHours", FuelHours);
+            tree.SetFloat("blockTemperature", BlockTemperature);
         }
         public override bool OnTesselation(ITerrainMeshPool mesher, ITesselatorAPI tessThreadTesselator)
         {

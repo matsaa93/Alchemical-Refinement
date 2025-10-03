@@ -23,9 +23,9 @@
 - [Mineral Expert place to find stuff about minerals](https://mineralexpert.org/articles?page=1)
 - [WebMineral another place to find info about minerals](https://webmineral.com/)
 - []()
-- []()
-- []()
-- []()
+- [Cupellation Wikipedia](https://en.wikipedia.org/wiki/Cupellation)
+- [Cupellation assay](https://www.britannica.com/science/assaying)
+- [Cupellation Metallurgist](https://www.911metallurgist.com/blog/cupellation-silver-assaying/)
 - []()
 - []()
 
