@@ -238,10 +238,10 @@ namespace AlchemicalRefinement
         {
             if (IsBurning || IsSmoldering)
             {
-                if (Api.Side == EnumAppSide.Client)
+                if (Api.Side == EnumAppSide.Server)
                 {
-                    _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
-                    //MarkDirty();
+                    //_clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+                    MarkDirty(true);
                 }
             }
 

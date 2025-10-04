@@ -82,7 +82,7 @@ namespace AlchemicalRefinement.Inventory
 
         public override float GetSuitability(ItemSlot sourceSlot, ItemSlot targetSlot, bool isMerge)
         {
-            if (targetSlot == _slots[0] && sourceSlot.Itemstack.Collectible.Attributes?["calcinationProps"] != null) return 4f;
+            //if (targetSlot == _slots[0] && sourceSlot.Itemstack.Collectible.Attributes?["calcinationProps"] != null) return 4f;
 
             return base.GetSuitability(sourceSlot, targetSlot, isMerge);
         }
