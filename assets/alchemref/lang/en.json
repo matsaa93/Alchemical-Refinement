@@ -1,6 +1,9 @@
 {
-  "game:smeltdesc-convertore-plural": "Calcinates into Calcinated Powdered Ore",
-  "alchemref:itemdesc-powdered-ore-*-raw": "Raw Needs to be calcinated to burn away some of the volatile impurities.",
+	"alchemref:block-calcinator-*": "Calcinator (WIP)",
+	"alchemref:gui-title-calcinator": "Calcinator (WIP)",
+	"alchemref:blockdesc-calcinator-*": "Calcinator (WIP): \n\r\n a work in progress block ment to replace the calcinating in firepit for now only have an invetory and GUI.",
+  	"game:smeltdesc-convertore-plural": "Calcinates into Calcinated Powdered Ore",
+  	"alchemref:itemdesc-powdered-ore-*-raw": "Raw Needs to be calcinated to burn away some of the volatile impurities.",
   	"alchemref:itemdesc-powdered-ore-*-calcinated": "Can be smelted into metal, or can be further refined with the Alchemical Process by crafting it into a block.",
 	"alchemref:itemdesc-powdered-ore-*-washed": "Can be smelted into metal, or can be further refined with the Alchemical Process.",
 	"alchemref:block-ore-pan-wooden": "Ore Washing Pan",

@@ -64,14 +64,6 @@ namespace AlchemicalRefinement
                     GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
                 }
             }
-
-            //RegisterGameTickListener(onBurnTick, 100);
-            //loadFirepitMesh();
-
-            //if (firepitStage == 6 && IsBurning)
-            //{
-            //    GetBehavior<BEBehaviorFirepitAmbient>()?.ToggleAmbientSounds(true);
-            //}
         }
         
         /// <summary>

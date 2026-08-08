@@ -30,7 +30,12 @@ namespace AlchemicalRefinement.RecipeSystem.Recipes
         /// <summary>
         /// The Required temperature for the craft to start
         /// </summary>
-        int CraftTemperature { get; set; }
+        int CraftTemperatureMin { get; set; }
+        
+        /// <summary>
+        /// The max temperature for the craft the item should not get higher that this or else it will fail craft
+        /// </summary>
+        int CraftTemperatureMax { get; set; }
         
         /// <summary>
         /// Custom Attributes for the Apparatus<br/>
@@ -70,7 +75,7 @@ namespace AlchemicalRefinement.RecipeSystem.Recipes
 
         /// <summary>
         /// Recipe Outputs in any order.<br/>
-        /// Typically of type VERecipeVariableOuput for VE variable-output recipes.
+        /// Typically of type ARRecipeVariableOuput for AR variable-output recipes.
         /// </summary>
         IRecipeOutput[] Outputs { get; }
         
