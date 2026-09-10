@@ -1,0 +1,20 @@
+{
+  "code": "rock-metamorphic",
+  "variants": [
+    {
+      "code": "phyllite"
+    },
+    {
+      "code": "slate"
+    },
+    {
+      "code": "whitemarble"
+    },
+    {
+      "code": "redmarble"
+    },
+    {
+      "code": "greenmarble"
+    }
+  ]
+}

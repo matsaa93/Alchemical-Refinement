@@ -21,14 +21,30 @@ FA_Create_oregen_patch(){
     #jq -r ".[].attributes.inblock.allowedVariants[]" assets/game/worldgen/deposits/metalore/azurite.json
     #jq -r ".[].attributes.placeblock.allowedVariantsByInBlock.\"rock-limestone\"[]" assets/game/worldgen/deposits/metalore/azurite.json
     local ore=$1
+    local child_deposits=$2
+    local variantsByInBLock=$3
     local file=assets/game/worldgen/deposits/metalore/$ore.json
     for rock in $(jq -r ".[].attributes.inblock.allowedVariants[]" $file); do
-        ##echo "rock: $rock"
+        #echo "rock: $rock"
         PATCH_OP_ADD_AV looseores-$ore-$rock-free blocktypes/stone/looseores >> /tmp/item-looseore.txt
-        for abondace in $(jq -r ".[].attributes.placeblock.allowedVariantsByInBlock.\"rock-$rock\"[]" $file); do
-            #print -r "ore-$abondace-$ore-$rock"
+        if [[ $child_deposits == true ]]
+        then
+          #echo "child_deposits"
+          for abondace in $(jq -r ".[].childDepostis[].attributes.placeblock.allowedVariants[]" $file); do
             PATCH_allowedvariants_ore $abondace-$ore-$rock
-        done
+          done
+        elif [[ $variantsByInBLock == false ]]; then
+          #echo "variantsByInBLock"
+            for abondace in $(jq -r ".[].attributes.placeblock.allowedVariants[]" $file); do
+              PATCH_allowedvariants_ore $abondace-$ore-$rock
+            done  
+        else
+          for abondace in $(jq -r ".[].attributes.placeblock.allowedVariantsByInBlock.\"rock-$rock\"[]" $file); do
+              #print -r "ore-$abondace-$ore-$rock"
+              #echo "allowedVariantsByInBlock"
+              PATCH_allowedvariants_ore $abondace-$ore-$rock
+          done
+        fi
     done
     cat /tmp/item-looseore.txt
     echo ""
@@ -40,6 +56,11 @@ FA_Create_oregen_patch(){
     rm -r /tmp/*txt
 }
 
-#FA_Create_oregen_patch azurite > tmp/azurite.json
-#FA_Create_oregen_patch cerussite > tmp/cerussite.json
-#FA_Create_oregen_patch smithsonite > tmp/smithsonite.json
+
+#FA_Create_oregen_patch siderite > tmp/siderite.json
+
+#FA_Create_oregen_patch nativeelectrum false true > tmp/nativeelectrum.json
+#FA_Create_oregen_patch quartz_nativeelectrum true false > tmp/quartz_nativeelectrum.json
+#FA_Create_oregen_patch azurite false true > tmp/azurite.json
+#FA_Create_oregen_patch cerussite false true > tmp/cerussite.json
+#FA_Create_oregen_patch smithsonite false true > tmp/smithsonite.json

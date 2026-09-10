@@ -10,10 +10,12 @@
 	"attributes": {
 		"heldItemPitchFollow": 0.5,
 		"panningDrops": {
-			"@.*-(nativecopper|azurite|malachite|cerussite|wulfenite|smithsonite|hemimorphite)": [
+			"@.*-(nativecopper|azurite|malachite|cerussite|wulfenite|smithsonite|hemimorphite|siderite|rhodochrosite)": [
 				{ "type": "item", "code": "alchemref:carbonate-copper-raw",  					"chance": { "avg": 0.15, "var": 0 } },
 				{ "type": "item", "code": "alchemref:carbonate-calcium-raw",  					"chance": { "avg": 0.15, "var": 0 } },
 				{ "type": "item", "code": "alchemref:carbonate-lead-raw",  						"chance": { "avg": 0.05, "var": 0 } },
+				{ "type": "item", "code": "alchemref:carbonate-manganese-raw",  				"chance": { "avg": 0.05, "var": 0 } },
+				{ "type": "item", "code": "alchemref:carbonate-iron-raw",  						"chance": { "avg": 0.05, "var": 0 } },
 				{ "type": "item", "code": "alchemref:carbonate-zinc-raw",				  		"chance": { "avg": 0.1, "var": 0 }  },
 				{ "type": "item", "code": "alchemref:nitrum-copper-raw",				  		"chance": { "avg": 0.1, "var": 0 }  },
 				{ "type": "item", "code": "alchemref:powdered-ore-wulfenite-washed", 			"chance": { "avg": 0.1, "var": 0 }  },
@@ -103,7 +105,7 @@
 				{ "type": "item", "code": "game:crushed-quartz", 								"chance": { "avg": 0.1, "var": 0 }  },
 				{ "type": "item", "code": "game:powder-sulfur",  								"chance": { "avg": 0.1, "var": 0 }  }
 			],
-			"@.*-(quartz_nativesilver|nativesilver|nativegold|quartz_nativegold|rhodochrosite|nativeplatinum|nativeelectrum)": [
+			"@.*-(quartz_nativesilver|nativesilver|nativegold|quartz_nativegold|nativeplatinum|nativeelectrum|quartz_nativeelectrum)": [
 				{ "type": "item", "code": "alchemref:powdered-ore-nativecopper-washed",  		"chance": { "avg": 0.05, "var": 0 } },
 				{ "type": "item", "code": "alchemref:powdered-ore-nativegold-washed",  			"chance": { "avg": 0.05, "var": 0 } },
 				{ "type": "item", "code": "alchemref:powdered-ore-nativesilver-washed",  		"chance": { "avg": 0.05, "var": 0 } },

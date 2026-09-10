@@ -1,0 +1,17 @@
+{
+  "code": "rock-igneous",
+  "variants": [
+    {
+      "code": "andesite"
+    },
+    {
+      "code": "granite"
+    },
+    {
+      "code": "peridotite"
+    },
+    {
+      "code": "basalt"
+    }
+  ]
+}

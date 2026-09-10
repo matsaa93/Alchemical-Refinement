@@ -1,0 +1,9 @@
+[
+  { "op": "add", "path": "/allowedVariants/-", "value": "ore-quartz-aragonite", "file": "game:blocktypes/stone/ore-ungraded.json" },
+  { "op": "add", "path": "/allowedVariants/-", "value": "ore-quartz-calcite", "file": "game:blocktypes/stone/ore-ungraded.json" },
+  { "op": "add", "path": "/allowedVariants/-", "value": "ore-quartz-dolomite", "file": "game:blocktypes/stone/ore-ungraded.json" },
+  
+  { "op": "add", "path": "/allowedVariants/-", "value": "looseores-quartz-aragonite-free", "file": "game:blocktypes/stone/looseores.json" },
+  { "op": "add", "path": "/allowedVariants/-", "value": "looseores-quartz-calcite-free", "file": "game:blocktypes/stone/looseores.json" },
+  { "op": "add", "path": "/allowedVariants/-", "value": "looseores-quartz-dolomite-free", "file": "game:blocktypes/stone/looseores.json" }
+]

@@ -2,12 +2,13 @@ using System;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.MathTools;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 
 namespace AlchemicalRefinement
 {
-    public class BEFirepitContainer : BlockEntityOpenableContainer, IFirePit
+    public class BEFirepitContainer : BlockEntityOpenableContainer, IFirePit, IHeatSource, ITemperatureSensitive
     {
         private ICoreClientAPI capi;
         private ICoreServerAPI sapi;
@@ -71,7 +72,7 @@ namespace AlchemicalRefinement
         /// It sets the Temperature with the heatBlock methode,
         /// to change how this function Override the heatBlock function.
         /// </summary>
-        /// <param name="dt"></param>
+        /// <param name="dt"> Time passed since last tick or block load</param>
         private void OnFirepitBurnTick(float dt)
         {
             if (FirepitStage == 6 && !IsBurning)
@@ -101,8 +102,10 @@ namespace AlchemicalRefinement
 
         /// <summary>
         /// Calculation Function for Temperature of the block used for making the block hotter.
+        /// can also be changed as it is virtual and possible to use for anything you want to happen,
+        /// when the block meets the IsBurning condition in the OnFirepitBurnTick methode.
         /// </summary>
-        /// <param name="dt"></param>
+        /// <param name="dt"> Time passed since last tick or block load</param>
         public virtual void HeatBlock(float dt)
         {
             if (BlockTemperature <= blockMaxTemperature)
@@ -111,12 +114,46 @@ namespace AlchemicalRefinement
             }
         }
 
+        /// <summary>
+        /// Calculation Function for Temperature when the block is cooling.
+        /// can also be changed as it is virtual and possible to use for anything you want to happen,
+        /// when the block meets the IsSmoldering condition in the OnFirepitBurnTick methode.
+        /// </summary>
+        /// <param name="dt"> Time passed since last tick or block load</param>
         public virtual void CoolBlock(float dt)
         {
             if(BlockTemperature >= 0) BlockTemperature -= dt * 8;
         }
+        public float GetHeatStrength(IWorldAccessor world, BlockPos heatSourcePos, BlockPos heatReceiverPos)
+        {
+            return IsBurning ? 10 : (IsSmoldering ? 0.25f : 0);
+        }
+
+        public void CoolNow(float amountRel, OnStackToCool onStackToCoolCallback)
+        {
+            Api.World.PlaySoundAt(new AssetLocation("sounds/effect/extinguish"), Pos, -0.5, null, false, 16);
+            
+            //TODO: impliment CoolNow fully replace or Add to Cool block.
+            //fuelBurnTime -= (float)amountRel / 10f;
+
+            /*if (Api.World.Rand.NextDouble() < amountRel / 5f || fuelBurnTime <= 0)
+            {
+                setBlockState("cold");
+                extinguishedTotalHours = -99;
+                canIgniteFuel = false;
+                fuelBurnTime = 0;
+                maxFuelBurnTime = 0;
+            }*/
+
+            MarkDirty(true);
+        }
+
+        public bool IsHot { get; }
         
-        
+        public virtual float BurnDurationModifier
+        {
+            get { return 1f; }
+        }
         
         
         /// <summary>
@@ -157,6 +194,12 @@ namespace AlchemicalRefinement
             }
 
             return false;
+        }
+
+        public virtual void AddFuel(ItemStack stack)
+        {
+            CombustibleProperties fuelCopts = stack.Collectible.GetCombustibleProperties(Api.World, stack as ItemStack, null);
+            FuelHours = fuelCopts.BurnDuration * BurnDurationModifier;
         }
         
         /// <summary>
@@ -228,6 +271,8 @@ namespace AlchemicalRefinement
 
             return base.OnTesselation(mesher, tessThreadTesselator);
         }
+
+        
     }
 }
 

@@ -36,6 +36,20 @@
 			"ore": { "base": "alchemref:item/resource/powder/ore/{ore}7" }
 		}
 	},
+	"attributes": {
+		"calcinationPropsByType": {
+			"*-raw": {
+				"CalcinationPoint": 150,
+				"CalcinationDuration": 30,
+				"CalcinationRatio": 1,
+				"CalcinationType": "Roast",
+				"CalcinatedStack": {
+					"type": "item",
+					"code": "alchemref:powdered-ore-{ore}-calcinated"
+				}
+			}
+		}
+	},
 	"shape": { "base": "alchemref:item/resource/powder/powdered-{calcinated}" },
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"dimensions": { "width": 0.0625, "height": 0.0625, "length": 0.0625 },
@@ -215,6 +229,18 @@
 			"smeltedRatio": 14,
 			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
 		},
+		"*-siderite-calcinated": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 16,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
+		"*-siderite-washed": {
+			"meltingPoint": 1482,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ironbloom" }
+		},
 		"*-cerussite-calcinated": {
 			"meltingPoint": 327,
 			"meltingDuration": 30,
@@ -346,6 +372,30 @@
 			"meltingDuration": 30,
 			"smeltedRatio": 14,
 			"smeltedStack": { "type": "item", "code": "game:ingot-gold" }
+		},
+		"*-quartz_nativeelectrum-calcinated": {
+			"meltingPoint": 1182,
+			"meltingDuration": 30,
+			"smeltedRatio": 16,
+			"smeltedStack": { "type": "item", "code": "game:ingot-electrum" }
+		},
+		"*-quartz_nativeelectrum-washed": {
+			"meltingPoint": 1182,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-electrum" }
+		},
+		"*-nativeelectrum-calcinated": {
+			"meltingPoint": 1182,
+			"meltingDuration": 30,
+			"smeltedRatio": 16,
+			"smeltedStack": { "type": "item", "code": "game:ingot-electrum" }
+		},
+		"*-nativeelectrum-washed": {
+			"meltingPoint": 1182,
+			"meltingDuration": 30,
+			"smeltedRatio": 14,
+			"smeltedStack": { "type": "item", "code": "game:ingot-electrum" }
 		},
 		"*-franckeite-calcinated": {
 			"meltingPoint": 232,

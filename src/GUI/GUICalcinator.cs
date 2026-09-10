@@ -14,7 +14,9 @@ namespace AlchemicalRefinement.GUI
         private float _craftProgress;
         private float _blockTemp = 0;
         private float _fuelHours = 0;
+        //private string _attributeInfo;
         private long lastRedrawMs;
+        
         
         protected override double FloatyDialogPosition => 0.75;
 
@@ -27,6 +29,7 @@ namespace AlchemicalRefinement.GUI
             {
                 _blockTemp = _beCalcinator.BlockTemperature;
                 _fuelHours = _beCalcinator.FuelHours;
+                //_attributeInfo = _beCalcinator.AttributeInfo;
             }
 
             SetupDialog();
@@ -67,6 +70,8 @@ namespace AlchemicalRefinement.GUI
             ElementBounds fuelslotinset = ElementBounds.Fixed(58, 155 + titlebarheight, 58, 58);
             ElementBounds fuelslotbnd = ElementBounds.Fixed(63, 160 + titlebarheight, 48, 48);
 
+            ElementBounds attributetextbnds = ElementBounds.Fixed(5, 55 + titlebarheight, 148, 18);
+            
             ElementBounds textareainset = ElementBounds.Fixed(131, 155 + titlebarheight, 158, 58);
             //ElementBounds blocktemptextinset = ElementBounds.Fixed(58, 90 + titlebarheight, 221, 96);
             ElementBounds blocktemptextbnds = ElementBounds.Fixed(136, 160 + titlebarheight, 148, 18);
@@ -88,6 +93,7 @@ namespace AlchemicalRefinement.GUI
                 outputslotbnd1,
                 outputslotbnd2,
                 fuelslotinset,
+                //attributetextbnds,
                 textareainset,
                 //blocktemptextinset,
                 blocktemptextbnds,
@@ -130,6 +136,7 @@ namespace AlchemicalRefinement.GUI
                 .AddItemSlotGrid(Inventory, SendInvPacket,1, new int[] {5}, outputslotbnd2, "outputSlots2")
                 .AddInset(fuelslotinset, insetdepth, insetbrightness)
                 .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 0 }, fuelslotbnd, "fuelSlots")
+                //.AddDynamicText(GetAttributeInfo(), leftyellow, attributetextbnds, "attributeInfo")
                 .AddInset(textareainset, insetdepth, insetbrightness)
                 .AddDynamicText(GetTemperatureText(), leftyellow, blocktemptextbnds, "blockTemp")
                 .AddDynamicText(GetFuelHours(), leftyellow, fuelhourtextbnds, "fuelHours")
@@ -138,20 +145,27 @@ namespace AlchemicalRefinement.GUI
                 
         }
 
-        public void Update(float blocktemp, float fuelhours, float craftProgress)
+        public void Update(float blocktemp, float fuelhours, float craftProgress, string attributeinfo)
         {
             _blockTemp = blocktemp;
             _fuelHours = fuelhours;
             _craftProgress = craftProgress;
+            //_attributeInfo = attributeinfo;
+            
             if (!IsOpened()) return;
             if (base.SingleComposer != null)
             {
+                //SingleComposer.GetDynamicText("attributeInfo").SetNewText(GetAttributeInfo());
                 SingleComposer.GetDynamicText("blockTemp").SetNewText(GetTemperatureText());
                 SingleComposer.GetDynamicText("fuelHours").SetNewText(GetFuelHours());
             }
             
         }
 
+        /*private string GetAttributeInfo()
+        {
+            return Lang.Get("AttributeInfo: {0}", Lang.Get(_attributeInfo));
+        }*/
         private string GetFuelHours()
         {
             return Lang.Get("Fuel for {0:#.#} hours.", _fuelHours);

@@ -444,6 +444,39 @@
 	"alchemref:block-powdered-ore-*-bismuthinite": "Bismuthinite Ore-sand",
 	"alchemref:block-washed-powdered-ore-sand-bismuthinite": "Washed Bismuthinite Ore-sand",
 
+	"game:block-looseores-siderite-*": "Siderite ore bits",
+	"game:ore-siderite": "Siderite",
+	"game:block-ore-*-siderite-*": "Siderite ore",
+	"game:item-nugget-siderite": "Nugget (Siderite)",
+
+	"alchemref:item-powdered-ore-siderite-raw": "Raw Impure Powdered Siderite",
+	"alchemref:item-powdered-ore-siderite-calcinated": "Calcinated Powdered Siderite",
+	"alchemref:item-powdered-ore-siderite-washed": "Washed Powdered Siderite",
+	"alchemref:block-powdered-ore-*-siderite": "Siderite Ore-sand",
+	"alchemref:block-washed-powdered-ore-sand-siderite": "Washed Siderite Ore-sand",
+
+	"game:block-looseores-quartz_nativeelectrum-*": "Quartz with Nativeelectrum ore bits",
+	"game:ore-quartz_nativeelectrum": "Quartz with  Nativeelectrum",
+	"game:block-ore-*-quartz_nativeelectrum-*": "Quartz with Nativeelectrum ore",
+	"game:item-nugget-quartz_nativeelectrum": "Nugget (Quartz with Nativeelectrum)",
+
+	"alchemref:item-powdered-ore-quartz_nativeelectrum-raw": "Raw Impure Powdered Quartz with Nativeelectrum",
+	"alchemref:item-powdered-ore-quartz_nativeelectrum-calcinated": "Calcinated Powdered Quartz with Nativeelectrum",
+	"alchemref:item-powdered-ore-quartz_nativeelectrum-washed": "Washed Powdered Quartz with Nativeelectrum",
+	"alchemref:block-powdered-ore-*-quartz_nativeelectrum": "Quartz with Nativeelectrum Ore-sand",
+	"alchemref:block-washed-powdered-ore-sand-quartz_nativeelectrum": "Washed Quartz with Nativeelectrum Ore-sand",
+
+	"game:block-looseores-nativeelectrum-*": "Nativeelectrum ore bits",
+	"game:ore-nativeelectrum": "Nativeelectrum",
+	"game:block-ore-*-nativeelectrum-*": "Nativeelectrum ore",
+	"game:item-nugget-nativeelectrum": "Nugget (Nativeelectrum)",
+
+	"alchemref:item-powdered-ore-nativeelectrum-raw": "Raw Impure Powdered Nativeelectrum",
+	"alchemref:item-powdered-ore-nativeelectrum-calcinated": "Calcinated Powdered Nativeelectrum",
+	"alchemref:item-powdered-ore-nativeelectrum-washed": "Washed Powdered Nativeelectrum",
+	"alchemref:block-powdered-ore-*-nativeelectrum": "Nativeelectrum Ore-sand",
+	"alchemref:block-washed-powdered-ore-sand-nativeelectrum": "Washed Nativeelectrum Ore-sand",
+	
 	"game:block-looseores-azurite-*": "Azurite ore bits",
 	"game:ore-azurite": "Azurite",
 	"game:block-ore-*-azurite-*": "Azurite ore",

@@ -27,7 +27,8 @@
 - [Cupellation assay](https://www.britannica.com/science/assaying)
 - [Cupellation Metallurgist](https://www.911metallurgist.com/blog/cupellation-silver-assaying/)
 - []()
-- []()
+- [Unicode Database Alchemical Block](https://www.compart.com/en/unicode/block/U+1F700)
+- [Unicode Database](https://www.compart.com/en/unicode/)
 
 
 # Links for VS code help
@@ -36,7 +37,6 @@
 - [intagetext Markup Language (VTML)](https://wiki.vintagestory.at/index.php/VTML)
 - [Github for Vintage story Survival module](https://github.com/anegostudios/vssurvivalmod)
 - [Json CheatSheet](https://quickref.me/json.html)
-- []()
 - []()
 - []()
 - []()

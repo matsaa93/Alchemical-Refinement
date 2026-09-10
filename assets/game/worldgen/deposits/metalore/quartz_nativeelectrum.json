@@ -1,0 +1,38 @@
+[
+  {
+    "code": "quartz",
+    "triesPerChunk": 0.5,
+    "generator": "disc-anywhere",
+    "attributes": {
+      "inblock": { "code": "rock-*", "name": "rock", "allowedVariants": ["aragonite", "calcite", "dolomite", "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate"] },
+      "placeblock": { "code": "ore-quartz-{rock}" },
+      "surfaceBlock": { "code": "looseores-quartz-{rock}-free" },
+      "surfaceBlockChance": 0.1,
+      "radius": { "dist": "gaussian", "avg": 32, "var": 32 },
+      "yPosRel": {"dist": "uniform", "avg": 0.46, "var": 0.48 },
+      "gradedistribution": "RandomPlusDepthBonus",
+      "thickness": { "dist": "invexp", "avg": 1.2, "var": 3 }
+    },
+    "childDepostis": [
+      {
+        "code": "quartz_nativeelectrum",
+        "triesPerChunk": 6,
+        "handbookPageCode": "item-nugget-quartz_nativeelectrum",
+        "withOreMap": true,
+        "generator": "childdeposit-pointcloud",
+        "attributes": {
+          "randomTries": { "avg": 20 },
+          "placeblock": {
+            "code": "ore-*-quartz_nativeelectrum-{rock}",
+            "name": "grade",
+            "allowedVariants": ["poor", "medium", "rich", "bountiful"]
+          },
+          "surfaceBlock": { "code": "looseores-quartz_nativeelectrum-{rock}-free" },
+          "surfaceBlockChance": 0.1,
+          "radius": { "dist": "gaussian", "avg": 2, "var": 2 },
+          "thickness": { "dist": "invexp", "avg":  2, "var": 1}
+        }
+      }
+    ]
+  }
+]

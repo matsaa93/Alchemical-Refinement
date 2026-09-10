@@ -90,4 +90,6 @@ FA_LANG_ROCK(){
 #FA_LANG_ORE cerussite
 #FA_LANG_ORE azurite
 #FA_LANG_ORE smithsonite
-
+#FA_LANG_ORE siderite
+#FA_LANG_ORE nativeelectrum
+#FA_LANG_ORE quartz_nativeelectrum

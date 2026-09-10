@@ -1,16 +1,18 @@
 ﻿using System;
+using AlchemicalRefinement.API.Common;
 using Vintagestory.API.Common;
 using Vintagestory.Common;
 using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
 using Vintagestory.API.Config;
+using Vintagestory.API.MathTools;
 
 
 [assembly: ModInfo("AlchemicalRefinement",
     Authors = new string[] { "Matsaa93", "UnknownFutureGuy" },
     Description = "Extension to, Alchemy, Refining, and mining.",
-    Version = "0.4.1")]
+    Version = "0.4.2")]
 namespace AlchemicalRefinement
 {
     public class AlchemicalRefinementMod : ModSystem
@@ -31,9 +33,10 @@ namespace AlchemicalRefinement
 
             RegisterBlocks(api);
             RegisterBlockEntities(api);
-            //capi.ShowChatMessage("gayyy");
+            RegisterItems(api);
             //capi.Logger.StoryEvent("it is alchemical-refinement time story-event");
             //capi.Logger.Event("it is alchemical-refinement time event");
+            api.World.Logger.Event("The Emerald Formula is being Worked on..");
 
         }
         
@@ -44,6 +47,11 @@ namespace AlchemicalRefinement
         public void RegisterBlockEntities(ICoreAPI api)
         {
             api.RegisterBlockEntityClass("ARBECalcinator", typeof(BECalcinator));
+        }
+
+        public void RegisterItems(ICoreAPI api)
+        {
+            api.RegisterItemClass( "ItemAlchemical", typeof(ItemAlchemical));
         }
     }
      

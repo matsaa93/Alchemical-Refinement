@@ -348,13 +348,14 @@ F_MASK_blackout_ore(){
 # F_TEXTURE_NUGGET "56,28,15" "199,153,129" "174,138,112" cerussite
 #F_TEXTURE_NUGGET "0,95,114" "90,136,162" "42,139,155" smithsonite
 #F_TEXTURE_NUGGET "37,42,22" "42,139,155" "90,136,162" smithsonite
+#F_TEXTURE_NUGGET "136,93,76" "139,56,38" "228,209,190" siderite
 
 #F_MASK_TEXTURE_FILES_ORE
 #F_MASK_blackout_ore
-# F_TEXTURE_MASK_MAKE
-F_TEXTURE_ROCK dolomite "205,185,185"
-F_TEXTURE_ROCK calcite "205,205,165"
-F_TEXTURE_ROCK aragonite "193,154,107"
+#F_TEXTURE_MASK_MAKE
+#F_TEXTURE_ROCK dolomite "205,185,185"
+#F_TEXTURE_ROCK calcite "205,205,165"
+#F_TEXTURE_ROCK aragonite "193,154,107"
 
 # magick -size 32x32 xc:"rgb(193,154,107)" \
 #           -stroke xc:"rgb(193,154,0)"    -strokewidth 15 -draw 'line 5,50 65,50' \

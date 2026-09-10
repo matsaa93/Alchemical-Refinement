@@ -2,11 +2,14 @@ changed:
 
 
 added:
-calcinator block (WIP) not yet functional just a shell block with an inventory and GUI
-started coding on the more advanced stuff.
+nativeelectrum
+quartz_nativeelectrum
+siderite
 
 to worldgen:
-
+nativeelectrum
+quartz_nativeelectrum
+siderite
 
 variant files added: 
 
@@ -20,19 +23,18 @@ Bugs detected:
 Fixed: 
 
 
-TODO:{
+TODO:
     add mineral:
-    siderite
-    barite
+    barite has to have a reson for barium to be added
     bornite
     pyrolusite
     arsenopyrite
     argentite
-    nativeelectrum
-    quartz_nativeelectrum
     anglesite
     calamine
+    hydrozincite
     
+TODO: Nitrate Minerals
     nitrate minerals:
     nitre or niter (saltpetre) 
     nitratine or nitratite
@@ -40,22 +42,48 @@ TODO:{
     likasite
     nitrocalcite (forms in limestone mines and caverns)
 
-    carbonate minerals:
-    Spherocobaltite
-    gaspeite
+ TODO: Carbonate Minerals
+    carbonate minerals: needs to be made so they get converted to cabonate after washing
+    Spherocobaltite needs to add Cobalt first
+    gaspeite will be ungraded ore
     Malachite
     azurite
     Cerussite
     Hydrozincite
     Natrona
+    zaratite
+    vatenite
+    strontianite
+    pirssonite
+    magnesite
+    gaylussite
+    dawsonite
+    bismutite
+    aurichalcite
+    hydrozincite Spawns in  smithsonite, hemimorphite, willemite, cerussite, aurichalcite, calcite and limonite.
 
+TODO: Texture
     Create new textures:
     Salis
     Carbonate
     Nitrum
     currently uses quartz as texture but needs its own.
-}
+    
+TODO: Quartz 
+    when Quartz ore is washed becomes nativeversion of ore.
+    
+TODO: Worldgen
+    Gypsum spawn rock: { "dolomite", "calcite", "chalk", "limestone", "Aragonite" }
 
+TODO:
+    make potions and poisons 
+    
+TODO: 
+    Make ThermalProperties for material burnvalues and specific heat
+    make is so the materials burnvalue gets higher with temperature
+    the max value will be at the max temperature.
+    for peat: burnvalue HHV for kj /kg (28644.10-20107.58), LHV for Kj/kg (25404.10-16867.58)
+    similar with the specific heat, it will have a range.
 add "@.*-(limonite|hematite|quartz_.*|pentlandite)-.*" to the ore "panning drop" in the ore-washing pan and for the ore blocks drop where
 
 Pyrolusite is extensively used for the manufacture of spiegeleisen and ferromanganese and of various alloys such as manganese-bronze. 
@@ -68,12 +96,7 @@ chalk
 limestone
 Aragonite
 
-Gypsum spawn rock:
-dolomite
-calcite
-chalk
-limestone
-Aragonite
+
 <a href=\"handbook://alchemical--handbook\">TEXT</a>
 <a href=\"handbook://block-alchemref:ore-pan-wooden\">Ore Washing Pan</a> 
 
@@ -125,3 +148,31 @@ Aragonite
             "thickness": { "dist": "invexp", "avg": 2.5, "var": 6 }
         }
     },
+    
+Sedimentary rock types are:
+
+    Claystone
+    Sandstone
+    Chert
+    Shale
+    Conglomerate
+    Bauxite
+    Chalk
+    Limestone
+
+Metamorphic rocks
+
+Metamorphic rock is usually found under sedimentary rock but above igneous rock. Metamorphic rock types include:
+
+    Phyllite
+    Slate
+    Marble (found as deposits in phyllite or slate)
+
+Igneous rock
+
+Igneous rock is usually found underneath sedimentary and metamorphic rock. Basalt is an exception to this, as it can appear above any other rock layer. Igneous rocks are hard and well-suited to toolmaking, as well as for use in querns. Igneous rock types include:
+
+    Andesite
+    Granite
+    Peridotite
+    Basalt

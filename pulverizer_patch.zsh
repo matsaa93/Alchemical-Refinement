@@ -190,6 +190,15 @@ FA_Variants_file(){
 
 #vargruop="vitriol"
 #FA_Variants_file "red" "green" "blue" "white" "sweet" "glauber" "argentum" "dutch_white" "gypsum" "turpeth" "epsomite" "alunogen" "celestine" "angelesite"
+ 
+# vargruop="rock-sedementary"
+# FA_Variants_file "Claystone" "Sandstone" "Chert" "Shale" "Conglomerate" "Bauxite" "Chalk" "Limestone" "dolomite" "calcite" "aragonite" > tmp/rock-sedementary.json
+ 
+# vargruop="rock-igneous"
+# FA_Variants_file "Andesite" "Granite" "Peridotite" "Basalt" > tmp/rock-igneous.json
+ 
+# vargruop="rock-metamorphic"
+# FA_Variants_file "Phyllite" "Slate" "whitemarble" "redmarble" "greenmarble" > tmp/rock-metamorphic.json
 
 # FA_combustion_prop_file
 

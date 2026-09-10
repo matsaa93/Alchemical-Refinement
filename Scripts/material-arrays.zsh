@@ -55,6 +55,7 @@ F_array_material_set(){
 F_array_test(){
     F_array_material_set bismuthinite bismuth 2 1.8 271
     F_array_material_set azurite copper 2 1.5 1084
+    F_array_material_set siderite ironbloom 2 1.5 1482
     F_array_material_set chalcopyrite copper 2 1 1084
     F_array_material_set chalcocite copper 2 1 1084
     F_array_material_set tetrahedrite copper 2 1 1084
@@ -76,6 +77,8 @@ F_array_test(){
     F_array_material_set freibergite silver 2 1 961
     F_array_material_set nativegold gold 2 1 1063
     F_array_material_set quartz_nativegold gold 2 0.3 1063
+    F_array_material_set nativeelectrum electrum 2 1 1182
+    F_array_material_set quartz_nativeelectrum electrum 2 0.3 1182
 }
 F_array_test
 F_array_test_Geology_Addition(){

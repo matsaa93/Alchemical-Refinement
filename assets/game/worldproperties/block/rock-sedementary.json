@@ -1,0 +1,38 @@
+{
+  "code": "rock-sedementary",
+  "variants": [
+    {
+      "code": "claystone"
+    },
+    {
+      "code": "sandstone"
+    },
+    {
+      "code": "chert"
+    },
+    {
+      "code": "shale"
+    },
+    {
+      "code": "conglomerate"
+    },
+    {
+      "code": "bauxite"
+    },
+    {
+      "code": "chalk"
+    },
+    {
+      "code": "limestone"
+    },
+    {
+      "code": "dolomite"
+    },
+    {
+      "code": "calcite"
+    },
+    {
+      "code": "aragonite"
+    }
+  ]
+}

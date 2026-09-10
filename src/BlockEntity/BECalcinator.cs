@@ -1,4 +1,5 @@
 using System;
+using AlchemicalRefinement.API.Common;
 using AlchemicalRefinement.GUI;
 using Vintagestory.API.Client;
 using Vintagestory.API.Server;
@@ -11,32 +12,6 @@ using Vintagestory.API.Config;
 
 namespace AlchemicalRefinement
 {
-    public class CalcinatableProps
-    {
-        /// <summary>
-        /// <!--<jsonoptional>Recommended</jsonoptional><jsondefault>0</jsondefault>-->
-        /// If set, this is the resulting itemstack once the CalcinationPoint has been reached for the supplied duration.
-        /// </summary>
-        public JsonItemStack CalcinatedStack;
-
-        /// <summary>
-        /// <!--<jsonoptional>Optional</jsonoptional><jsondefault>0</jsondefault>-->
-        /// If there is a melting point, the max temperature it can reach. A value of 0 implies no limit.
-        /// </summary>
-        public float MaxTemperature;
-
-        /// <summary>
-        /// <!--<jsonoptional>Recommended</jsonoptional><jsondefault>0</jsondefault>-->
-        /// How many degrees celsius it takes to Calcinate/transform this collectible into another. Required if <see cref="CalcinatedStack"/> is set.
-        /// </summary>
-        public float CalcinationPoint;
-
-        /// <summary>
-        /// <!--<jsonoptional>Recommended</jsonoptional><jsondefault>0</jsondefault>-->
-        /// For how many seconds the temperature has to be above the melting point until the item is smelted. Recommended if <see cref="CalcinatedStack"/> is set.
-        /// </summary>
-        public float CalcinationDuration;
-    }
 
     public class BECalcinator : BEFirepitContainer //BlockEntityOpenableContainer, IFirePit
     {
@@ -48,6 +23,7 @@ namespace AlchemicalRefinement
         float calcinationAccum;
         private float calcinatorTemp;
         private float calcinatoinProgress = 0;
+        public string AttributeInfo;
 
         #region Invetory
         private InventoryCalcinator _inventory;
@@ -103,7 +79,7 @@ namespace AlchemicalRefinement
 
         public bool FuelSlotsEmpty
         {
-            get { return _inventory[1].Empty; }
+            get { return _inventory[0].Empty; }
         }
 
         
@@ -131,14 +107,14 @@ namespace AlchemicalRefinement
         {
             get
             {
-                return _inventory[0]?.Itemstack;
+                return _inventory[1]?.Itemstack;
             }
         }
         public ItemStack OutputStack
         {
             get
             {
-                return _inventory[1]?.Itemstack;
+                return _inventory[4]?.Itemstack;
             }
         }
         #endregion
@@ -187,11 +163,47 @@ namespace AlchemicalRefinement
             }
         }
 
-        public CalcinatableProps CalcinProps
+        public CalcinationProperties CalcinationProps
         {
             get
             {
-                return InputStack?.ItemAttributes?["calcinationProps"].AsObject<CalcinatableProps>();
+                return InputStack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            }
+        }
+
+        public virtual CalcinationProperties GetCalcinationProperties(ItemStack stack)//ItemSlot input)
+        { // calcinationPropsByType
+            //return input.Itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>(); //itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            var props = stack?.ItemAttributes?["calcinationProps"].Exists == true ? stack.ItemAttributes["calcinationProps"].AsObject<CalcinationProperties>(null, stack.Collectible.Code.Domain) : null;
+            props?.CalcinatedStack?.Resolve(Api.World, "Calcinatable Properties CalcinatedStack", stack.Collectible.Code);
+            return  props;
+        }
+        public string getAttributeInfo(int slot)
+        {
+            var props = GetCalcinationProperties(InputSlots[0].Itemstack);
+            //var props = CalcinationProps;
+            return props.CalcinatedStack?.Code.ToString();
+        }
+
+        public bool CanCalcinate()
+        {
+            CalcinationProperties calcinProps = GetCalcinationProperties(InputSlots[0].Itemstack);
+            return calcinProps != null;
+        }
+
+        protected void CalcinateInput()
+        {
+            if (GetCalcinationProperties(InputSlots[0].Itemstack).CalcinatedStack != null)
+            {
+                CalcinationProperties  calcinProps = GetCalcinationProperties(InputSlots[0].Itemstack);
+                Api.World.Logger.Warning("CalcinatedStack Is Real not a null referance at least");
+                ItemStack calcinStack = calcinProps.CalcinatedStack.ResolvedItemStack.Clone();
+                if (calcinStack != null && OutputSlots[0].Empty)
+                {
+                    OutputSlots[0].Itemstack = calcinStack;
+                    InputSlots[0].TakeOut(1);
+                    InputSlots[0].MarkDirty();
+                }
             }
         }
 
@@ -217,7 +229,7 @@ namespace AlchemicalRefinement
             {
                 toggleInventoryDialogClient(byPlayer, () => {
                     _clientDialog = new GUICalcinator(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
-                    _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+                    _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress, AttributeInfo);
                     return _clientDialog;
                 });
             }
@@ -234,10 +246,22 @@ namespace AlchemicalRefinement
             _inventory.LateInitialize($"{InventoryClassName}-{this.Pos.X}/{this.Pos.Y}/{this.Pos.Z}", api);
         }
 
+        
+
         public void OnCraftTick(float dt)
         {
             if (IsBurning || IsSmoldering)
             {
+                //InputSlots[1].Itemstack;
+                //var calsin = GetCalcinationProperties(null, InputSlots[1].Itemstack, null);
+                if (CanCalcinate())
+                {
+                    //AttributeInfo = getAttributeInfo(1);
+                    Api.World.Logger.Warning("GetCalcinationProperties Is Real not a null referance at least");
+                    CalcinateInput();
+                }
+                //AttributeInfo = getAttributeInfo(1);
+                //CalcinateInput();
                 if (Api.Side == EnumAppSide.Server)
                 {
                     //_clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
@@ -253,15 +277,17 @@ namespace AlchemicalRefinement
             ITreeAttribute invtree = new TreeAttribute();
             this._inventory.ToTreeAttributes(invtree);
             tree["inventory"] = invtree;
+            //AttributeInfo = tree.GetString("attributeInfo");
         }
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessorForResolve)
         {
             base.FromTreeAttributes(tree, worldAccessorForResolve);
             _inventory.FromTreeAttributes(tree.GetTreeAttribute("inventory"));
+            //tree.SetString("attributeInfo", AttributeInfo);
             if (Api?.Side == EnumAppSide.Client && _clientDialog != null)
             {
-                _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress);
+                _clientDialog.Update(BlockTemperature, FuelHours, calcinatoinProgress, AttributeInfo);
             }
         }
         

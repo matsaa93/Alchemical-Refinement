@@ -1,0 +1,23 @@
+[
+	{
+		"code": "nativeelectrum",
+		"triesPerChunk": 0.5,
+		"withOreMap": true,
+		"handbookPageCode": "item-nugget-nativeelectrum",
+		"generator": "disc-followsurface",
+		"attributes": {
+			"inblock": { "code": "rock-*", "name": "rock", "allowedVariants": ["aragonite", "calcite", "dolomite", "andesite", "chalk", "chert", "conglomerate", "limestone", "claystone", "granite", "sandstone", "shale", "basalt", "peridotite", "phyllite", "slate"] },
+			"placeblock": {
+				"code": "ore-*-nativeelectrum-{rock}",
+				"name": "grade",
+				"allowedVariants": ["poor", "medium", "rich", "bountiful"]
+			},
+			"surfaceBlock": { "code": "looseores-nativeelectrum-{rock}-free" },
+			"surfaceBlockChance": 0.1,
+			"radius": { "dist": "gaussian", "avg": 7, "var": 3 },
+			"yPosRel": {"dist": "uniform", "avg": 0.46, "var": 0.48 },
+			"gradedistribution": "RandomPlusDepthBonus",
+			"thickness": { "dist": "stronginvexp", "avg": 1, "var": 2 }
+		}
+	}
+]

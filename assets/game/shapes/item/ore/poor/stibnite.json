@@ -6,7 +6,7 @@
 	"textureWidth": 16,
 	"textureHeight": 16,
 	"textures": {
-		"ore": "block/stone/ore/stibnite3"
+		"ore": "block/stone/ore/stibnite1"
 	},
 	"elements": [
 		{
