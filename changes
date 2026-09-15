@@ -1,7 +1,13 @@
 changed:
-
+improved calcinator block
 
 added:
+ThermalProperties added to vanilla common fuels(coal, Peat, Firewood)
+CalcinationProperties added
+ItemAlchemical
+CollectibleAlchemical
+
+added ores:
 nativeelectrum
 quartz_nativeelectrum
 siderite
@@ -10,6 +16,8 @@ to worldgen:
 nativeelectrum
 quartz_nativeelectrum
 siderite
+
+Patched:
 
 variant files added: 
 
@@ -78,12 +86,6 @@ TODO: Worldgen
 TODO:
     make potions and poisons 
     
-TODO: 
-    Make ThermalProperties for material burnvalues and specific heat
-    make is so the materials burnvalue gets higher with temperature
-    the max value will be at the max temperature.
-    for peat: burnvalue HHV for kj /kg (28644.10-20107.58), LHV for Kj/kg (25404.10-16867.58)
-    similar with the specific heat, it will have a range.
 add "@.*-(limonite|hematite|quartz_.*|pentlandite)-.*" to the ore "panning drop" in the ore-washing pan and for the ore blocks drop where
 
 Pyrolusite is extensively used for the manufacture of spiegeleisen and ferromanganese and of various alloys such as manganese-bronze. 

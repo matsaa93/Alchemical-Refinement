@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/thermalProps",
+    "value": {
+      "SpecificHeatCapacity": 1.2,
+      "WeightInKg": 13,
+      "SpecificBurnValueMin": 13400,
+      "SpecificBurnValueMax": 16700
+    },
+    "file": "game:blocktypes/soil/peatbrick.json",
+    "side": "Server"
+  }
+]

@@ -12,7 +12,7 @@
     "calcinationPropsByType": {
       "test-nugget-nativegold": {
         "CalcinationPoint": 150,
-        "CalcinationDuration": 30,
+        "CalcinationEnergy": 30,
         "CalcinationRatio": 1,
         "CalcinationType": "Roast",
         "CalcinatedStack": {
@@ -22,7 +22,7 @@
       },
       "test-nugget-nativecopper": {
         "CalcinationPoint": 150,
-        "CalcinationDuration": 30,
+        "CalcinationEnergy": 30,
         "CalcinationRatio": 1,
         "CalcinationType": "Reaction",
         "OxidizerStack": {
@@ -40,7 +40,7 @@
       },
       "test-nugget-*": {
         "CalcinationPoint": 150,
-        "CalcinationDuration": 30,
+        "CalcinationEnergy": 30,
         "CalcinationRatio": 1,
         "CalcinationType": "Roast",
         "CalcinatedStack": {

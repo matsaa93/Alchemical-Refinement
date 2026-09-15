@@ -9,6 +9,11 @@ namespace AlchemicalRefinement.API.Common
         /// Information about the burnable states
         /// </summary>
         public CalcinationProperties CalcinationProps = null;
+        
+        /// <summary>
+        /// Information About Thermal Abilities 
+        /// </summary>
+        public ThermalProperties ThermalProps = null;
 
         /// <summary>
         /// Should return the burnable properties of the item/block
@@ -17,10 +22,13 @@ namespace AlchemicalRefinement.API.Common
         /// <param name="itemstack">Set if its an itemstack for which to get properties</param>
         /// <param name="pos">May be null</param>
         /// <returns></returns>
-        public virtual CalcinationProperties GetCalcinationProperties(IWorldAccessor world, ItemStack itemstack,
+        public virtual CalcinationProperties GetCalcinationProperties(IWorldAccessor world, ItemStack stack,
             BlockPos pos)
         {
-            return itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            //return itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            var props = stack?.ItemAttributes?["calcinationProps"].Exists == true ? stack.ItemAttributes["calcinationProps"].AsObject<CalcinationProperties>(null, stack.Collectible.Code.Domain) : null;
+            props?.CalcinatedStack?.Resolve(world, "Calcinatable Properties CalcinatedStack", stack.Collectible.Code);
+            return  props;
         }
         //TODO: maybe add GetHeldItemInfo see if that is needed.
 
@@ -45,11 +53,11 @@ namespace AlchemicalRefinement.API.Common
         /// <param name="calcinationSlotsProvider"></param>
         /// <param name="inputSlot"></param>
         /// <returns></returns>
-        public virtual float GetCalcinationDuration(IWorldAccessor world, ISlotProvider calcinationSlotsProvider,
+        public virtual float GetCalcinationEnergy(IWorldAccessor world, ISlotProvider calcinationSlotsProvider,
             ItemSlot inputSlot)
         {
             CalcinationProperties calcinationProps = GetCalcinationProperties(world, inputSlot?.Itemstack, null);
-            return calcinationProps == null ? 0 : calcinationProps.CalcinationDuration;
+            return calcinationProps == null ? 0 : calcinationProps.CalcinationEnergy;
         }
         
         /// <summary>

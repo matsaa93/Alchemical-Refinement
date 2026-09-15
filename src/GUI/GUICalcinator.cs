@@ -13,7 +13,7 @@ namespace AlchemicalRefinement.GUI
         private BECalcinator _beCalcinator;
         private float _craftProgress;
         private float _blockTemp = 0;
-        private float _fuelHours = 0;
+        private float _fuelBurnTime = 0;
         //private string _attributeInfo;
         private long lastRedrawMs;
         
@@ -28,7 +28,7 @@ namespace AlchemicalRefinement.GUI
             if (_beCalcinator != null)
             {
                 _blockTemp = _beCalcinator.BlockTemperature;
-                _fuelHours = _beCalcinator.FuelHours;
+                _fuelBurnTime = _beCalcinator.fuelBurnTime;
                 //_attributeInfo = _beCalcinator.AttributeInfo;
             }
 
@@ -138,17 +138,17 @@ namespace AlchemicalRefinement.GUI
                 .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 0 }, fuelslotbnd, "fuelSlots")
                 //.AddDynamicText(GetAttributeInfo(), leftyellow, attributetextbnds, "attributeInfo")
                 .AddInset(textareainset, insetdepth, insetbrightness)
-                .AddDynamicText(GetTemperatureText(), leftyellow, blocktemptextbnds, "blockTemp")
-                .AddDynamicText(GetFuelHours(), leftyellow, fuelhourtextbnds, "fuelHours")
+                .AddDynamicText(GetTemperatureText(), leftyellow, blocktemptextbnds, "blockTemperature")
+                .AddDynamicText(GetFuelBurnTime(), leftyellow, fuelhourtextbnds, "fuelBurnTime")
                 .EndChildElements()
                 .Compose(true);
                 
         }
 
-        public void Update(float blocktemp, float fuelhours, float craftProgress, string attributeinfo)
+        public void Update(float blocktemp, float burnTime, float craftProgress, string attributeinfo)
         {
             _blockTemp = blocktemp;
-            _fuelHours = fuelhours;
+            _fuelBurnTime = burnTime;
             _craftProgress = craftProgress;
             //_attributeInfo = attributeinfo;
             
@@ -156,8 +156,8 @@ namespace AlchemicalRefinement.GUI
             if (base.SingleComposer != null)
             {
                 //SingleComposer.GetDynamicText("attributeInfo").SetNewText(GetAttributeInfo());
-                SingleComposer.GetDynamicText("blockTemp").SetNewText(GetTemperatureText());
-                SingleComposer.GetDynamicText("fuelHours").SetNewText(GetFuelHours());
+                SingleComposer.GetDynamicText("blockTemperature").SetNewText(GetTemperatureText());
+                SingleComposer.GetDynamicText("fuelBurnTime").SetNewText(GetFuelBurnTime());
             }
             
         }
@@ -166,13 +166,13 @@ namespace AlchemicalRefinement.GUI
         {
             return Lang.Get("AttributeInfo: {0}", Lang.Get(_attributeInfo));
         }*/
-        private string GetFuelHours()
+        private string GetFuelBurnTime()
         {
-            return Lang.Get("Fuel for {0:#.#} hours.", _fuelHours);
+            return Lang.Get("Fuel: {0:#.#} Sec.", _fuelBurnTime);
         }
         private string GetTemperatureText()
         {
-            return Lang.Get("Temperature: {0}°C", (int)_blockTemp);
+            return Lang.Get("Temp: {0}°C", (int)_blockTemp);
         }
         private void OnTitleBarClosed()
         {
@@ -189,7 +189,7 @@ namespace AlchemicalRefinement.GUI
             base.OnGuiOpened();
             Inventory.SlotModified += OnSlotModified;
         }
-        private void OnSlotModified(int slotid)
+        private void OnSlotModified(int slotId)
         {
             capi.Event.EnqueueMainThreadTask(new Action(SetupDialog), "setupcalcinatordlg");
         }

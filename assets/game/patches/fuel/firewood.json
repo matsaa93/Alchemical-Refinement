@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/thermalProps",
+    "value": {
+      "SpecificHeatCapacity": 1.7,
+      "WeightInKg": 13,
+      "SpecificBurnValueMin": 10300,
+      "SpecificBurnValueMax": 14600
+    },
+    "file": "game:itemtypes/resource/firewood.json",
+    "side": "Server"
+  }
+]

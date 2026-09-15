@@ -21,18 +21,18 @@ namespace AlchemicalRefinement.API.Common
             base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
             if (combustibleProps?.SmeltedStack != null)
             {
-                string smelttype = combustibleProps.SmeltingType.ToString().ToLowerInvariant();
-                int instacksize = combustibleProps.SmeltedRatio;
+                string smeltType = combustibleProps.SmeltingType.ToString().ToLowerInvariant();
+                int inStackSize = combustibleProps.SmeltedRatio;
                 if (combustibleProps.SmeltedStack.ResolvedItemstack != null)
                 {
-                    int outstacksize = combustibleProps.SmeltedStack.ResolvedItemstack.StackSize;
-                    float units = outstacksize * 100f / instacksize;
+                    int outStackSize = combustibleProps.SmeltedStack.ResolvedItemstack.StackSize;
+                    float units = outStackSize * 100f / inStackSize;
 
                     string metal = combustibleProps.SmeltedStack.ResolvedItemstack.Collectible?.Variant?["metal"];
-                    string metalname = Lang.Get("material-" + metal);
-                    if (metal == null) metalname = combustibleProps.SmeltedStack.ResolvedItemstack.GetName();
+                    string metalName = Lang.Get("material-" + metal);
+                    if (metal == null) metalName = combustibleProps.SmeltedStack.ResolvedItemstack.GetName();
 
-                    string str = Lang.Get("game:smeltdesc-" + smelttype + "ore-plural", units.ToString("0.#"), metalname);
+                    string str = Lang.Get("game:smeltdesc-" + smeltType + "ore-plural", units.ToString("0.#"), metalName);
                     dsc.AppendLine(str);
                 }
             }
@@ -46,11 +46,11 @@ namespace AlchemicalRefinement.API.Common
                 //int outcalsize = calcinationProps.CalcinatedStack.ResolvedItemstack;
                 string oresname = calcinationProps.CalcinatedStack.Code.ToString();
                 float orepoint = calcinationProps.CalcinationPoint;
-                float oreduration = calcinationProps.CalcinationDuration;
+                //float oreenergy = calcinationProps.CalcinationEnergy;
                 string oretype = calcinationProps.CalcinationType.ToString().ToLowerInvariant();
                 /*api.World.Logger.Warning("CalcinatedStack Code: {0}", oresname);
                 api.World.Logger.Warning("CalcinationType: {0}", oretype);
-                api.World.Logger.Warning("Calcination Duration: {0}", oreduration);
+                api.World.Logger.Warning("Calcination Energy: {0}", oreenergy);
                 api.World.Logger.Warning("CalcinatedStack Ratio: {0}", incalcsize);
                 api.World.Logger.Warning("Calcination Temperature: {0}", orepoint);*/
                 if (calcinationProps.OxidizerStack != null)
@@ -65,19 +65,6 @@ namespace AlchemicalRefinement.API.Common
                     api.World.Logger.Warning("CatalystStack Code: {0}", catalystname);
                 }
                 
-                
-                /*ItemStack orestack = calcinationProps.CalcinatedStack.ResolvedItemstack;
-                
-                if (orestack != null)
-                {
-                    string ore = calcinationProps.CalcinatedStack.ResolvedItemStack.Collectible?.Variant?["ore"];
-                    api.World.Logger.Warning("ore variant type: {0}", ore);
-                    string orename = Lang.Get("material-" + ore);
-                    if (ore == null) orename = calcinationProps.CalcinatedStack.ResolvedItemStack.GetName();
-                    api.World.Logger.Warning("ore name type: {0}", orename);
-                    string strr = Lang.Get("game:calcindesc-" + calcinationType + "-ore", orename, ore);
-                    dsc.AppendLine(strr);
-                }*/
             }
             
         }

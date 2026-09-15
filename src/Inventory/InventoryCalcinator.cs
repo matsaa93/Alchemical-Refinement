@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlchemicalRefinement.API.Common;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -82,7 +83,8 @@ namespace AlchemicalRefinement.Inventory
 
         public override float GetSuitability(ItemSlot sourceSlot, ItemSlot targetSlot, bool isMerge)
         {
-            //if (targetSlot == _slots[0] && sourceSlot.Itemstack.Collectible.Attributes?["calcinationProps"] != null) return 4f;
+            CalcinationProperties props = sourceSlot.Itemstack?.Collectible.Attributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            if (targetSlot == _slots[0] && props != null) return 4f;
 
             return base.GetSuitability(sourceSlot, targetSlot, isMerge);
         }

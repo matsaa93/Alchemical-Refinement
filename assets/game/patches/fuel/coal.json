@@ -1,0 +1,64 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/thermalProps",
+    "value": {
+      "SpecificHeatCapacity": 0.84,
+      "WeightInKg": 19,
+      "SpecificBurnValueMin": 24100,
+      "SpecificBurnValueMax": 30200
+    },
+    "file": "game:itemtypes/resource/charcoal.json",
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/thermalProps",
+    "value": {
+      "SpecificHeatCapacity": 1.26,
+      "WeightInKg": 54,
+      "SpecificBurnValueMin": 26200,
+      "SpecificBurnValueMax": 33400
+    },
+    "file": "game:itemtypes/resource/coke.json",
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/thermalProps",
+    "value": {
+      "SpecificHeatCapacity": 1.44,
+      "WeightInKg": 38,
+      "SpecificBurnValueMin": 5000,
+      "SpecificBurnValueMax": 13300
+    },
+    "file": "game:itemtypes/resource/coal-contaminated.json",
+    "side": "Server"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/thermalPropsByType",
+    "value": {
+      "*-anthracite": {
+        "SpecificHeatCapacity": 1.26,
+        "WeightInKg": 103,
+        "SpecificBurnValueMin": 28300,
+        "SpecificBurnValueMax": 35200
+      },
+      "*-lignite": {
+        "SpecificHeatCapacity": 1.57,
+        "WeightInKg": 47,
+        "SpecificBurnValueMin": 16300,
+        "SpecificBurnValueMax": 20300
+      },
+      "*-bituminouscoal": {
+        "SpecificHeatCapacity": 1.38,
+        "WeightInKg": 50,
+        "SpecificBurnValueMin": 22000,
+        "SpecificBurnValueMax": 33400
+      }
+    },
+    "file": "game:itemtypes/resource/ore-ungraded.json",
+    "side": "Server"
+  }
+]

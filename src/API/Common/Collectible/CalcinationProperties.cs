@@ -44,26 +44,10 @@ namespace AlchemicalRefinement.API.Common
     ///     "calcinationPropsByType": {
     ///	        "powdered-ore-*-raw": {
     ///		        "CalcinationPoint": 150,
-    ///		        "CalcinationDuration": 30,
+    ///		        "CalcinationEnergy": 30,
     ///		        "CalcinationRatio": 1,
     ///		        "CalcinationType": "Roast",
-    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated" }
-    ///	        }
-    ///     },
-    ///}
-    /// </code>
-    /// Reaction:
-    /// <code language="json">
-    ///"attributes": {
-    ///     "calcinationPropsByType": {
-    ///	        "powdered-ore-*-raw": {
-    ///		        "CalcinationPoint": 150,
-    ///		        "CalcinationDuration": 30,
-    ///		        "CalcinationRatio": 1,
-    ///		        "CalcinationType": "Reaction",
-    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated" },
-    ///             "CatalystStack": { "type": "item","code": "powdered-Catalyst" },
-    ///             "OxidizerStack": { "type": "item","code": "powdered-oxidizer" }
+    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated", "quantity": 1 }
     ///	        }
     ///     },
     ///}
@@ -71,14 +55,30 @@ namespace AlchemicalRefinement.API.Common
     /// Oxidation:
     /// <code language="json">
     ///"attributes": {
-    ///     "calcinationPropsByType": {
+    ///     "oxidationPropsByType": {
     ///	        "powdered-ore-*-raw": {
     ///		        "CalcinationPoint": 150,
-    ///		        "CalcinationDuration": 30,
+    ///		        "CalcinationEnergy": 30,
     ///		        "CalcinationRatio": 1,
     ///		        "CalcinationType": "Oxidation",
-    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated" },
-    ///             "OxidizerStack": { "type": "item","code": "powdered-oxidizer" }
+    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated", "quantity": 1 },
+    ///             "OxidizerStack": { "type": "item","code": "powdered-oxidizer", "quantity": 1 }
+    ///	        }
+    ///     },
+    ///}
+    /// </code>
+    /// Reaction:
+    /// <code language="json">
+    ///"attributes": {
+    ///     "reactionPropsByType": {
+    ///	        "powdered-ore-*-raw": {
+    ///		        "CalcinationPoint": 150,
+    ///		        "CalcinationEnergy": 30,
+    ///		        "CalcinationRatio": 1,
+    ///		        "CalcinationType": "Reaction",
+    ///		        "CalcinatedStack": { "type": "item","code": "powdered-ore-{ore}-calcinated", "quantity": 1 },
+    ///             "CatalystStack": { "type": "item","code": "powdered-Catalyst", "quantity": 1 },
+    ///             "OxidizerStack": { "type": "item","code": "powdered-oxidizer", "quantity": 1 }
     ///	        }
     ///     },
     ///}
@@ -114,7 +114,7 @@ namespace AlchemicalRefinement.API.Common
         /// If there is a melting point, the max temperature it can reach. A value of 0 implies no limit.
         /// </summary>
         [DocumentAsJson("Recommended", "1200")]
-        public float CalcinationMaxTemperature;
+        public float CalcinationMaxTemperature = 1200f;
 
         /// <summary>
         /// <!--<jsonoptional>Recommended</jsonoptional><jsondefault>0</jsondefault>-->
@@ -125,10 +125,11 @@ namespace AlchemicalRefinement.API.Common
 
         /// <summary>
         /// <!--<jsonoptional>Recommended</jsonoptional><jsondefault>0</jsondefault>-->
-        /// For how many seconds the temperature has to be above the Calcination Point until the item is smelted. Recommended if <see cref="CalcinatedStack"/> is set.
+        /// How much energy needer after temperature is reached. Recommended if <see cref="CalcinatedStack"/> is set.
+        /// This value is in kJ/kg and is dependant on the ThermalProperties Weight
         /// </summary>
-        [DocumentAsJson("Recommended", "20")]
-        public float CalcinationDuration = 20;
+        [DocumentAsJson("Recommended", "2000")]
+        public float CalcinationEnergy = 2000;
         
         /// <summary>
         /// How many of this collectible are needed to calcinate into <see cref="CalcinatedStack"/>.

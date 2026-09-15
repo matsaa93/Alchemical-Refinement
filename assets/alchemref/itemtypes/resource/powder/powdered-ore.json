@@ -1,6 +1,6 @@
 {
 	"code": "powdered-ore",
-	"class": "ItemNugget",
+	"class": "ItemAlchemical",
 	"variantgroups": [
 		{ "code": "ore", "loadFromProperties": "alchemref:block/ore-mineral" },
 		{ "code": "calcinated", "states": [ "raw", "calcinated", "washed" ] }
@@ -40,14 +40,22 @@
 		"calcinationPropsByType": {
 			"*-raw": {
 				"CalcinationPoint": 150,
-				"CalcinationDuration": 30,
+				"CalcinationEnergy": 3000,
 				"CalcinationRatio": 1,
 				"CalcinationType": "Roast",
 				"CalcinatedStack": {
 					"type": "item",
-					"code": "alchemref:powdered-ore-{ore}-calcinated"
+					"code": "alchemref:powdered-ore-{ore}-calcinated",
+					"quantity": 2
 				}
 			}
+		},
+		"thermalPropsByType": {
+			"*-raw": {
+				"SpecificHeatCapacity": 0.84,
+				"WeightInKg": 3
+			}
+			
 		}
 	},
 	"shape": { "base": "alchemref:item/resource/powder/powdered-{calcinated}" },
