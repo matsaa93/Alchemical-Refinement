@@ -1,7 +1,136 @@
 using Vintagestory.API;
+using Vintagestory.API.Common;
+using Vintagestory.API.MathTools;
 
 namespace AlchemicalRefinement.API.Common
 {
+    public class ThermalFunctions
+    {
+        public void HeatItemstack(IWorldAccessor world, ItemStack stack, float temperature)
+        {
+            stack.Collectible.SetTemperature(world, stack, temperature);
+        }
+
+        public float GetItemTemperature(IWorldAccessor world, ItemStack stack)
+        {
+            return stack.Collectible.GetTemperature(world, stack);
+        }
+        /// <summary>
+        /// get the ThermalProperties of a ItemStack
+        /// </summary>
+        /// <param name="stack"> ItemStack to check</param>
+        /// <returns></returns>
+        public ThermalProperties GetThermalProperties(ItemStack stack)
+        {
+            return stack?.ItemAttributes?["thermalProps"].AsObject<ThermalProperties>();
+        }
+
+        public CombustibleProperties GetCombustibleProperties(IWorldAccessor world, ItemStack stack, BlockPos pos)
+        {
+            return stack?.Collectible.GetCombustibleProperties(world, stack, pos);
+        }
+        
+        /// <summary>
+        /// Methode used to calculate the temp increase for an item/block.
+        /// </summary>
+        /// <param name="inputEnergy"> The energy amount for temp increase in kJ</param>
+        /// <param name="weight"> the Weight of the Item</param>
+        /// <param name="stackSize">Amount of items in Stack</param>
+        /// <param name="specificHeatCapacity"> the specific heat capacity in kJ/kg·K stored in ThermalProperties</param>
+        /// <returns>float Temperature increase in ºK</returns>
+        public float CalculateTemperatureIncrease(float inputEnergy, float weight, float stackSize, float specificHeatCapacity)
+        {
+            return inputEnergy / (weight * stackSize * specificHeatCapacity);
+        }
+
+        /// <summary>
+        /// calculate the needed energy for temperature increase in kJ/ºK
+        /// </summary>
+        /// <param name="weight"> the Weight of the Item</param>
+        /// <param name="stackSize">Amount of items in Stack</param>
+        /// <param name="specificHeatCapacity"> the specific heat capacity in kJ/kg·K stored in ThermalProperties</param>
+        /// <returns>float value kJ/ºK</returns>
+        public float EnergyForTemperatureIncrease(float weight, float stackSize, float specificHeatCapacity)
+        {
+            return weight * stackSize * specificHeatCapacity;
+        }
+
+        /// <summary>
+        /// Calculate Craft energy needed after temperature is reached.
+        /// </summary>
+        /// <param name="craftEnergy"></param>
+        /// <param name="stackSize"></param>
+        /// <returns>Returns energy needed for craft in kJ</returns>
+        public float CraftEnergyNeeded(float craftEnergy, float stackSize)
+        {
+            return craftEnergy * stackSize;
+        }
+        
+        /// <summary>
+        /// Calculate Temperature based on needed energy to increase it
+        /// </summary>
+        /// <param name="inputEnergy"> The energy amount for temp increase in kJ</param>
+        /// <param name="energyNeeded"></param>
+        /// <returns>float Temperature increase in ºK</returns>
+        public float IncreaseTemperature(float inputEnergy, float energyNeeded)
+        {
+            return inputEnergy / energyNeeded;
+        }
+        
+        /// <summary>
+        /// Calculate the current Specific BurnValue for the item 
+        /// </summary>
+        /// <param name="minBurnValue"> SpecificBurnValueMin stored in ThermalProperties</param>
+        /// <param name="maxBurnValue">SpecificBurnValueMax stored in ThermalProperties</param>
+        /// <param name="currentFuelBurnTemp">Fuel burn temperature at current moment same as BlockTemperature</param>
+        /// <param name="maxFuelBurnTemp"></param>
+        /// <returns>float value in kJ/kg</returns>
+        public float CalculateBurnValue(float minBurnValue, float maxBurnValue, float currentFuelBurnTemp, float maxFuelBurnTemp)
+        {
+            return (maxBurnValue - minBurnValue) / maxFuelBurnTemp * currentFuelBurnTemp + minBurnValue;
+        }
+        
+        /// <summary>
+        /// calculate the energy generated pr sec in kJ/s or kW  
+        /// </summary>
+        /// <param name="burnDuration"> the total amount of time the Item burns for stored in CombustionProperties</param>
+        /// <param name="weight"> the weight of the item is stored in ThermalProperties</param>
+        /// <param name="specificBurnValue"> Energy stored pr kilo given in kJ/kg stored in ThermalProperties </param>
+        /// <returns>float value in kJ/s or kW</returns>
+        public float CalculateFuelEnergyOutput(float burnDuration, float weight, float specificBurnValue)
+        {
+            return specificBurnValue * weight / burnDuration;
+        }
+    }
+    public interface IThermalProps
+    {
+        
+        /// <summary>
+        /// Calculated Fuel Energy Output when burning in kJ/s or kW
+        /// </summary>
+        float FuelEnergyOutput { get; set; }
+        /// <summary>
+        /// how fast the fuel increses temp in ºK/s
+        /// </summary>
+        float FuelTempIncrease { get; set; }
+        float FuelBurnTime { get; set; }
+        float FuelTemperatureMax { get; set; }
+
+        float FuelTemperature { get; set; }
+        
+        /// <summary>
+        /// The temperature increase for the block.
+        /// </summary>
+        float BlockTemperatureIncrease { get; set; }
+        /// <summary>
+        /// Max Temperature the block can be 
+        /// </summary>
+        float BlockTemperatureMax { get; set; }
+        /// <summary>
+        /// the current Specific BurnValue for the item in kJ/kg 
+        /// </summary>
+        float CurrentBurnValue { get; set; }
+    }
     /// <summary>
     /// Gives an Item the ThermalProperties needed for many apparatuses to work.
     /// </summary>

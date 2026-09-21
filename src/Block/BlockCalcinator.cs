@@ -53,7 +53,7 @@ namespace AlchemicalRefinement
                         Itemstacks = canIgniteStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
                             BECalcinator bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BECalcinator;
-                            if (bef != null && !bef.IsBurning && bef.fuelBurnTime > 0 && bef.FirepitStage >= 5) return wi.Itemstacks;
+                            if (bef != null && !bef.IsBurning && bef.FuelBurnTime > 0 && bef.FirepitStage >= 5) return wi.Itemstacks;
                             return null;
                         }
                     },
@@ -75,7 +75,7 @@ namespace AlchemicalRefinement
                         Itemstacks = firewoodStacks.ToArray(),
                         GetMatchingStacks = (wi, bs, es) => {
                             BECalcinator bef = api.World.BlockAccessor.GetBlockEntity(bs.Position) as BECalcinator;
-                            if (bef != null && bef.FirepitStage > 0 && bef.fuelBurnTime <= 6f) return wi.Itemstacks;
+                            if (bef != null && bef.FirepitStage > 0 && bef.FuelBurnTime <= 6f) return wi.Itemstacks;
                             return null;
                         }
                     }
@@ -206,13 +206,13 @@ namespace AlchemicalRefinement
 
             if (beb != null && beb.FirepitStage >= 5)
             {
-                if (beb.fuelBurnTime <= 0)
+                if (beb.FuelBurnTime <= 0)
                 {
                     info += "\t" + Lang.Get(":  No more fuel.");
                 }
                 else
                 {
-                    info += "\t" + Lang.Get(":  {0:#.#} Sec.", beb.fuelBurnTime);
+                    info += "\t" + Lang.Get(":  {0:#.#} Sec.", beb.FuelBurnTime);
                 }
             }
 

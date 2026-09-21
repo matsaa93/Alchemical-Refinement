@@ -6,6 +6,23 @@ using Vintagestory.API.MathTools;
 
 namespace AlchemicalRefinement.API.Common
 {
+
+    public class CalcinationFunctions
+    {
+        public CalcinationProperties GetCalcinationProperties(IWorldAccessor world, ItemStack stack)//ItemSlot input)
+        { // calcinationPropsByType
+            //return input.Itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>(); //itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+            var props = stack?.ItemAttributes?["calcinationProps"].Exists == true ? stack.ItemAttributes["calcinationProps"].AsObject<CalcinationProperties>(null, stack.Collectible.Code.Domain) : null;
+            props?.CalcinatedStack?.Resolve(world, "Calcinatable Properties CalcinatedStack", stack.Collectible.Code);
+            return  props;
+        }
+        public bool CanCalcinate(CalcinationProperties props)
+        {
+            //CalcinationProperties calcinProps = GetCalcinationProperties(stack);
+            return props != null;
+        }
+        
+    }
     /// <summary>
     /// The type of Calcination for the collectible. This effects how the object is Calcinated.
     /// </summary>
@@ -29,11 +46,7 @@ namespace AlchemicalRefinement.API.Common
         /// </summary>
         Oxidation
     }
-    public interface ICalcinatable
-    {
-        float GetCalcinationDuration(IWorldAccessor world, BlockPos blockPos);
-        
-    }
+    
     /// <summary>
     /// Marks an item as Calcinationable, either by Roasting or Decomposistion.
     /// </summary>

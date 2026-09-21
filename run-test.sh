@@ -22,7 +22,7 @@ run_fun(){
     ./Vintagestory --dataPath "$VSDataDIR" --addModPath "$build_dir" --playStyle "preset-surviveandbuild" --openWorld  "modding test world" --tracelog
 }
 SCRIPT_path=$(/bin/readlink -f ${0%/*})
-bin_dir="$(dirname "$(readlink -f "$0")")/bin/Release/Mods/mod"
+#bin_dir="$(dirname "$(readlink -f "$0")")/bin/Release/Mods/mod"
 build_dir="$(dirname "$(readlink -f "$0")")/build"
 vintagestory_dir_pre=$SCRIPT_path/Referance/VS-prerelease
 VSDataDIR=$SCRIPT_path/VSDataDIR
@@ -30,13 +30,15 @@ vintagestory_dir=/opt/vintagestory
 vintagestory_mods_dir="$HOME/.config/VintagestoryData/Mods"
 version=$(get_Json_info "version")
 modid=$(get_Json_info "modid")
+export MODID="$modid"
+bin_dir="$(dirname "$(readlink -f "$0")")/bin/Release/Mods/$MODID"
 build_fun(){
     # Build function for making/packging the mod.zip file.
     # it will look at the modinfo.json file to make the file name,
     # so this is needed to have the moidid and version variables set.
     local Filename="${modid}-${version}.zip"
     dotnet build $(dirname "$(readlink -f "$0")")/AlchemicalRefinement.csproj -c Release
-    
+
     [[ ! -d $build_dir ]] && mkdir build
     [ -f $build_dir/$Filename ] && rm -r build/${modid}-*
     cd $bin_dir

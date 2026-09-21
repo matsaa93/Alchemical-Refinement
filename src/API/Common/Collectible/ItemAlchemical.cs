@@ -56,13 +56,13 @@ namespace AlchemicalRefinement.API.Common
                 if (calcinationProps.OxidizerStack != null)
                 {
                     string oxidisername = calcinationProps.OxidizerStack.Code.ToString();
-                    api.World.Logger.Warning("OxidizerStack Code: {0}", oxidisername);
+                    //api.World.Logger.Warning("OxidizerStack Code: {0}", oxidisername);
                 }
 
                 if ( calcinationProps.CatalystStack != null)
                 {
                     string catalystname = calcinationProps.CatalystStack.Code.ToString();
-                    api.World.Logger.Warning("CatalystStack Code: {0}", catalystname);
+                    //api.World.Logger.Warning("CatalystStack Code: {0}", catalystname);
                 }
                 
             }

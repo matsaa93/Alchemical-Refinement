@@ -26,7 +26,7 @@ namespace AlchemicalRefinement.Inventory
         
         private ItemSlot[] _slots;
         public ItemSlot[] Slots { get { return _slots; } }
-        public override int Count { get { return _slots.Length; } }
+        public override int Count => _slots.Length;
 
         /// <summary>
         /// SlotID: FuelStack = 0 input = 1-3 , output = 4-5
@@ -34,7 +34,12 @@ namespace AlchemicalRefinement.Inventory
         public InventoryCalcinator(string inventoryID, ICoreAPI api) : base(inventoryID, api)
         {
             
-            _slots = base.GenEmptySlots(6);
+            _slots = GenEmptySlots(6);
+        }
+
+        public InventoryCalcinator(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)
+        {
+            _slots = GenEmptySlots(6);
         }
         
         public override void LateInitialize(string inventoryID, ICoreAPI api)
@@ -68,12 +73,12 @@ namespace AlchemicalRefinement.Inventory
 
         public override void FromTreeAttributes(ITreeAttribute tree)
         {
-            this._slots = SlotsFromTreeAttributes(tree, this._slots, null);
+            this._slots = SlotsFromTreeAttributes(tree, this._slots);
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
         {
-            base.SlotsToTreeAttributes(_slots, tree);
+            SlotsToTreeAttributes(_slots, tree);
         }
 
         protected override ItemSlot NewSlot(int i)
@@ -91,7 +96,7 @@ namespace AlchemicalRefinement.Inventory
 
         public override ItemSlot GetAutoPushIntoSlot(BlockFacing atBlockFace, ItemSlot fromSlot)
         {
-            return _slots[4];
+            return _slots[1];
         }
 
     }

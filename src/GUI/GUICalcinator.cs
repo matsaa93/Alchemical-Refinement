@@ -11,7 +11,8 @@ namespace AlchemicalRefinement.GUI
     public class GUICalcinator: GuiDialogBlockEntity
     {
         private BECalcinator _beCalcinator;
-        private float _craftProgress;
+        private float _craftProgress = 0;
+        private float _craftNeeds = 0;
         private float _blockTemp = 0;
         private float _fuelBurnTime = 0;
         //private string _attributeInfo;
@@ -28,7 +29,9 @@ namespace AlchemicalRefinement.GUI
             if (_beCalcinator != null)
             {
                 _blockTemp = _beCalcinator.BlockTemperature;
-                _fuelBurnTime = _beCalcinator.fuelBurnTime;
+                _fuelBurnTime = _beCalcinator.FuelBurnTime;
+                _craftNeeds = _beCalcinator.CraftEnergy;
+                _craftProgress = _beCalcinator.calcinatoinProgress;
                 //_attributeInfo = _beCalcinator.AttributeInfo;
             }
 
@@ -67,17 +70,19 @@ namespace AlchemicalRefinement.GUI
             ElementBounds outputslotbnd1 = ElementBounds.Fixed(209, 13 + titlebarheight, 48, 48);
             ElementBounds outputslotbnd2 = ElementBounds.Fixed(262, 13 + titlebarheight, 48, 48);
             
-            ElementBounds fuelslotinset = ElementBounds.Fixed(58, 155 + titlebarheight, 58, 58);
-            ElementBounds fuelslotbnd = ElementBounds.Fixed(63, 160 + titlebarheight, 48, 48);
+            ElementBounds fuelslotinset = ElementBounds.Fixed(18, 155 + titlebarheight, 58, 58);
+            ElementBounds fuelslotbnd = ElementBounds.Fixed(24, 160 + titlebarheight, 48, 48);
 
             ElementBounds attributetextbnds = ElementBounds.Fixed(5, 55 + titlebarheight, 148, 18);
             
-            ElementBounds textareainset = ElementBounds.Fixed(131, 155 + titlebarheight, 158, 58);
+            ElementBounds textareainset = ElementBounds.Fixed(95, 93 + titlebarheight, 220, 120);
             //ElementBounds blocktemptextinset = ElementBounds.Fixed(58, 90 + titlebarheight, 221, 96);
-            ElementBounds blocktemptextbnds = ElementBounds.Fixed(136, 160 + titlebarheight, 148, 18);
+            ElementBounds extratextbnds = ElementBounds.Fixed(100, 98 + titlebarheight, 210, 20);
+            ElementBounds prosesstextbnds = ElementBounds.Fixed(100, 128 + titlebarheight, 210, 20);
+            ElementBounds blocktemptextbnds = ElementBounds.Fixed(100, 158 + titlebarheight, 210, 20);
             
             //ElementBounds fuelhourtextinset = ElementBounds.Fixed(58, 113 + titlebarheight, 221, 96);
-            ElementBounds fuelhourtextbnds = ElementBounds.Fixed(136, 190 + titlebarheight, 148, 18);
+            ElementBounds fuelhourtextbnds = ElementBounds.Fixed(100, 188 + titlebarheight, 210, 20);
 
             dialog.WithChildren(new ElementBounds[]
             {
@@ -96,6 +101,8 @@ namespace AlchemicalRefinement.GUI
                 //attributetextbnds,
                 textareainset,
                 //blocktemptextinset,
+                extratextbnds,
+                prosesstextbnds,
                 blocktemptextbnds,
                 //fuelhourtextinset,
                 fuelhourtextbnds
@@ -138,6 +145,7 @@ namespace AlchemicalRefinement.GUI
                 .AddItemSlotGrid(Inventory, SendInvPacket, 1, new int[] { 0 }, fuelslotbnd, "fuelSlots")
                 //.AddDynamicText(GetAttributeInfo(), leftyellow, attributetextbnds, "attributeInfo")
                 .AddInset(textareainset, insetdepth, insetbrightness)
+                .AddDynamicText(GetProcessingInfo(), leftyellow, prosesstextbnds, "Progress")
                 .AddDynamicText(GetTemperatureText(), leftyellow, blocktemptextbnds, "blockTemperature")
                 .AddDynamicText(GetFuelBurnTime(), leftyellow, fuelhourtextbnds, "fuelBurnTime")
                 .EndChildElements()
@@ -145,11 +153,12 @@ namespace AlchemicalRefinement.GUI
                 
         }
 
-        public void Update(float blocktemp, float burnTime, float craftProgress, string attributeinfo)
+        public void Update(float blocktemp, float burnTime, float craftProgress, float craftNeeds)
         {
             _blockTemp = blocktemp;
             _fuelBurnTime = burnTime;
             _craftProgress = craftProgress;
+            _craftNeeds = craftNeeds;
             //_attributeInfo = attributeinfo;
             
             if (!IsOpened()) return;
@@ -158,6 +167,7 @@ namespace AlchemicalRefinement.GUI
                 //SingleComposer.GetDynamicText("attributeInfo").SetNewText(GetAttributeInfo());
                 SingleComposer.GetDynamicText("blockTemperature").SetNewText(GetTemperatureText());
                 SingleComposer.GetDynamicText("fuelBurnTime").SetNewText(GetFuelBurnTime());
+                SingleComposer.GetDynamicText("Progress").SetNewText(GetProcessingInfo());
             }
             
         }
@@ -166,6 +176,17 @@ namespace AlchemicalRefinement.GUI
         {
             return Lang.Get("AttributeInfo: {0}", Lang.Get(_attributeInfo));
         }*/
+        private string GetProcessingInfo()
+        {
+            if (_craftNeeds > 10000)
+            {
+                return Lang.Get("Processing: {0:#.##} / {1} MJ", (int)_craftProgress+1/1000, (int)_craftNeeds/1000);
+            }
+            else
+            {
+                return Lang.Get("Processing: {0} / {1} kJ", (int)_craftProgress, (int)_craftNeeds);
+            }
+        }
         private string GetFuelBurnTime()
         {
             return Lang.Get("Fuel: {0:#.#} Sec.", _fuelBurnTime);

@@ -7,22 +7,19 @@ using Vintagestory.GameContent;
 
 namespace AlchemicalRefinement.API.Common.BlockEntity
 {
-    public class BlockEntityFirepitContainer : BlockEntityOpenableContainer, IFirePit, IHeatSource, ITemperatureSensitive
+    public class BlockEntityFirepitContainer : BlockEntityOpenableContainer,IThermalProps , IFirePit, IHeatSource, ITemperatureSensitive
     {
         #region Variables
 
         private ICoreClientAPI capi;
         private ICoreServerAPI sapi;
-        public float fuelBurnTime;
+        public ThermalFunctions TFun = new ThermalFunctions();
         public int FirepitStage;
         MeshData firepitMesh;
         private double lastTickTotalHours;
-        private float _blockMaxTemperature;
         public float BlockTemperature;
         private const float BlockSpecificHeatCapacity = 0.385f;
         private const float BlockWeight = 130;
-        public float FuelTemperature;
-        public float FuelTemperatureMax;
         public float SpecificBurnValueMin;
         public float SpecificBurnValueMax;
     
@@ -32,8 +29,8 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         /// <summary>
         /// If CanIgnite is changed this needs to be overidden to make it fit with the new firepitStage in that methode. 
         /// </summary>
-        public virtual bool IsBurning => FirepitStage == 6 && fuelBurnTime > 0;
-        public virtual bool IsSmoldering => FirepitStage == 7 && fuelBurnTime > -3 && FuelTemperature >= 10;
+        public virtual bool IsBurning => FirepitStage == 6 && FuelBurnTime > 0;
+        public virtual bool IsSmoldering => FirepitStage == 7 && FuelBurnTime > -3 && FuelTemperature >= 10;
         public virtual bool IsCold => BlockTemperature <= 10 && FuelTemperature <= 10;
         #endregion
         
@@ -127,7 +124,7 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
             if (IsBurning)
             {
                 HeatBlock(dt);
-                fuelBurnTime -= dt;
+                FuelBurnTime -= dt;
                 //blockTemperature += 3 * 1;
             } else if (IsSmoldering || !IsCold)
             {
@@ -151,15 +148,15 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         /// <param name="dt"> Time passed since last tick or block load</param>
         public virtual void HeatBlock(float dt)
         {
-            if (BlockTemperature < _blockMaxTemperature && BlockTemperature < FuelTemperature)
+            if (BlockTemperature < BlockTemperatureMax && BlockTemperature < FuelTemperature)
             {
                 BlockTemperature += dt * BlockTemperatureIncrease;
             }
-            else if ( BlockTemperature >= (_blockMaxTemperature - 4) &&  BlockTemperature <= (_blockMaxTemperature + 4) )
+            else if ( BlockTemperature >= (BlockTemperatureMax - 4) &&  BlockTemperature <= (BlockTemperatureMax + 4) )
             { //if (number >= min && number <= max)
-                BlockTemperature = _blockMaxTemperature;
+                BlockTemperature = BlockTemperatureMax;
             }
-            else if (BlockTemperature > _blockMaxTemperature)
+            else if (BlockTemperature > BlockTemperatureMax)
             {
                 BlockTemperature -= dt * 2;
             }
@@ -240,7 +237,7 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
             bool isFuel = hotbarSlot.Itemstack?.Collectible is ItemFirewood || hotbarSlot.Itemstack?.Collectible is ItemCoal;
             bool addGrass = hotbarSlot.Itemstack?.Collectible is ItemDryGrass && FirepitStage == 0;
             bool addFireWood = hotbarSlot.Itemstack?.Collectible is ItemFirewood && FirepitStage >= 1 && FirepitStage <= 4;
-            bool reignite = (isFuel) && (FirepitStage >= 5 && fuelBurnTime <= 10f);
+            bool reignite = (isFuel) && (FirepitStage >= 5 && FuelBurnTime <= 10f);
             bool interactgui = (hotbarSlot.Empty || !isFuel) && (FirepitStage >= 5);
 
             if (interactgui) OnPlayerRightClick(byPlayer, blockSel);
@@ -289,20 +286,20 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         /// <param name="slot">Inventory Slot for the Fuel Stack</param>
         public virtual void AddFuel(ItemStack stack, ItemSlot slot)
         {
-            if (fuelBurnTime >= 2) return;
-            CombustibleProperties fuelCopts = GetCombustibleProperties(Api.World, stack, null);//stack.Collectible.GetCombustibleProperties(Api.World, stack as ItemStack, null);
-            ThermalProperties thermalProps = GetThermalProperties(stack);
-            if(thermalProps != null && fuelCopts != null && (FuelTemperature >= 100 || fuelBurnTime <= 3))
+            if (FuelBurnTime >= 2) return;
+            CombustibleProperties fuelCopts = TFun.GetCombustibleProperties(Api.World, stack, null);
+            ThermalProperties thermalProps = TFun.GetThermalProperties(stack);
+            if(thermalProps != null && fuelCopts != null && (FuelTemperature >= 100 || FuelBurnTime <= 3))
             {
                 float burnduration = fuelCopts.BurnDuration * BurnDurationModifier;
-                CurrentBurnValue = CalculateBurnValue(thermalProps.SpecificBurnValueMin,
+                CurrentBurnValue = TFun.CalculateBurnValue(thermalProps.SpecificBurnValueMin,
                     thermalProps.SpecificBurnValueMax, FuelTemperature, fuelCopts.BurnTemperature);
-                FuelEnergyOutput = CalculateFuelEnergyOutput(burnduration, thermalProps.WeightInKg, CurrentBurnValue);
-                FuelTempIncrease = CalculateItemHeatIncrease(FuelEnergyOutput * 0.2f,  thermalProps.WeightInKg, 1, thermalProps.SpecificHeatCapacity);
-                BlockTemperatureIncrease = CalculateItemHeatIncrease(FuelEnergyOutput * 0.2f, BlockWeight, 1, BlockSpecificHeatCapacity);
-                fuelBurnTime += burnduration;
+                FuelEnergyOutput = TFun.CalculateFuelEnergyOutput(burnduration, thermalProps.WeightInKg, CurrentBurnValue);
+                FuelTempIncrease = TFun.CalculateTemperatureIncrease(FuelEnergyOutput * 0.2f,  thermalProps.WeightInKg, 1, thermalProps.SpecificHeatCapacity);
+                BlockTemperatureIncrease = TFun.CalculateTemperatureIncrease(FuelEnergyOutput * 0.2f, BlockWeight, 1, BlockSpecificHeatCapacity);
+                FuelBurnTime += burnduration;
                 FuelTemperatureMax = fuelCopts.BurnTemperature;
-                _blockMaxTemperature = FuelTemperatureMax * 0.85f;
+                BlockTemperatureMax = FuelTemperatureMax * 0.85f;
                 slot.TakeOut(1);
                 if (IsSmoldering) FirepitStage = 6;
             }
@@ -313,10 +310,13 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         {
             get { return 1f; }
         }
-        
-        private float BlockTemperatureIncrease { get; set; }
+        public float FuelTemperature { get; set; }
+        public float FuelTemperatureMax { get; set; }
+        public float BlockTemperatureMax { get; set; }
+        public float FuelBurnTime { get; set; }
+        public float BlockTemperatureIncrease { get; set; }
 
-        private float FuelTempIncrease { get; set; }
+        public float FuelTempIncrease { get; set; }
         //private float FuelTempIncreaseMax { get; set; }
         /// <summary>
         /// Calculated Fuel Energy Output when burning in kJ/s or kW
@@ -327,46 +327,6 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         /// the current Specific BurnValue for the item in kJ/kg 
         /// </summary>
         public float CurrentBurnValue { get; set; }
-
-        /// <summary>
-        /// Methode used to calculate the temp increase for an item.
-        /// </summary>
-        /// <param name="inputEnergy"> The energy amount for temp increase in kJ</param>
-        /// <param name="weight"> the Weight of the Item</param>
-        /// <param name="stackSize">Amount of items in Stack</param>
-        /// <param name="specificHeatCapacity"> the specific heat capacity in kJ/kg·K stored in ThermalProperties</param>
-        /// <returns></returns>
-        public virtual float CalculateItemHeatIncrease(float inputEnergy, float weight, float stackSize, float specificHeatCapacity)
-        {
-            return inputEnergy / (weight * stackSize * specificHeatCapacity);
-        }
-        
-        /// <summary>
-        /// Calculate the current Specific BurnValue for the item 
-        /// </summary>
-        /// <param name="minBurnValue"> SpecificBurnValueMin stored in ThermalProperties</param>
-        /// <param name="maxBurnValue">SpecificBurnValueMax stored in ThermalProperties</param>
-        /// <param name="currentFuelBurnTemp">Fuel burn temperature at current moment same as BlockTemperature</param>
-        /// <param name="maxFuelBurnTemp"></param>
-        /// <returns></returns>
-        public virtual float CalculateBurnValue(float minBurnValue, float maxBurnValue, float currentFuelBurnTemp, float maxFuelBurnTemp)
-        {
-            return (maxBurnValue - minBurnValue) / maxFuelBurnTemp * currentFuelBurnTemp + minBurnValue;
-        }
-        
-        /// <summary>
-        /// calculate the energy generated pr sec in kJ/s or kW  
-        /// </summary>
-        /// <param name="burnDuration"> the total amount of time the Item burns for stored in CombustionProperties</param>
-        /// <param name="weight"> the weight of the item is stored in ThermalProperties</param>
-        /// <param name="specificBurnValue"> Energy stored pr kilo given in kJ/kg stored in ThermalProperties </param>
-        /// <returns></returns>
-        public virtual float CalculateFuelEnergyOutput(float burnDuration, float weight, float specificBurnValue)
-        {
-            return specificBurnValue * weight / burnDuration;
-        }
-        
-        
         
         /// <summary>
         /// Checks for the possibility to inginte the block
@@ -404,9 +364,9 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
 
             FirepitStage = tree.GetInt("firepitConstructionStage");
             lastTickTotalHours = tree.GetDouble("lastTickTotalHours");
-            fuelBurnTime = tree.GetFloat("fuelBurnTime");
+            FuelBurnTime = tree.GetFloat("fuelBurnTime");
             BlockTemperature  = tree.GetFloat("blockTemperature");
-            _blockMaxTemperature = tree.GetFloat("blockMaxTemperature");
+            BlockTemperatureMax = tree.GetFloat("blockMaxTemperature");
             BlockTemperatureIncrease = tree.GetFloat("blockTemperatureIncrease");
             FuelEnergyOutput = tree.GetFloat("fuelEnergyOutput");
             CurrentBurnValue = tree.GetFloat("currentBurnValue");
@@ -424,9 +384,9 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
 
             tree.SetInt("firepitConstructionStage", FirepitStage);
             tree.SetDouble("lastTickTotalHours", lastTickTotalHours);
-            tree.SetFloat("fuelBurnTime", fuelBurnTime);
+            tree.SetFloat("fuelBurnTime", FuelBurnTime);
             tree.SetFloat("blockTemperature", BlockTemperature);
-            tree.SetFloat("blockMaxTemperature", _blockMaxTemperature);
+            tree.SetFloat("blockMaxTemperature", BlockTemperatureMax);
             tree.SetFloat("blockTemperatureIncrease", BlockTemperatureIncrease);
             tree.SetFloat("fuelEnergyOutput", FuelEnergyOutput);
             tree.SetFloat("currentBurnValue", CurrentBurnValue);
