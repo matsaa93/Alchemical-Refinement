@@ -31,7 +31,7 @@ namespace AlchemicalRefinement.GUI
                 _blockTemp = _beCalcinator.BlockTemperature;
                 _fuelBurnTime = _beCalcinator.FuelBurnTime;
                 _craftNeeds = _beCalcinator.CraftEnergy;
-                _craftProgress = _beCalcinator.calcinatoinProgress;
+                _craftProgress = _beCalcinator.CalcinationProgress;
                 //_attributeInfo = _beCalcinator.AttributeInfo;
             }
 
@@ -180,7 +180,7 @@ namespace AlchemicalRefinement.GUI
         {
             if (_craftNeeds > 10000)
             {
-                return Lang.Get("Processing: {0:#.##} / {1} MJ", (int)_craftProgress+1/1000, (int)_craftNeeds/1000);
+                return Lang.Get("Processing: {0:#.##} / {1} MJ", (int)_craftProgress/1000, (int)_craftNeeds/1000);
             }
             else
             {

@@ -13,8 +13,64 @@ namespace AlchemicalRefinement.API.Common
 
         public float GetItemTemperature(IWorldAccessor world, ItemStack stack)
         {
-            return stack.Collectible.GetTemperature(world, stack);
+            return stack?.Collectible.GetTemperature(world, stack) ?? 20;
         }
+
+        /// <summary>
+        /// a Methode to Equalize the Temperature of all the Items In the Array,
+        /// this methode will set the temperatures of the item
+        /// and return the new temperature if it is needed as a variable.
+        /// </summary>
+        /// <param name="world"> Api.World</param>
+        /// <param name="slots"> Array of slots to loop usually the Input Slots of the block</param>
+        /// <param name="energyNeededForTemperatureIncrease"> energy that is needed to increase the temperature</param>
+        /// <returns>the new temperature of the items so it can be set to a variable</returns>
+        public float EqualizeItemTemperature(IWorldAccessor world, ItemSlot[] slots, float energyNeededForTemperatureIncrease)
+        {
+            // TODO: Find out what the hell is not working with this.
+            ThermalProperties props;
+            ItemStack stack;
+            float storedEnergy = 0f;
+            float temperature;
+            foreach (var slot in slots)
+            {
+                if (!slot.Empty)
+                {
+                    stack = slot.Itemstack;
+                    props = GetThermalProperties(stack);
+                    if (props != null && GetItemTemperature(world, stack) > 20)
+                    {
+                        storedEnergy += CalculateStoredHeatEnergy(
+                            GetItemTemperature(world, stack), props.WeightInKg,
+                            stack.StackSize, props.SpecificHeatCapacity);
+                    }
+                }
+            }
+            temperature = IncreaseTemperature(storedEnergy, energyNeededForTemperatureIncrease);
+            foreach (var slot in slots)
+            {
+                if (!slot.Empty)
+                {
+                    stack = slot.Itemstack;
+                    HeatItemstack(world, stack, temperature);
+                }
+            }
+            return temperature;
+        }
+
+        /// <summary>
+        /// Calculates the stored energy
+        /// </summary>
+        /// <param name="temperature"></param>
+        /// <param name="weight"></param>
+        /// <param name="stackSize"></param>
+        /// <param name="specificHeatCapacity"></param>
+        /// <returns></returns>
+        public float CalculateStoredHeatEnergy(float temperature, float weight, float stackSize, float specificHeatCapacity)
+        {
+            return temperature * weight * stackSize * specificHeatCapacity;
+        }
+        
         /// <summary>
         /// get the ThermalProperties of a ItemStack
         /// </summary>

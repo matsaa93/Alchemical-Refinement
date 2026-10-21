@@ -26,7 +26,13 @@ namespace AlchemicalRefinement.Inventory
         
         private ItemSlot[] _slots;
         public ItemSlot[] Slots { get { return _slots; } }
+        ItemSlot[] calcinationSlots;
+        ItemSlot[] calcinatedOutSlots;
         public override int Count => _slots.Length;
+        
+        public ItemSlot[] CalcinationSlots { get { return calcinationSlots ?? Array.Empty<ItemSlot>(); } }
+
+        public ItemSlot[] CalcinatedOutSlots  { get { return calcinatedOutSlots ?? Array.Empty<ItemSlot>(); } }
 
         /// <summary>
         /// SlotID: FuelStack = 0 input = 1-3 , output = 4-5
@@ -35,11 +41,15 @@ namespace AlchemicalRefinement.Inventory
         {
             
             _slots = GenEmptySlots(6);
+            calcinationSlots = new []{ _slots[1], _slots[2], _slots[3] };
+            calcinatedOutSlots = new []{ _slots[4], _slots[5] };
         }
 
         public InventoryCalcinator(string className, string instanceID, ICoreAPI api) : base(className, instanceID, api)
         {
             _slots = GenEmptySlots(6);
+            calcinationSlots = new []{ _slots[1], _slots[2], _slots[3] };
+            calcinatedOutSlots = new []{ _slots[4], _slots[5] };
         }
         
         public override void LateInitialize(string inventoryID, ICoreAPI api)
@@ -71,9 +81,20 @@ namespace AlchemicalRefinement.Inventory
             }
         }
 
+        public override void DidModifyItemSlot(ItemSlot slot, ItemStack extractedStack = null)
+        {
+            base.DidModifyItemSlot(slot, extractedStack);
+        }
+        public override void OnItemSlotModified(ItemSlot slot)
+        {
+            base.OnItemSlotModified(slot);
+        }
+
         public override void FromTreeAttributes(ITreeAttribute tree)
         {
-            this._slots = SlotsFromTreeAttributes(tree, this._slots);
+            List<ItemSlot> modifiedSlots = new List<ItemSlot>();
+            _slots = SlotsFromTreeAttributes(tree, _slots,  modifiedSlots);
+            for (int i = 0; i < modifiedSlots.Count; i++) DidModifyItemSlot(modifiedSlots[i]);
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)

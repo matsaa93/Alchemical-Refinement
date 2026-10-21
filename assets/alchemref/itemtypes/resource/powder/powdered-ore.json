@@ -41,6 +41,7 @@
 			"*-raw": {
 				"CalcinationPoint": 150,
 				"CalcinationEnergy": 3000,
+				"CalcinationMaxTemperature": 300,
 				"CalcinationRatio": 1,
 				"CalcinationType": "Roast",
 				"CalcinatedStack": {

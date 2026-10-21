@@ -310,6 +310,8 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         {
             get { return 1f; }
         }
+
+        public virtual float FuelEfficiencyModifier { get; set; }
         public float FuelTemperature { get; set; }
         public float FuelTemperatureMax { get; set; }
         public float BlockTemperatureMax { get; set; }
@@ -337,7 +339,10 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
         {
             return FirepitStage == 5;
         }
-        
+        public virtual int EnviromentTemperature()
+        {
+            return (int)sapi.World.BlockAccessor.GetClimateAt(Pos, EnumGetClimateMode.NowValues, sapi.World.Calendar.TotalDays).Temperature;
+        }
         /// <summary>
         /// Tries to ignite the block if it is CanIgnite returns true
         /// else it is skipped
@@ -373,6 +378,7 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
             FuelTemperature = tree.GetFloat("fuelTemperature");
             FuelTemperatureMax  = tree.GetFloat("fuelTemperatureMax");
             FuelTempIncrease = tree.GetFloat("fuelTempIncrease");
+            FuelEfficiencyModifier = tree.GetFloat("fuelEfficiencyModifier");
             
 
             if (Api != null) LoadFirepitMesh();
@@ -393,6 +399,7 @@ namespace AlchemicalRefinement.API.Common.BlockEntity
             tree.SetFloat("fuelTemperature", FuelTemperature);
             tree.SetFloat("fuelTemperatureMax", FuelTemperatureMax);
             tree.SetFloat("fuelTempIncrease", FuelTempIncrease);
+            tree.SetFloat("fuelEfficiencyModifier", FuelEfficiencyModifier);
         }
 
         #endregion

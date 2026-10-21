@@ -24,9 +24,10 @@ namespace AlchemicalRefinement
 
         private GUICalcinator _clientDialog;
         private float calcinationAccum;
-        private float calcinatorTemp;
-        public float calcinatoinProgress;
+        //private float calcinatorTemp;
+        public float CalcinationProgress;
         public float CraftEnergy;
+        
         private float energyTempIncrease;
         private bool activeRecipe = false;
         public string AttributeInfo;
@@ -47,7 +48,7 @@ namespace AlchemicalRefinement
         public ItemStack CalcinationStack => _inventory[1]?.Itemstack;
         public bool CalcinationSlotEmpty => CalcinationSlot.Empty;
 
-        public ItemSlot OxidationSlot => _inventory[2];
+        public ItemSlot OxidationSlot => _inventory.CalcinationSlots[1];//_inventory[2];
         public ItemStack OxidationStack => _inventory[2]?.Itemstack;
         public bool OxidationSlotEmpty => OxidationSlot.Empty;
         
@@ -98,7 +99,7 @@ namespace AlchemicalRefinement
         {
             if (Api is ICoreClientAPI)
             {
-                _clientDialog.Update(BlockTemperature, FuelBurnTime, calcinatoinProgress, CraftEnergy);
+                _clientDialog.Update(BlockTemperature, FuelBurnTime, CalcinationProgress, CraftEnergy);
             }
             if (slotid >= 0 && slotid <= 5) 
             {
@@ -113,6 +114,7 @@ namespace AlchemicalRefinement
                         {
                             Api.World.Logger.Warning("amount of active Calcination stacks");
                             SetCraftThermalProperties();
+                            CalcinatorTemperature = TFun.EqualizeItemTemperature(Api.World, _inventory.CalcinationSlots, energyTempIncrease);
                         }
                     }else if (InputsEmpty)
                     {
@@ -120,6 +122,7 @@ namespace AlchemicalRefinement
                         activeRecipe = false;
                         CraftEnergy = 0f;
                         energyTempIncrease = 0f;
+                        CalcinationProgress = 0f;
                     }
                 }
                 MarkDirty(true);
@@ -156,7 +159,7 @@ namespace AlchemicalRefinement
                     break;
             }*/
 
-            if (HasCalcinationProp(stack))
+            if (CalFun.HasCalcinationProp(Api.World, stack))
             {
                 _recipeSlots[slotId] = true;
             }
@@ -170,9 +173,10 @@ namespace AlchemicalRefinement
         private void SetCraftThermalProperties()
         {
             // TODO: Impliment this Methode Fully. use for loop to loop the _recipeSlots and
-            //      and check if the bool is true for the slot.
+            //       and check if the bool is true for the slot.
             float energy = 0f;
             float  craftEnergy = 0f;
+            float temperature = 0f;
             ItemStack stack = null;
             ThermalProperties  props = null;
             CalcinationProperties CProps = null;
@@ -190,20 +194,22 @@ namespace AlchemicalRefinement
                 CProps = CalFun.GetCalcinationProperties(Api.World, stack);
                 energy += TFun.EnergyForTemperatureIncrease(props.WeightInKg, stack.StackSize, props.SpecificHeatCapacity);
                 craftEnergy += TFun.CraftEnergyNeeded(CProps.CalcinationEnergy, stack.StackSize);
+                if (CalFun.CanCalcinate(CProps) && temperature < CalFun.GetCalcinationTemperature(CProps))
+                {
+                    temperature = CalFun.GetCalcinationTemperature(CProps);
+                    CraftTemperature = temperature;
+                    temperature = CalFun.GetCalcinationMaxTemperature(CProps);
+                    CraftMaxTemperature  = temperature;
+                }
                 Api.World.Logger.Chat("Energy for Temperature Increase in loop {0} slot{1}",energy, i);
                 Api.World.Logger.Chat("Craft Energy in loop {0} slot{1}",craftEnergy, i);
             }
             energyTempIncrease = energy;
             CraftEnergy = craftEnergy;
+            
+            Api.World.Logger.Warning("Temperature Point for Calcination start {0} - {1}", CraftTemperature, CraftMaxTemperature);
             Api.World.Logger.Warning("Energy for Temperature Increase in total {0}",energyTempIncrease);
             Api.World.Logger.Warning("Craft Energy in total {0}",CraftEnergy);
-        }
-
-        private bool HasCalcinationProp(ItemStack stack)
-        {
-            if (stack == null) return false;
-            CalcinationProperties calcinProps = GetCalcinationProperties(stack);
-            return calcinProps != null;
         }
         #endregion
         
@@ -212,27 +218,82 @@ namespace AlchemicalRefinement
             get { return 0.66f; }
         }
 
-       
-        
+        #region ThermalStuff
+        public float CraftTemperature { get; set; }
+        public float CraftMaxTemperature  { get; set; }
+        public override float FuelEfficiencyModifier { get; set; }
 
-        public void HeatItem(float dt)
+        /// <summary>
+        /// Methode for changing temperature of the Items in Input slots.
+        /// needed for the crafting system of this block.
+        /// </summary>
+        /// <param name="dt">Time passed since last tick or block load</param>
+        /// <param name="heating"> true or false if heating or cooling should happend</param>
+        public void ThermalHandleItems(float dt, bool heating)
         {
-            if (_inventory[1].Empty || _inventory[2].Empty) return;
-
-            if (InputStackTemp < 100)
+            float temperatureIncrease = TFun.IncreaseTemperature(FuelEnergyOutput * FuelEfficiencyModifier, energyTempIncrease) * dt;
+            ItemStack stack = null;
+            float oldtemperature = EnviromentTemperature();
+            float newtemperature = 0f;
+            if (!InputsEmpty)
             {
-                InputStackTemp += dt * 2;
+                for (int i = 0; i < 2; i++)
+                {
+                    if (!_inventory.CalcinationSlots[i].Empty)
+                    {
+                        stack = _inventory.CalcinationSlots[i].Itemstack;
+                        oldtemperature = GetItemTemperature(stack);
+                        if (heating) { newtemperature = oldtemperature + temperatureIncrease; }
+                        else { newtemperature = oldtemperature - temperatureIncrease; }
+                        //newtemperature = oldtemperature + temperatureIncrease;
+                        if (newtemperature > CalcinatorTemperature || CraftMaxTemperature < CalcinatorTemperature) CalcinatorTemperature = newtemperature;
+                        SetItemTemperature(stack, newtemperature);
+                    }
+                }
+                
+            }
+        }
+        
+        public override void HeatBlock(float dt)
+        {
+            base.HeatBlock(dt);
+            if (activeRecipe && CalcinatorTemperature < BlockTemperature && CalcinatorTemperature < CraftTemperature)
+            {
+                FuelEfficiencyModifier = 0.8f;
+                ThermalHandleItems(dt, true);
+            } else if (activeRecipe && CalcinatorTemperature > CraftTemperature &&  CalcinatorTemperature < CraftMaxTemperature)
+            {
+                FuelEfficiencyModifier = 0.01f;
+                ThermalHandleItems(dt, true);
+            } else if (activeRecipe && (CalcinatorTemperature > CraftMaxTemperature || CalcinatorTemperature > BlockTemperature))
+            {
+                FuelEfficiencyModifier = 0.1f;
+                ThermalHandleItems(dt, false);
             }
         }
 
-        /// <summary>
-        /// Set and get for Calcinator Block Temperature 
-        /// </summary>
-        public float CalcinatorTemp
+        public override void CoolBlock(float dt)
         {
-            get => calcinatorTemp;
-            set => calcinatorTemp = value;
+            base.CoolBlock(dt);
+            if(CalcinatorTemperature >= 0) CalcinatorTemperature -= dt * 8;
         }
+
+        public void SetItemTemperature(ItemStack stack, float temperature)
+        {
+            stack?.Collectible.SetTemperature(Api.World, stack, temperature);
+        }
+
+        public float GetItemTemperature(ItemStack stack)
+        {
+            return stack?.Collectible.GetTemperature(Api.World, stack) ?? EnviromentTemperature();
+        }
+        
+        /// <summary>
+        /// Set and get for Calcinator Temperature
+        /// this is the temperature of the block and the items within.
+        /// </summary>
+        public float CalcinatorTemperature { get; set; }
+        #endregion
         
         public float InputStackTemp
         {
@@ -241,19 +302,18 @@ namespace AlchemicalRefinement
         }
 
         public virtual CalcinationProperties GetCalcinationProperties(ItemStack stack)//ItemSlot input)
-        { // calcinationPropsByType
-            //return input.Itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>(); //itemstack?.ItemAttributes?["calcinationProps"].AsObject<CalcinationProperties>();
+        { 
             var props = stack?.ItemAttributes?["calcinationProps"].Exists == true ? stack.ItemAttributes["calcinationProps"].AsObject<CalcinationProperties>(null, stack.Collectible.Code.Domain) : null;
             props?.CalcinatedStack?.Resolve(Api.World, "Calcinatable Properties CalcinatedStack", stack.Collectible.Code);
             return  props;
         }
         
 
-        public bool CanCalcinate()
+        /*public bool CanCalcinate()
         {
             CalcinationProperties calcinProps = GetCalcinationProperties(CalcinationStack);
             return calcinProps != null;
-        }
+        }*/
 
         protected void CalcinateInput()
         {
@@ -293,7 +353,7 @@ namespace AlchemicalRefinement
             {
                 toggleInventoryDialogClient(byPlayer, () => {
                     _clientDialog = new GUICalcinator(DialogTitle, Inventory, Pos, Api as ICoreClientAPI);
-                    _clientDialog.Update(BlockTemperature, FuelBurnTime, calcinatoinProgress, CraftEnergy);
+                    _clientDialog.Update(BlockTemperature, FuelBurnTime, CalcinationProgress, CraftEnergy);
                     return _clientDialog;
                 });
             }
@@ -313,21 +373,37 @@ namespace AlchemicalRefinement
 
         
 
+
         public void OnCraftTick(float dt)
         {
             if (IsBurning || IsSmoldering)
             {
-                if (CanCalcinate())
+                /*if (CanCalcinate())
                 {
                     CalcinateInput();
+                }*/
+
+                if (activeRecipe)
+                {
+                    if (CalcinatorTemperature >= CraftTemperature && CalcinationProgress < CraftEnergy)
+                    {
+                        FuelEfficiencyModifier = 0.8f;
+                        CalcinationProgress += FuelEnergyOutput * FuelEfficiencyModifier * dt;
+                        //Api.World.Logger.Warning("Calcination Progress: " + CalcinationProgress);
+                    }else if (CalcinationProgress >= CraftEnergy)
+                    {
+                        CalcinateInput();
+                    }
+                    
                 }
+                
                 
                 
                 if (!FuelSlotEmpty)
                 {
-                    ThermalProperties thermalProps = GetThermalProperties(FuelSlot.Itemstack);
-                    CombustibleProperties combustibleProps = GetCombustibleProperties(Api.World, FuelSlot.Itemstack, null);
                     AddFuel(FuelSlot.Itemstack, FuelSlot);
+                    //ThermalProperties thermalProps = GetThermalProperties(FuelSlot.Itemstack);
+                    //CombustibleProperties combustibleProps = GetCombustibleProperties(Api.World, FuelSlot.Itemstack, null);
 
                     /*if (thermalProps != null){
                         // float SpecificHeatCapacity = thermalProps.SpecificHeatCapacity;
@@ -364,19 +440,25 @@ namespace AlchemicalRefinement
             ITreeAttribute invtree = new TreeAttribute();
             this._inventory.ToTreeAttributes(invtree);
             tree["inventory"] = invtree;
-            tree.SetFloat("calcinatoinProgress", calcinatoinProgress);
+            tree.SetFloat("calcinationProgress", CalcinationProgress);
             tree.SetFloat("craftEnergy", CraftEnergy);
+            tree.SetFloat("calcinatorTemperature", CalcinatorTemperature);
+            tree.SetFloat("craftMaxTemperature", CraftMaxTemperature);
+            tree.SetFloat("energyTempIncrease", energyTempIncrease);
         }
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessorForResolve)
         {
             base.FromTreeAttributes(tree, worldAccessorForResolve);
             _inventory.FromTreeAttributes(tree.GetTreeAttribute("inventory"));
-            calcinatoinProgress = tree.GetFloat("calcinatoinProgress");
+            CalcinationProgress = tree.GetFloat("calcinationProgress");
+            CalcinatorTemperature  = tree.GetFloat("calcinatorTemperature");
+            CraftMaxTemperature  = tree.GetFloat("craftMaxTemperature");
             CraftEnergy = tree.GetFloat("craftEnergy");
+            energyTempIncrease  = tree.GetFloat("energyTempIncrease");
             if (Api?.Side == EnumAppSide.Client && _clientDialog != null)
             {
-                _clientDialog.Update(BlockTemperature, FuelBurnTime, calcinatoinProgress, CraftEnergy);
+                _clientDialog.Update(BlockTemperature, FuelBurnTime, CalcinationProgress, CraftEnergy);
             }
         }
         

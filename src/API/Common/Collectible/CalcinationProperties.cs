@@ -21,6 +21,22 @@ namespace AlchemicalRefinement.API.Common
             //CalcinationProperties calcinProps = GetCalcinationProperties(stack);
             return props != null;
         }
+        public bool HasCalcinationProp(IWorldAccessor world, ItemStack stack)
+        {
+            if (stack == null) return false;
+            CalcinationProperties calcinProps = GetCalcinationProperties(world ,stack);
+            return calcinProps != null;
+        }
+
+        public float GetCalcinationTemperature(CalcinationProperties props)
+        {
+            return props.CalcinationPoint;
+        }
+
+        public float GetCalcinationMaxTemperature(CalcinationProperties props)
+        {
+            return props.CalcinationMaxTemperature;
+        }
         
     }
     /// <summary>
